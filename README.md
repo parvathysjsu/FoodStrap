@@ -4,9 +4,9 @@ A portal where extra food can be donated
 
 # Steps to run
 
-Git clone
-cd .\foodstrap\
-npm install
-npm start
+1. Git clone
+2. cd .\foodstrap\
+3. npm install
+4. npm start
 
 http://localhost:5000/
