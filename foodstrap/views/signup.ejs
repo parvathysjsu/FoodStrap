@@ -2,11 +2,89 @@
 <html lang="en">
 
 <head>
-    <title>FoodStrap</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- Font Icon
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">     
+    <link rel="stylesheet" href="css/style.css"> -->
 </head>
 
 <body>
-    hello sign up page
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header logobg">
+                <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/problem">THE PROBLEM</a></li>
+                <li><a href="/donors">DONATE FOOD</a></li>
+                <li><a href="/shelters">SHELTERS</a></li>
+                <li><a href="/volunteers">VOLUNTEER</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/signin">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container bgBrown" >
+        <div>
+            <div class="sectionDivider65">
+                <img class= "imgWidth" src="img/signup.jpg">
+            </div>
+            <div class="sectionDivider35">
+                <form id="signup-form" action="/signup" method="post" >
+                    <div class="form-group form-input">
+                        <input type="text" name="name" id="name" value="" required />
+                        <label for="name" class="form-label">Your name</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="number" name="phone" id="phone" value="" required />
+                        <label for="phone" class="form-label">Your phone number</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="email" name="emailid" id="emailid" value="" required />
+                        <label for="emailid" class="form-label">Your email id</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="text" name="username" id="username" value="" required />
+                        <label for="username" class="form-label">Your username</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="password" name="pass" id="pass" value="" required />
+                        <label for="pass" class="form-label">Your password</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <div class="select-list">
+                            <select name="usertype" id="usertype" required>
+                                <option value="">User Type</option>
+                                <option value="restaurant">Restaurant</option>
+                                <option value="shelter">Shelter</option>
+                                <option value="volunteer">Volunteer</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <a href="/signup" class="vertify-booking"><input type="submit" value="Sign Up" class="submit"
+                                id="submit" name="submit" /></a>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
 
 </body>
 
