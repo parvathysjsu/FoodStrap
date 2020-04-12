@@ -32,12 +32,39 @@ router.get('/shelter_dashboard', function (req, res, next) {
 router.post('/signup', function (req, res, next) {
   console.log(req.body);
   var user = {};
+  var rest = {};
+  var shelter = {};
+  var vol = {};
   user.usertype = req.body.usertype;
-  user.name = req.body.name;
-  user.emailid = req.body.emailid;
-  user.phone = req.body.phone;
   user.username = req.body.username;
-  user.password = req.body.pass;
+  user.password = req.body.pass;  
+  if(user.usertype == "restaurant") {
+    rest.username = req.body.username;
+    rest.name = req.body.usertype;
+    rest.cuisine = req.body.rcuisine;
+    rest.phone = req.body.rphone;
+    rest.emailid = req.body.remailid;
+    rest.addr = req.body.raddr;
+    rest.city = req.body.rcity;
+    rest.state = req.body.rstate;
+    rest.zip = req.body.rzip;
+  }
+  if(user.usertype == "shelter") {
+    shelter.username = req.body.username;
+    shelter.name = req.body.sname ;  
+    shelter.phone = req.body.sphone;
+    shelter.emailid = req.body.semailid;
+    shelter.addr = req.body.saddr;
+    shelter.city = req.body.scity;
+    shelter.state = req.body.sstate;
+    shelter.zip = req.body.szip;
+  }
+  if(user.usertype == "volunteer") {
+    vol.username = req.body.username;
+    vol.name = req.body.name;   
+    vol.phone = req.body.phone;
+    vol.emailid = req.body.emailid;
+  }
   MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
     if (!err) {
       console.log("We are connected");
@@ -46,9 +73,33 @@ router.post('/signup', function (req, res, next) {
     dbo.collection("users").insertOne(user, function (err, result) {
       if (err) throw err;
       // res.send("Successfully inserted");
-      //res.render('signin');
-      res.redirect("/signin");
+      //res.render('signin');      
+     // res.redirect("/signin");
     });
+    if(user.usertype == "restaurant") {
+      dbo.collection("restaurants").insertOne(rest, function (err, result) {
+        if (err) throw err;
+        // res.send("Successfully inserted");
+        //res.render('signin');      
+        res.redirect("/signin");
+      }); 
+    }
+    if(user.usertype == "shelter") {
+      dbo.collection("shelters").insertOne(shelter, function (err, result) {
+        if (err) throw err;
+        // res.send("Successfully inserted");
+        //res.render('signin');      
+        res.redirect("/signin");
+      }); 
+    }
+    if(user.usertype == "volunteer") {
+      dbo.collection("volunteers").insertOne(vol, function (err, result) {
+        if (err) throw err;
+        // res.send("Successfully inserted");
+        //res.render('signin');      
+        res.redirect("/signin");
+      }); 
+    }
   });
   // res.render('signup');
 });
@@ -71,7 +122,7 @@ router.post('/signin', function (req, res, next) {
       for (var i = 0; i < result.length; i++) {
         console.log("record:" + JSON.stringify(result[i]));
         if (username == result[i].username && password == result[i].password && usertype == result[i].usertype) {
-          user.name = result[i].name;
+         // user.name = result[i].name;
           user.username = result[i].username;
           user.type = result[i].usertype;
           console.log(user);

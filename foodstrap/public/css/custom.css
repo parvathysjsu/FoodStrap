@@ -22,11 +22,21 @@
     padding: 15px;
     float: left;
   }
+  .sectionDivider45 {
+    width: 45%;
+    padding: 15px;
+    float: left;
+  }
   .imgWidth{
     width: 100%;
   }
   .sectionDivider65 {
     width: 65%;
+    padding: 15px;
+    float: left;
+  }
+  .sectionDivider55 {
+    width: 55%;
     padding: 15px;
     float: left;
   }
