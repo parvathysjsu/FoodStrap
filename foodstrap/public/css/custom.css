@@ -12,6 +12,11 @@
     padding: 15px;
     float: left;
   }
+  .sectionDivider33 {
+    width: 33%;
+    padding: 15px;
+    float: left;
+  }
   .sectionDivider35 {
     width: 35%;
     padding: 15px;
@@ -101,3 +106,7 @@
                 background: transparent;
                 border-bottom: 1px solid #999;
                 padding: 4px 0; }
+                
+                h3 {
+                  color: #1e1408; 
+                }
