@@ -2,9 +2,11 @@ var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
 const fetch = require("node-fetch");
+const fs = require('fs');
+
 /* SHOW landing PAGE */
 router.get('/', function (req, res, next) {
-  res.render('index');
+  res.render('index'); 
 });
 /* show signin page */
 router.get('/signin', function (req, res, next) {
@@ -13,6 +15,38 @@ router.get('/signin', function (req, res, next) {
 /* show signup page */
 router.get('/signup', function (req, res, next) {
   res.render('signup');
+});
+router.get('/setting', function (req, res, next) {
+  var prop = require('../public/settings/properties');
+ var lang= prop.lang;
+ console.log(lang);
+  res.render('setting',
+    {
+      langCode: lang
+    }
+  );
+});
+router.post('/setting', function (req, res, next) {
+  //res.render('setting'); 
+  //   var properties = require('../public/settings/properties');
+  var lang = req.body.lang;
+  //sessionStorage.setItem("lang",lang);
+  //   console.log("lang updated: "+lang); 
+  // console.log("props: "+properties.lang);
+  //properties.lang = lang;
+  
+  //setting value in json file
+  jsonReader('../foodstrap/public/settings/properties.json', (err, prop) => {
+    if (err) {
+      console.log('Error reading file:', err)
+      return
+    }
+    prop.lang = lang;
+    fs.writeFile('../foodstrap/public/settings/properties.json', JSON.stringify(prop), (err) => {
+      if (err) console.log('Error updating language:', err)
+    })
+  })
+  res.redirect("/");
 });
 
 router.get('/restaurant_dashboard', function (req, res, next) {
@@ -37,8 +71,8 @@ router.post('/signup', function (req, res, next) {
   var vol = {};
   user.usertype = req.body.usertype;
   user.username = req.body.username;
-  user.password = req.body.pass;  
-  if(user.usertype == "restaurant") {
+  user.password = req.body.pass;
+  if (user.usertype == "restaurant") {
     rest.username = req.body.username;
     rest.name = req.body.usertype;
     rest.cuisine = req.body.rcuisine;
@@ -49,9 +83,9 @@ router.post('/signup', function (req, res, next) {
     rest.state = req.body.rstate;
     rest.zip = req.body.rzip;
   }
-  if(user.usertype == "shelter") {
+  if (user.usertype == "shelter") {
     shelter.username = req.body.username;
-    shelter.name = req.body.sname ;  
+    shelter.name = req.body.sname;
     shelter.phone = req.body.sphone;
     shelter.emailid = req.body.semailid;
     shelter.addr = req.body.saddr;
@@ -59,9 +93,9 @@ router.post('/signup', function (req, res, next) {
     shelter.state = req.body.sstate;
     shelter.zip = req.body.szip;
   }
-  if(user.usertype == "volunteer") {
+  if (user.usertype == "volunteer") {
     vol.username = req.body.username;
-    vol.name = req.body.name;   
+    vol.name = req.body.name;
     vol.phone = req.body.phone;
     vol.emailid = req.body.emailid;
   }
@@ -74,31 +108,31 @@ router.post('/signup', function (req, res, next) {
       if (err) throw err;
       // res.send("Successfully inserted");
       //res.render('signin');      
-     // res.redirect("/signin");
+      // res.redirect("/signin");
     });
-    if(user.usertype == "restaurant") {
+    if (user.usertype == "restaurant") {
       dbo.collection("restaurants").insertOne(rest, function (err, result) {
         if (err) throw err;
         // res.send("Successfully inserted");
         //res.render('signin');      
         res.redirect("/signin");
-      }); 
+      });
     }
-    if(user.usertype == "shelter") {
+    if (user.usertype == "shelter") {
       dbo.collection("shelters").insertOne(shelter, function (err, result) {
         if (err) throw err;
         // res.send("Successfully inserted");
         //res.render('signin');      
         res.redirect("/signin");
-      }); 
+      });
     }
-    if(user.usertype == "volunteer") {
+    if (user.usertype == "volunteer") {
       dbo.collection("volunteers").insertOne(vol, function (err, result) {
         if (err) throw err;
         // res.send("Successfully inserted");
         //res.render('signin');      
         res.redirect("/signin");
-      }); 
+      });
     }
   });
   // res.render('signup');
@@ -122,7 +156,7 @@ router.post('/signin', function (req, res, next) {
       for (var i = 0; i < result.length; i++) {
         console.log("record:" + JSON.stringify(result[i]));
         if (username == result[i].username && password == result[i].password && usertype == result[i].usertype) {
-         // user.name = result[i].name;
+          // user.name = result[i].name;
           user.username = result[i].username;
           user.type = result[i].usertype;
           console.log(user);
@@ -138,11 +172,11 @@ router.post('/signin', function (req, res, next) {
           //return res.send("success");                  
         }
       }
-      if(notfound){
+      if (notfound) {
         console.log("failure to find match");
-        res.redirect("/error");    
+        res.redirect("/error");
       }
-    
+
     });
   });
 });
@@ -197,5 +231,17 @@ router.get('/shelters', function (req, res, next) {
 router.get('/volunteers', function (req, res, next) {
   res.render('volunteers');
 });
-
+function jsonReader(filePath, cb) {
+  fs.readFile(filePath, (err, fileData) => {
+    if (err) {
+      return cb && cb(err)
+    }
+    try {
+      const object = JSON.parse(fileData)
+      return cb && cb(null, object)
+    } catch (err) {
+      return cb && cb(err)
+    }
+  })
+}
 module.exports = router;

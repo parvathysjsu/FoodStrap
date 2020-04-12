@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- Font Icon
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">     
+    <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header logobg">
+                <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/problem">THE PROBLEM</a></li>
+                <li><a href="/donors">DONATE FOOD</a></li>
+                <li><a href="/shelters">SHELTERS</a></li>
+                <li><a href="/volunteers">VOLUNTEER</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/signin">SIGN IN</a></li>
+                <li><a class="active" href="/setting">SETTINGS</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container bgBrown">
+        <div>
+            <div class="sectionDivider65">
+                <img class="imgWidth" src="img/settings.jpg">
+            </div>
+            <div class="sectionDivider35">
+                <form id="signup-form" action="/setting" method="post">
+                    <div class="form-group form-input">
+                        <label for="lang" class="form-label">Language</label><br>
+                        <%=langCode%>
+                        <br>
+                        <div class="select-list">
+                            <select name="lang" id="lang" required>
+                                <% if(langCode == 'en'){ %>
+                                <option value="en" selected>English</option>
+                                <option value="fr">French</option>
+                                <option value="hi">Hindi</option>
+                                <% } %>
+                                <% if(langCode == 'fr'){ %>
+                                <option value="en">English</option>
+                                <option value="fr" selected>French</option>
+                                <option value="hi">Hindi</option>
+                                <% } %>
+                                <% if(langCode == 'hi'){ %>
+                                <option value="en">English</option>
+                                <option value="fr">French</option>
+                                <option value="hi" selected>Hindi</option>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <a href="/setting" class="vertify-booking"><input type="submit" value="Update" class="submit"
+                                id="submit" name="submit" /></a>
+                        <!--<button class="signInButton" onclick="loginInfo();">
+                            Sign In
+                        </button>-->
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
