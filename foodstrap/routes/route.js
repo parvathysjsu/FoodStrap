@@ -3,6 +3,7 @@ var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
 const fetch = require("node-fetch");
 const fs = require('fs');
+var constants = require('../public/settings/Constants');
 
 /* SHOW landing PAGE */
 router.get('/', function (req, res, next) {
@@ -17,9 +18,11 @@ router.get('/signup', function (req, res, next) {
   res.render('signup');
 });
 router.get('/setting', function (req, res, next) {
-  var prop = require('../public/settings/properties');
- var lang= prop.lang;
- console.log(lang);
+ // console.log(req.session);
+ // var prop = require('../public/settings/properties');
+ //var lang= prop.lang;
+ var lang = constants.properties.lang;
+ console.log("----lang: "+lang);
   res.render('setting',
     {
       langCode: lang
@@ -28,7 +31,7 @@ router.get('/setting', function (req, res, next) {
 });
 router.post('/setting', function (req, res, next) {
   //res.render('setting'); 
-  //   var properties = require('../public/settings/properties');
+  //   var properties = require('../public/settings/properties');  
   var lang = req.body.lang;
   //sessionStorage.setItem("lang",lang);
   //   console.log("lang updated: "+lang); 
@@ -36,7 +39,7 @@ router.post('/setting', function (req, res, next) {
   //properties.lang = lang;
   
   //setting value in json file
-  jsonReader('../foodstrap/public/settings/properties.json', (err, prop) => {
+ /* jsonReader('../foodstrap/public/settings/properties.json', (err, prop) => {
     if (err) {
       console.log('Error reading file:', err)
       return
@@ -45,7 +48,8 @@ router.post('/setting', function (req, res, next) {
     fs.writeFile('../foodstrap/public/settings/properties.json', JSON.stringify(prop), (err) => {
       if (err) console.log('Error updating language:', err)
     })
-  })
+  })*/
+  constants.properties.lang = lang;
   res.redirect("/");
 });
 
