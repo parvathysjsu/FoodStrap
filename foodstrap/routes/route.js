@@ -78,7 +78,7 @@ router.post('/signup', function (req, res, next) {
   user.password = req.body.pass;
   if (user.usertype == "restaurant") {
     rest.username = req.body.username;
-    rest.name = req.body.usertype;
+    rest.name = req.body.rname;
     rest.cuisine = req.body.rcuisine;
     rest.phone = req.body.rphone;
     rest.emailid = req.body.remailid;
@@ -224,7 +224,30 @@ router.get('/problem', function (req, res, next) {
 
 //donote food page
 router.get('/donors', function (req, res, next) {
-  res.render('donors');
+  var rest = [];
+MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("restaurants").find({}).toArray(function (err, result) {
+      if (err) {console.log(err);}
+      //console.log("---restaurants: "+result);
+      for (var i = 0; i < result.length; i++) {	  
+			rest.push({
+			"name":result[i].name,
+      "addr":result[i].city+', '+result[i].state,
+      "contact":'Ph: '+result[i].phone+', Email: '+result[i].emailid
+      });  
+     // console.log("---"+i+' '+result[i].name);
+      //rest.push(result[i].name);                                         
+      }      
+      console.log("restaurants: "+rest);
+      res.render('donors',{
+        restList:rest
+      });    
+    });
+  }); 
 });
 
 //shelters page
