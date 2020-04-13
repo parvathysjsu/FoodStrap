@@ -1,0 +1,89 @@
+{
+    "applicationName": "foodstrap",
+    "page": {
+        "index": {
+            "en": {
+                "title": "FoodStrap",
+                "quote": "If you can't feed a hundred people, then feed just one!",
+                "quoteAuthor": "Mother Teresa",
+                "descWhatAreWe": "What are we?",
+                "descWhatAreWeAnswer": "We provide an alternative to discarding surplus wholesome food by linking food service donors with surplus food to local hunger relief agencies. We do this by creating and maintaining an efficient communication and reporting network that links available sources of food to those in need through these existing charitable organizations.",
+                "descWhatdoWeDo": "What do we do to help the community?",
+                "descWhatdoWeDoAnswer": "We help people who are having a financial crisis. They may have lost their job, or had a medical emergency, or their car may have broken down. We help the people who are needy or who are poor and need some help getting food. People that go hungry for a long period of time will change as a person completely. More than seventy percent of people go hungry in the world. Going hungry for a certain period of time damages your mental health and physical health. When it damages your mental health it causes you to have negative thoughts about things. Going hungry also changes your physical health, it causes you to lose weight and it will mess up your respiratory system.",
+                "descFromWhereFood": "From where do we get our food?",
+                "descFromWhereFoodAnswer": "They have few sources from where we get the food. It can be restaurants who have surplus food, caterers who have leftover food, individual donations, local businesses around the area.",
+                "shareYourFood": "Share your food",
+                "shareYourFoodAnswer": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
+                "donateFood": "Donate Surplus food",
+                "donateFoodAnswer": "Instead of throwing away surplus food that is safe to eat, donate to local hunger relief organizations. This delivers a triple benefit: Food stays out of landfills to prevent environmental impact, nonprofits benefit from the donations and  restaurants give back to local communities.",
+                "recieveFood": "Recieve food",
+                "recieveFoodAnswer": "The quality, wholesome prepared food donated from restaurants can serve those who experience hunger. If you have to choose between paying rent or buying healthy groceries, we can help."
+            },
+            "fr": {
+                "title": "FoodStrap",
+                "quote": "Si vous ne pouvez pas nourrir une centaine de personnes, n'en nourrissez qu'une!",
+                "quoteAuthor": "Mère Teresa",
+                "descWhatAreWe": "Que sommes-nous?",
+                "descWhatAreWeAnswer": "Nous offrons une alternative à l'élimination des surplus d'aliments sains en reliant les donateurs de services alimentaires avec les surplus de nourriture aux agences locales de lutte contre la faim. Pour ce faire, nous créons et maintenons un réseau de communication et de rapport efficace qui relie les sources de nourriture disponibles à ceux qui en ont besoin par le biais de ces organisations caritatives existantes.",
+                "descWhatdoWeDo": "Que faisons-nous pour aider la communauté?",
+                "descWhatdoWeDoAnswer": "Nous aidons les personnes qui traversent une crise financière. Ils ont peut-être perdu leur emploi, eu une urgence médicale ou leur voiture est tombée en panne. Nous aidons les personnes dans le besoin ou pauvres qui ont besoin d'aide pour se nourrir. Les personnes qui souffrent de la faim pendant une longue période changeront complètement en tant que personne. Plus de 70% des personnes souffrent de la faim dans le monde. Avoir faim pendant un certain temps nuit à votre santé mentale et physique. Quand cela nuit à votre santé mentale, cela vous fait avoir des pensées négatives à propos des choses. Avoir faim modifie également votre santé physique, vous fait perdre du poids et perturbe votre système respiratoire.",
+                "descFromWhereFood": "D'où obtenons-nous notre nourriture?",
+                "descFromWhereFoodAnswer": "Ils ont peu de sources d'où nous obtenons la nourriture. Il peut s'agir de restaurants qui ont un surplus de nourriture, de traiteurs qui ont des restes de nourriture, de dons individuels, d'entreprises locales dans la région.",
+                "shareYourFood": "Partagez votre nourriture",
+                "shareYourFoodAnswer": "De nombreuses familles de notre région ont besoin d'un peu d'aide pour mettre de la nourriture sur la table. Ils ne devraient pas avoir à choisir entre payer un loyer ou acheter une épicerie saine. Vous pouvez aider en faisant des dons de nourriture. Votre soutien est grandement nécessaire et apprécié.",
+                "donateFood": "Donnez un surplus de nourriture",
+                "donateFoodAnswer": "Au lieu de jeter les surplus de nourriture qui sont sûrs à manger, faites un don aux organisations locales de lutte contre la faim. Cela offre un triple avantage: la nourriture reste hors des décharges pour éviter l'impact environnemental, les organisations à but non lucratif bénéficient des dons et les restaurants redonnent aux communautés locales.",
+                "recieveFood": "Recevoir de la nourriture",
+                "recieveFoodAnswer": "La nourriture saine et de qualité préparée donnée par les restaurants peut servir ceux qui ont faim. Si vous devez choisir entre payer un loyer ou acheter une épicerie saine, nous pouvons vous aider."
+            },
+            "hi": {
+                "title": "फूड्सत्रप",
+                "quote": "यदि आप सौ लोगों को नहीं खिला सकते हैं, तो सिर्फ एक को खिलाएं",
+                "quoteAuthor": "मदर टेरेसा",
+                "descWhatAreWe": "हम क्या है?",
+                "descWhatAreWeAnswer": "हम खाद्य सेवा दाताओं को अधिशेष भोजन के साथ स्थानीय भूख राहत एजेंसियों से जोड़कर अधिशेष पौष्टिक भोजन छोड़ने का विकल्प प्रदान करते हैं। हम एक कुशल संचार और रिपोर्टिंग नेटवर्क का निर्माण और रखरखाव करते हैं जो इन मौजूदा धर्मार्थ संगठनों के माध्यम से उन लोगों के लिए भोजन के उपलब्ध स्रोतों को जोड़ता है।",
+                "descWhatdoWeDo": "हम समुदाय की मदद के लिए क्या करते हैं?",
+                "descWhatdoWeDoAnswer": "हम ऐसे लोगों की मदद करते हैं जो आर्थिक संकट में हैं। हो सकता है कि उन्होंने अपनी नौकरी खो दी हो, या कोई मेडिकल इमरजेंसी हो, या उनकी कार टूट गई हो। हम उन लोगों की मदद करते हैं जो जरूरतमंद हैं या जो गरीब हैं और उन्हें भोजन पाने में कुछ मदद की जरूरत है। लंबे समय तक भूखे रहने वाले लोग पूरी तरह से एक व्यक्ति के रूप में बदल जाएंगे। दुनिया में सत्तर प्रतिशत से अधिक लोग भूखे रहते हैं। एक निश्चित अवधि के लिए भूखे रहने से आपके मानसिक स्वास्थ्य और शारीरिक स्वास्थ्य को नुकसान होता है। जब यह आपके मानसिक स्वास्थ्य को नुकसान पहुंचाता है तो इससे आपको चीजों के बारे में नकारात्मक विचार रखने पड़ते हैं। भूखे रहने से आपका शारीरिक स्वास्थ्य भी बदल जाता है, इससे आपका वजन कम होता है और यह आपके श्वसन तंत्र को गड़बड़ कर देगा।",
+                "descFromWhereFood": "जहां से हमें अपना भोजन मिलता है?",
+                "descFromWhereFoodAnswer": "हमारे पास कुछ स्रोत हैं जहां से हमें भोजन मिलता है। यह ऐसे रेस्तरां हो सकते हैं जिनमें अधिशेष भोजन, कैटरर्स हैं जिनके पास बचा हुआ भोजन, व्यक्तिगत दान, क्षेत्र के आसपास के स्थानीय व्यवसाय हैं।",
+                "shareYourFood": "अपना भोजन साझा करें",
+                "shareYourFoodAnswer": "हमारे क्षेत्र के कई परिवारों को मेज पर खाना लगाने में थोड़ी मदद की ज़रूरत है। उन्हें किराया देने या स्वस्थ किराने का सामान खरीदने के बीच चयन नहीं करना चाहिए। आप भोजन दान करके मदद कर सकते हैं। आपके समर्थन की बहुत आवश्यकता है और सराहना की जाती है।",
+                "donateFood": "अधिशेष भोजन का दान करें",
+                "donateFoodAnswer": "खाने के लिए सुरक्षित अधिशेष भोजन को फेंकने के बजाय, स्थानीय भूख राहत संगठनों को दान करें। यह एक ट्रिपल लाभ देता है: खाद्य पर्यावरणीय प्रभाव को रोकने के लिए लैंडफिल से बाहर रहता है, दान और रेस्तरां से गैर-लाभकारी लाभ स्थानीय समुदायों को वापस देते हैं।",
+                "recieveFood": "भोजन ग्रहण करें",
+                "recieveFoodAnswer": "रेस्तरां से दान किए गए गुणवत्ता पूर्ण, तैयार भोजन उन लोगों की सेवा कर सकते हैं जो भूख का अनुभव करते हैं। यदि आपको किराए का भुगतान करने या स्वस्थ किराने का सामान खरीदने के बीच चयन करना है, तो हम मदद कर सकते हैं।"
+            }
+        },
+        "nav": {
+            "en": {
+                "home": "HOME",
+                "problem": "THE PROBLEM",
+                "donate": "DONATE FOOD",
+                "shelters": "RECIEVE FOOD",
+                "volunteer": "VOLUNTEER",
+                "signin": "SIGN IN",
+                "settings": "SETTINGS"
+            },
+            "fr": {
+                "home": "MAISON",
+                "problem": "PROBLEME",
+                "donate": "DONNER",
+                "shelters": "RECEVEZ",
+                "volunteer": "BÉNÉVOLE",
+                "signin": "SE CONNECTER",
+                "settings": "RÉGLAGES"
+            },
+            "hi": {
+                "home": "घर",
+                "problem": "समस्या",
+                "donate": "भोजन दान",
+                "shelters": "भोजन प्राप्त",
+                "volunteer": "स्वयंसेवक",
+                "signin": "साइन इन",
+                "settings": "पतिस्थिति"
+            }
+        },
+        "donors": {},
+        "shelters": {}
+    }
+}

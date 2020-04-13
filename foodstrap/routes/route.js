@@ -4,10 +4,17 @@ var MongoClient = require('mongodb').MongoClient;
 const fetch = require("node-fetch");
 const fs = require('fs');
 var constants = require('../public/settings/Constants');
-
+var messages = require('../public/settings/localization');
 /* SHOW landing PAGE */
 router.get('/', function (req, res, next) {
-  res.render('index'); 
+  var lang = constants.properties.lang;
+  console.log(lang);  
+  var msgsVar = messages.page.index[lang];
+  //console.log(msgsVar);
+  res.render('index',{
+    msgs:msgsVar,
+    navLabels:messages.page.nav[lang]
+  }); 
 });
 /* show signin page */
 router.get('/signin', function (req, res, next) {

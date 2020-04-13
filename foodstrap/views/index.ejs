@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>FoodStrap</title>
+  <title><%= msgs.title %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -12,7 +12,25 @@
 </head>
 
 <body>
-  <%- include nav.ejs %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/"><%= navLabels.home %></a></li>
+        <li><a href="/problem"><%= navLabels.problem %></a></li>
+        <li><a href="/donors"><%= navLabels.donate %></a></li>
+        <li><a href="/shelters"><%= navLabels.shelters %></a></li>
+        <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/signin"><%= navLabels.signin %> </a></li>
+        <li><a href="/setting"><%= navLabels.settings %></a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -23,7 +41,6 @@
         <li data-target="#myCarousel" data-slide-to="3"></li>
         <li data-target="#myCarousel" data-slide-to="4"></li>
       </ol>
-
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
 
@@ -53,66 +70,58 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
     <br>
     <br>
     <blockquote>
-      If you can't feed a hundred people, then feed just one!
-      <footer>Mother Teresa</footer>
+      <%= msgs.quote %>
+      <footer><%= msgs.quoteAuthor %></footer>
     </blockquote>
-    
     <br>
     <div class="row">
-      <strong> What are we?</strong>
-      <p>We provide an alternative to discarding surplus wholesome food by linking food service donors with surplus food to local hunger relief agencies. We do this by creating and maintaining an efficient communication and reporting network that links available sources of food to those in need through these existing charitable organizations.</p>
+      <strong> <%= msgs.descWhatAreWe %></strong>
+      <p> <%= msgs.descWhatAreWeAnswer %>.</p>
       <br>
       <p>
-        <strong> What do we do to help the community?</strong>
+        <strong> <%= msgs.descWhatdoWeDo %></strong>
         <br>
-We help people who are having a financial crisis. They may have lost their job, or had a medical emergency, or their car may have broken down. We help the people who are needy or who are poor and need some help getting food. People that go hungry for a long period of time will change as a person completely. More than seventy percent of people go hungry in the world. Going hungry for a certain period of time damages your mental health and physical health. When it damages your mental health it causes you to have negative thoughts about things. Going hungry also changes your physical health, it causes you to lose weight and it will mess up your respiratory system.
-<br>
-<br>
-<strong>From where do we get our food? </strong>
-<br>
-They have few sources from where we get the food. It can be restaurants who have surplus food, caterers who have leftover food, individual donations, local businesses around the area.
+        <%= msgs.descWhatdoWeDoAnswer %>
+        <br>
+        <br>
+        <strong> <%= msgs.descFromWhereFood %> </strong>
+        <br>
+        <%= msgs.descFromWhereFoodAnswer %>
       </p>
     </div>
     <div class="row">
-      <div class = "sectionDivider33">
+      <div class="sectionDivider33">
         <h4>
-          Share your food
+          <%= msgs.shareYourFood %>
         </h4>
         <p>
-          Many families in our area need a little help putting food on the table. They shouldn’t have to choose between
-          paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed
-          and appreciated.
+          <%= msgs.shareYourFoodAnswer %>
         </p>
       </div>
-      <div class = "sectionDivider33">
+      <div class="sectionDivider33">
         <h4>
-          Donate Surplus food
+          <%= msgs.donateFood %>
         </h4>
         <p>
-          Instead of throwing away surplus food that is safe to eat, donate to local hunger relief organizations. This delivers a triple benefit: Food stays out of landfills to prevent environmental impact, nonprofits benefit from the donations and  restaurants give back to local communities.
+          <%= msgs.donateFoodAnswer %>
         </p>
       </div>
-      <div class = "sectionDivider33">
+      <div class="sectionDivider33">
         <h4>
-          Recieve food
+          <%= msgs.recieveFood %>
         </h4>
         <p>
-          The quality, wholesome prepared food donated from restaurants can serve those who experience hunger. If you have to choose between
-          paying rent or buying healthy groceries, we can help.
+          <%= msgs.recieveFoodAnswer %>
         </p>
-        </div>
       </div>
-<br>
-<br>
-
-
-      </div>    
     </div>
-    
+    <br>
+    <br>
+  </div>
+  </div>
 </body>
 
 </html>
