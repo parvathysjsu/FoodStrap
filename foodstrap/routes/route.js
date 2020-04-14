@@ -28,11 +28,15 @@ router.get('/setting', function (req, res, next) {
  // console.log(req.session);
  // var prop = require('../public/settings/properties');
  //var lang= prop.lang;
+  
  var lang = constants.properties.lang;
  console.log("----lang: "+lang);
+ var msgsVar = messages.page.settings[lang];
   res.render('setting',
     {
-      langCode: lang
+      langCode: lang,
+      msgs:msgsVar,
+      navLabels:messages.page.nav[lang]
     }
   );
 });

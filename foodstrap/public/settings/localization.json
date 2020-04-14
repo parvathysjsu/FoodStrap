@@ -83,6 +83,20 @@
                 "settings": "पतिस्थिति"
             }
         },
+        "settings":{
+            "en": {
+                "language":"Language",
+                "update": "Update"
+            },
+            "fr": {
+                "language":"Langue",
+                "update": "Mise à jour"
+            },
+            "hi": {
+                "language":"भाषा",
+                "update": "अपडेट"
+            }
+        },
         "donors": {},
         "shelters": {}
     }
