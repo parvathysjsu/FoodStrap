@@ -66,6 +66,7 @@ router.post('/setting', function (req, res, next) {
 
 router.get('/restaurant_dashboard', function (req, res, next) {
   console.log("get restaurant_dashboard");
+  
   res.render('restaurant_dashboard');
 });
 router.get('/volunteer_dashboard', function (req, res, next) {

@@ -120,3 +120,33 @@
                 h3 {
                   color: #1e1408; 
                 }
+
+
+                .sidenav {
+                  height: 100%;
+                  width: 10%;
+                  position: fixed;
+                  z-index: 1;
+                  top: 0;
+                  left: 0;
+                  background-color: #1e1408;
+                  overflow-x: hidden;
+                  padding-top: 20px;
+                }
+                
+                .sidenav a {
+                  padding: 6px 8px 6px 16px;
+                  text-decoration: none;
+                  font-size: 18px;
+                  color: #d8dde3;
+                  display: block;
+                }
+                
+                .sidenav a:hover {
+                  color: #818181;
+                }                
+                .navbar-nav.navbar-center {
+                  position: absolute;
+                  left: 50%;
+                  transform: translatex(-50%);
+              }

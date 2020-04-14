@@ -98,6 +98,20 @@
             }
         },
         "donors": {},
-        "shelters": {}
+        "shelters": {},
+        "restaurant_dashboard":{
+            "en": {
+                "title":"Language",
+                "update": "Update"
+            },
+            "fr": {
+                "language":"Langue",
+                "update": "Mise à jour"
+            },
+            "hi": {
+                "language":"भाषा",
+                "update": "अपडेट"
+            }
+        },
     }
 }
