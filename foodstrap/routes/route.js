@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
   var lang = constants.properties.lang;
   console.log(lang);  
   var msgsVar = messages.page.index[lang];
+  //res.render('index');
   //console.log(msgsVar);
   res.render('index',{
     msgs:msgsVar,
@@ -64,10 +65,31 @@ router.post('/setting', function (req, res, next) {
   res.redirect("/");
 });
 
+router.get('/donate', function (req, res, next) {
+  console.log("get donate");
+  var lang = constants.properties.lang;
+  console.log(lang);  
+  console.log(req.session.user);  
+  var msgsVar = messages.page.donate[lang];
+  //var msgsVar = "hello";
+  //console.log(msgsVar);  
+  res.render('donate',{
+    msgs:msgsVar,
+    user:  req.session.user,
+    langCode: lang
+  }
+  );
+});
 router.get('/restaurant_dashboard', function (req, res, next) {
   console.log("get restaurant_dashboard");
-  
-  res.render('restaurant_dashboard');
+  var lang = constants.properties.lang;
+  console.log(lang);  
+  var msgsVar = messages.page.restaurant_dashboard[lang];
+  res.render('restaurant_dashboard',{
+    msgs:msgsVar,
+    user:  req.session.user
+  }
+  );
 });
 router.get('/volunteer_dashboard', function (req, res, next) {
   console.log("get volunteer_dashboard");
@@ -78,7 +100,31 @@ router.get('/shelter_dashboard', function (req, res, next) {
   console.log("get shelter_dashboard");
   res.render('shelter_dashboard');
 });
-
+router.post('/donate', function (req, res, next) {
+  console.log(req.body); 
+  var donation = {};
+  donation.restaurant = req.session.user.username;
+  donation.menu = req.body.menu;
+  donation.cuisine = req.body.cuisine;
+  donation.count = req.body.count;
+  donation.allergy = req.body.allergy;
+  donation.notes = req.body.notes;
+  donation.pickuptime = req.body.pickuptime;
+  donation.pickupaddr = req.body.addr;
+  donation.pickupaddrcity = req.body.city;
+  donation.pickupaddrstate = req.body.state;
+  donation.pickupaddrzip= req.body.zip;
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+      dbo.collection("donations").insertOne(donation, function (err, result) {
+        if (err) throw err;          
+        res.redirect("/restaurant_dashboard");
+      });
+  });
+});
 router.post('/signup', function (req, res, next) {
   console.log(req.body);
   var user = {};

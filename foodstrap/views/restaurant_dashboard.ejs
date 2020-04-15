@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title><%= msgs.title %></title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <script src="js/jquery.min.js"></script>
@@ -15,38 +15,37 @@
             box-sizing: border-box;
         }
     </style>
-    <!-- Font Icon
-        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">     
-        <link rel="stylesheet" href="css/style.css"> -->
 </head>
 
-<body>
-    
+<body>    
     <nav class="navbar navbar-default">
         <div class="container-fluid">     
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/">Restaurant Manager Dashboard</a></li>                
+                <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>                
             </ul>  
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signin">Profile </a></li>
-            <li><a href="/setting">Settings</a></li>
+            <li><a href="/signin"><%= msgs.profile %> </a></li>
+            <li><a href="/setting"><%= msgs.settings %></a></li>
           </ul>
         </div>
       </nav>
       <div class="sidenav">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">username</a>
-          </div>
-        <a href="#about">Donate</a>
-        <a href="#services">History</a>       
-        <a href="#contact">Process</a>
-        <a href="#clients">Profile</a>
-      </div>
+        <div class="navbar-header" align='center'>           
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/userlogo.jpg">
+               <%= user.username %></a>       
+        </div>
+        <br><br>
+        <br><br>
+        <a href="/donate"><p><%= msgs.donate %></p></a>
+        <a href="/donationshistory"><%= msgs.history %></a>
+        <a href="/donationprocess"><%= msgs.process %></a>
+        <a href="#clients"><%= msgs.profile %></a>
+    </div>
       <div class="container">
-          hello
+          
           hello
           <div align="center">
-            <a href="/signup" class="vertify-booking"><input type="submit" value="New User? Sign Up"
+            <a href="/donate" class="vertify-booking"><input type="submit" value="Donate Today!"
                     class="submit" id="submit" name="submit" /></a>
         </div>          
       </div>

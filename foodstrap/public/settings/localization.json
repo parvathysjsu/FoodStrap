@@ -101,17 +101,91 @@
         "shelters": {},
         "restaurant_dashboard":{
             "en": {
-                "title":"Language",
-                "update": "Update"
+                "title":"Dashboard",
+                "heading": "Restaurant Manager Dashboard",
+                "donate":"Donate",
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings"               
             },
             "fr": {
-                "language":"Langue",
-                "update": "Mise à jour"
+                "title":"Dashboard",
+                "heading": "Restaurant Manager Dashboard",
+                "donate":"Donate",
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings" 
             },
             "hi": {
-                "language":"भाषा",
-                "update": "अपडेट"
+                "title":"Dashboard",
+                "heading": "Restaurant Manager Dashboard",
+                "donate":"Donate",
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings" 
             }
         },
+        "donate":{
+            "en": {
+                "title":"Donate",
+                "heading": "Restaurant Manager Dashboard",               
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings",
+                "menu":"Menu", 
+                "cuisine":"Cuisine",              
+                "pcount":"Portion Count",              
+                "allergy":"Allergy Information",              
+                "splnotes":"Special Instructions",              
+                "time":"Pick Up Time",              
+                "addrline1":"Pick Up Address",              
+                "city":"City",              
+                "state":"State",              
+                "zip":"Zip" ,
+                "donate":"Donate"            
+            },
+            "fr": {
+                "title":"Donate",
+                "heading": "Restaurant Manager Dashboard",               
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings",
+                "menu":"Menu", 
+                "cuisine":"Cuisine",              
+                "pcount":"Portion Count",              
+                "allergy":"Allergy Information",              
+                "splnotes":"Special Instructions",              
+                "time":"Pick Up Time",              
+                "addrline1":"Pick Up Address",              
+                "city":"City",              
+                "state":"State",              
+                "zip":"Zip" ,
+                "donate":"Donate"      
+            },
+            "hi": {
+                "title":"Donate",
+                "heading": "Restaurant Manager Dashboard",               
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings",
+                "menu":"Menu", 
+                "cuisine":"Cuisine",              
+                "pcount":"Portion Count",              
+                "allergy":"Allergy Information",              
+                "splnotes":"Special Instructions",              
+                "time":"Pick Up Time",              
+                "addrline1":"Pick Up Address",              
+                "city":"City",              
+                "state":"State",              
+                "zip":"Zip" ,
+                "donate":"Donate"      
+            }
+        }
     }
 }
