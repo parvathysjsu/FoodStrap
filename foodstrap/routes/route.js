@@ -80,6 +80,21 @@ router.get('/donate', function (req, res, next) {
   }
   );
 });
+router.get('/donationshistory', function (req, res, next) {
+  console.log("get donationshistory");
+  var lang = constants.properties.lang;
+  console.log(lang);  
+  console.log(req.session.user);  
+  var msgsVar = messages.page.donationshistory[lang];
+  //var msgsVar = "hello";
+  //console.log(msgsVar);  
+  res.render('donationshistory',{
+    msgs:msgsVar,
+    user:  req.session.user,
+    langCode: lang
+  }
+  );
+});
 router.get('/restaurant_dashboard', function (req, res, next) {
   console.log("get restaurant_dashboard");
   var lang = constants.properties.lang;

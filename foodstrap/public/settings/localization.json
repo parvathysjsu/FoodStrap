@@ -186,6 +186,23 @@
                 "zip":"Zip" ,
                 "donate":"Donate"      
             }
+        },
+        "donationshistory":{
+            "en": {
+                "title":"Donations History",
+                "heading": "Restaurant Manager Dashboard",               
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings",            
+                "donate":"Donate"            
+            },
+            "fr": {
+                     
+            },
+            "hi": {
+                    
+            }
         }
     }
 }
