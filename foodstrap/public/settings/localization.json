@@ -195,7 +195,20 @@
                 "process":"Process",
                 "profile":"Profile",
                 "settings":"Settings",            
-                "donate":"Donate"            
+                "donate":"Donate",
+                "congrats":"Congragulations!" ,
+                "peopleFed":"people fed.",
+                "quote":"Giving is not just about making a donation. It's about making a difference.",
+                "menu":"Menu",
+                "cuisine":"Cuisine",
+                "pcount":"Portions Count",
+                "datetime":"Pick up Date Time",
+                "addr":"Address",
+                "allergyinfo":"Allergy Information",
+                "splnotes":"Special Instructions",
+                "title1":"Year",
+                "title2":"Number of People Fed",
+                "title3":"Donations Summary"
             },
             "fr": {
                      

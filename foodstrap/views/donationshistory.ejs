@@ -39,31 +39,72 @@
         <a href="#clients"><%= msgs.profile %></a>
     </div>
     <div class="container">        
-        <div class="sectionDivider33">
+        <div class="sectionDivider35">
             <div id="barchart_material"></div>            
-        </div>         
+        </div> 
+        <div class="sectionDivider65 verticalAlignCenter">
+            <% if(donCount != '0'){ %>
+         <br>
+         <br>
+         <p class = "brownAndbig">   <%= msgs.congrats %>                
+                <%= donCount %>  <%= msgs.peopleFed %>    </p>
+            <% } %>    
+            <p class = "brownAndbig">   <%= msgs.quote %>   </p>          
+        </div>       
       </div>
       <br>
       <br>
-      <div class="container bgBrown">        
-        <div id="barchart_material"></div>        
-        hello
-        -----list of donations----
+      <div class="container">        
+        <div id="barchart_material"></div>                       
+
+        <table class="table" align="center">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col"> <%= msgs.menu %></th>
+                <th scope="col"> <%= msgs.cuisine %></th>
+                <th scope="col"> <%= msgs.pcount %></th>
+                <th scope="col"> <%= msgs.datetime %></th>
+                <th scope="col"> <%= msgs.addr %></th>
+                <th scope="col"> <%= msgs.allergyinfo %></th>
+                <th scope="col"> <%= msgs.splnotes %></th>
+              </tr>
+            </thead>
+            <tbody>
+               
+                <% for(var item in donList) { %>
+                    <tr>
+                        <th scope="row"><%= parseInt(item)+1 %></th>
+                        <td> <%= donList[item].menu %></td>
+                        <td> <%= donList[item].cuisine %></td>
+                        <td> <%= donList[item].count %></td>
+                        <td> <%= donList[item].pickuptime %></td>
+                        <td> <%= donList[item].addr %></td>
+                        <td> <%= donList[item].allergy %></td>
+                        <td> <%= donList[item].notes %></td>
+                      </tr>
+                    <% } %>
+                          
+            </tbody>
+          </table>
+
       </div>
      <script type="text/javascript">
+     var c = <%- donCount %>;   
         google.charts.load('current', {'packages':['bar']});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Total Donations', 'Number of People Fed'],
-            ['1', 100],
-            ['2', 50]
+            ['Year', 'Number of People Fed'],
+            ['2018', 0],
+            ['2019', 0],
+            ['2020', c]
           ]);
           var options = {
             chart: {
-              title: 'Donations Summary',
-              subtitle: 'A summary of life time donations of restaurant',
+              title: 'Donations Summary'             
             },
+            colors: ['#1e1408']
            // bars: 'horizontal' // Required for Material Bar Charts.
           };
           var chart = new google.charts.Bar(document.getElementById('barchart_material'));  
