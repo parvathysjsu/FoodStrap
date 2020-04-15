@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= msgs.title %></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="sidenav">
+        <div class="navbar-header" align='center'>
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/userlogo.jpg">
+                <%= user.username %></a>
+        </div>
+        <br><br>
+        <br><br>
+        <a href="/donate">
+            <p><%= msgs.donate %></p>
+        </a>
+        <a  href="/donationshistory">
+            <p><%= msgs.history %></p>
+        </a>
+        <a class="active" href="/donationprocess"><p><%= msgs.process %></p></a>
+        <a href="/rest_profile"><%= msgs.profile %></a>
+    </div>
+    <div class="container bgBrown" style="color:#d8dde3">
+
+        <div class="sectionDivider">
+            <img class="imgWidth" src="img/donprocess.jpg">
+        </div>
+        <div class="sectionDivider verticalAlignCenter">
+            <% if(langCode == 'en'){ %>
+                <img class="imgWidth" src="img/process3.jpg">
+                <% } %>
+                <% if(langCode == 'fr'){ %>
+                    <img class="imgWidth" src="img/process_fr.jpg">
+                <% } %>
+                <% if(langCode == 'hi'){ %>
+                    <img class="imgWidth" src="img/process_hi.jpg">
+                <% } %>
+           
+        <!-- <div class="row">
+                <div class="sectionDivider10 align = 'center'">
+                    <h2>1</h2>
+                </div>
+                <div class="sectionDivider80 leftMiddleAlign">
+                 <br>  <%= msgs.m1 %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sectionDivider10 align = 'center'">
+                    <h2>2</h2>
+                </div>
+                <div class="sectionDivider80 leftMiddleAlign">
+                    <br>    <%= msgs.m2 %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sectionDivider10 align = 'center'">
+                    <h2>3</h2>
+                </div>
+                <div class="sectionDivider80 leftMiddleAlign">
+                    <br>   <%= msgs.m3 %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sectionDivider10 align = 'center'">
+                    <h2>4</h2>
+                </div>
+                <div class="sectionDivider80 leftMiddleAlign">
+                    <br>   <%= msgs.m4 %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sectionDivider10 align = 'center'">
+                    <h2>5</h2>
+                </div>
+                <div class="sectionDivider80 leftMiddleAlign">
+                    <br>   <%= msgs.m5 %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sectionDivider10 align = 'center'">
+                    <h2>6</h2>
+                </div>
+                <div class="sectionDivider80 leftMiddleAlign">
+                    <br>    <%= msgs.m6 %>
+                </div>
+            </div>    -->  
+        </div>
+    </div>
+
+</body>
+
+</html>

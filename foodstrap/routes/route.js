@@ -143,6 +143,18 @@ router.get('/restaurant_dashboard', function (req, res, next) {
   }
   );
 });
+router.get('/donationprocess', function (req, res, next) {
+  console.log("get donationprocess");
+  var lang = constants.properties.lang;
+  console.log(lang);  
+  var msgsVar = messages.page.donationprocess[lang];
+  res.render('donationprocess',{
+    msgs:msgsVar,
+    user:  req.session.user,
+    langCode:lang
+  }
+  );
+});
 router.get('/volunteer_dashboard', function (req, res, next) {
   console.log("get volunteer_dashboard");
   res.render('volunteer_dashboard');
@@ -381,4 +393,50 @@ function jsonReader(filePath, cb) {
     }
   })
 }
+  router.get('/rest_profile', function (req, res, next) {
+    console.log("get rest_profile");
+    var lang = constants.properties.lang;
+    console.log(lang);  
+    console.log(req.session.user);  
+    var msgsVar = messages.page.rest_profile[lang];
+    var msgsFormVar = messages.page.signup[lang];
+    //var msgsVar = "hello";
+    //console.log(msgsVar);  
+    var restUser = {};
+    MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+      if (!err) {
+        console.log("We are connected");
+      }
+      var dbo = db.db("foodstrap");
+      dbo.collection("restaurants").find({}).toArray(function (err, result) {
+        if (err) throw err;     
+        for (var i = 0; i < result.length; i++) {       
+          if (req.session.user.username == result[i].username) { 
+            restUser.name= result[i].name;
+            restUser.cuisine= result[i].cuisine;
+            restUser.phone= result[i].phone;
+            restUser.emailid= result[i].emailid;
+            restUser.addr= result[i].addr;
+            restUser.city= result[i].city;
+            restUser.state= result[i].state;
+            restUser.zip= result[i].zip;
+          }
+        }
+        var rname = restUser.name.toUpperCase();
+        console.log("restUser: "+restUser);
+        res.render('rest_profile',{
+          msgs:msgsVar,
+          formFields:msgsFormVar,
+          user:  req.session.user,
+          langCode: lang,
+          profile:restUser,
+          name:rname
+        }
+        );
+      });  
+    });
+  
+  });
+
 module.exports = router;
+

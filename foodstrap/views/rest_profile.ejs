@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= msgs.title %></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="sidenav">
+        <div class="navbar-header" align='center'>
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/userlogo.jpg">
+                <%= user.username %></a>
+        </div>
+        <br><br>
+        <br><br>
+        <a href="/donate">
+            <p><%= msgs.donate %></p>
+        </a>
+        <a  href="/donationshistory">
+            <p><%= msgs.history %></p>
+        </a>
+        <a  href="/donationprocess"><p><%= msgs.process %></p></a>
+        <a class="active" href="/rest_profile"><p><%= msgs.profile %></p></a>
+    </div>
+    <div class="container bgBrown" style="color:#d8dde3">
+
+        <div class="sectionDivider verticalAlignCenter">
+           
+            <br>
+            <h4 class=" verticalAlignCenter"><%= name %> </h4>
+            <br>
+
+            <img class="imgWidth2" src="img/restprofile.jpg">
+        </div>
+        <div class="sectionDivider verticalAlignCenter">
+            <form id="profileupdate-form" action="/rest_profile" method="post">              
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.cuisine %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.phone %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.emailid %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.addr %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.city %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.state %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" name="username" id="username" value= <%= profile.zip %> required />
+                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                </div>
+
+
+                <div class="form-submit">
+                    <a href="/rest_profile" class="vertify-booking"><input type="submit" value="Update" class="submit"
+                            id="submit" name="submit" /></a>                   
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

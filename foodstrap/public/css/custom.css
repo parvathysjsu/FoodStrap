@@ -17,6 +17,11 @@
     padding: 15px;
     float: left;
   }
+  .sectionDivider10 {
+    width: 10%;
+    padding: 15px;
+    float: left;
+  }
   .sectionDivider20 {
     width: 20%;
     padding: 15px;
@@ -40,6 +45,9 @@
   }
   .imgWidth{
     width: 100%;
+  }
+  .imgWidth2{
+    width: 90%;
   }
   .sectionDivider65 {
     width: 65%;
@@ -186,4 +194,9 @@
               .navbar-default{background-color:#1e1408;font-size: 18px;border-color:#301f0a}
               .brownAndbig {
                 color:#1e1408;font-size: 18px;
+              }
+              .leftMiddleAlign {
+                text-align: left;  
+                vertical-align: middle;
+                height: 100%;
               }

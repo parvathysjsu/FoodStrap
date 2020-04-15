@@ -216,6 +216,58 @@
             "hi": {
                     
             }
+        },
+        "donationprocess":{
+            "en": {
+                "title":"Donations Process",
+                "heading": "Restaurant Manager Dashboard",               
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings",            
+                "donate":"Donate",
+                "m1":"Identify the food to be donated.",
+                "m2":"Safely package and label food. Also note allergy information and special instructions if any.",
+                "m3":"Properly chill, then freeze packaged food.",
+                "m4":"Document the donation on FoodStrap providing all relevant information. Hold for pick up.",
+                "m5":"A volunteer or shelter claims the donation.",
+                "m6":"The volunteer picks up the food and people are fed."       
+            },
+            "fr": {
+                     
+            },
+            "hi": {
+                    
+            }
+        },
+        "rest_profile":{
+            "en": {
+                "title":"Profile",
+                "heading": "Restaurant Manager Dashboard",               
+                "history":"History",
+                "process":"Process",
+                "profile":"Profile",
+                "settings":"Settings",            
+                "donate":"Donate"                 
+            },
+            "fr": {
+                     
+            },
+            "hi": {
+                    
+            }
+        },
+        "signup":{
+            "en": {
+                "rname":"Restaurant name"
+                     
+            },            
+            "fr": {
+                     
+            },
+            "hi": {
+                    
+            }
         }
     }
 }
