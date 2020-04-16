@@ -7,6 +7,9 @@
 .bgBrown {
     background-color: #1e1408;
 }
+.bgBrown3 {
+  background-color: #857056;
+}
   .sectionDivider {
     width: 50%;
     padding: 15px;
@@ -199,4 +202,7 @@
                 text-align: left;  
                 vertical-align: middle;
                 height: 100%;
+              }
+              .greyAndbig {
+                color:#d8dde3;font-size: 14px;
               }

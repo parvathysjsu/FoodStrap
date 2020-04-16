@@ -15,6 +15,12 @@
             box-sizing: border-box;
         }
     </style>
+    <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+    </script>
+    <script type = "text/javascript">
+       google.charts.load('current', {packages: ['corechart']});     
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>    
@@ -22,11 +28,7 @@
         <div class="container-fluid">     
             <ul class="nav navbar-nav navbar-center">
                 <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>                
-            </ul>  
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signin"><%= msgs.profile %> </a></li>
-            <li><a href="/setting"><%= msgs.settings %></a></li>
-          </ul>
+            </ul>           
         </div>
       </nav>
       <div class="sidenav">
@@ -41,14 +43,45 @@
         <a href="/donationprocess"><%= msgs.process %></a>
         <a href="/rest_profile"><%= msgs.profile %></a>
     </div>
-      <div class="container">
-          
-          hello
+      <div class="container bgBrown">
+        <br><br>
+        <div class="sectionDivider65">
+        <div id="regions_div" ></div>
+        </div>
+        <div class="sectionDivider35 greyAndbig">
+        <br><br>
+       <p> <%= msgs.m1 %><%= msgs.m2 %><%= msgs.m3 %> </p>
+          <br><br><br>
           <div align="center">
-            <a href="/donate" class="vertify-booking"><input type="submit" value="Donate Today!"
+            <a href="/donate" class="vertify-booking"><input type="submit" value="Donate Today and Save lives!"
                     class="submit" id="submit" name="submit" /></a>
-        </div>          
+        </div>   
+      </div>       
       </div>
+      <script type="text/javascript">
+        google.charts.load('current', {
+          'packages':['geochart'],
+          // Note: you will need to get a mapsApiKey for your project.
+          // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+          'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+  
+        function drawRegionsMap() {
+          var c = <%- donCount %>;   
+          var data = google.visualization.arrayToDataTable([
+            ['Country', 'Portions Donated'],            
+            ['United States', c]
+           
+          ]);
+  
+          var options = { colors: ['#857056'],backgroundColor: '#1e1408'};
+  
+          var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+  
+          chart.draw(data, options);
+        }
+      </script>
 </body>
 
 </html>

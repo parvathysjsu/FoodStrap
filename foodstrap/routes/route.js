@@ -137,12 +137,50 @@ router.get('/restaurant_dashboard', function (req, res, next) {
   var lang = constants.properties.lang;
   console.log(lang);  
   var msgsVar = messages.page.restaurant_dashboard[lang];
-  res.render('restaurant_dashboard',{
-    msgs:msgsVar,
-    user:  req.session.user
-  }
-  );
+var don = [];
+  var count =0;
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("donations").find({}).toArray(function (err, result) {
+      if (err) throw err;     
+      for (var i = 0; i < result.length; i++) {
+       // console.log("count: "+count);
+        //console.log("record:" + JSON.stringify(result[i]));
+       // console.log(req.session.user.username+ ' '+result[i].restaurant);
+        if (req.session.user.username == result[i].restaurant) { 
+         // console.log(" ------match--"+req.session.user.username);
+         // console.log(count);
+         // console.log(result[i].count);
+          count= count+ parseInt(result[i].count);       
+          don.push({
+            "menu":result[i].menu,
+            "cuisine":result[i].cuisine,
+            "count":result[i].count,
+            "pickuptime":result[i].pickuptime,
+            "addr":result[i].pickupaddr+', '+result[i].pickupaddrcity+', '+result[i].pickupaddrstate+' '+result[i].pickupaddrzip,
+            "allergy":result[i].allergy,
+            "notes":result[i].notes           
+            }); 
+        }
+      }
+     // console.log("don: "+don);
+      console.log("c: "+count);
+      res.render('restaurant_dashboard',{
+        msgs:msgsVar,
+        user:  req.session.user,
+        langCode: lang,
+        donList:don,
+        donCount: count
+      }
+      );
+    });
+
+  });
 });
+
 router.get('/donationprocess', function (req, res, next) {
   console.log("get donationprocess");
   var lang = constants.properties.lang;
