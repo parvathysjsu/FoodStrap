@@ -437,6 +437,33 @@ function jsonReader(filePath, cb) {
     });
   
   });
+  router.post('/rest_profile', function (req, res, next) {
+    console.log(req.body);   
+    var rest = {};      
+   var username = req.session.user.username;
+     // rest.username = username;
+     // rest.name = req.body.rname;
+      rest.cuisine = req.body.rcuisine;
+      rest.phone = req.body.rphone;
+      rest.emailid = req.body.remailid;
+      rest.addr = req.body.raddr;
+      rest.city = req.body.rcity;
+      rest.state = req.body.rstate;
+      rest.zip = req.body.rzip;    
+    MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+      if (!err) {
+        console.log("We are connected");
+      }
+      var dbo = db.db("foodstrap");      
+      var myquery = { username: username };
+      var newvalues = { $set: rest };
+      dbo.collection("restaurants").updateOne(myquery, newvalues, function(err, resp) {
+        if (err) throw err;
+        console.log("1 document updated");      
+        res.redirect("/restaurant_dashboard");
+      });
 
+    });
+  });
 module.exports = router;
 

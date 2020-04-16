@@ -48,42 +48,41 @@
            
             <br>
             <h4 class=" verticalAlignCenter"><%= name %> </h4>
-            <br>
-
+           
             <img class="imgWidth2" src="img/restprofile.jpg">
+            <br><br><br>
         </div>
         <div class="sectionDivider verticalAlignCenter">
             <form id="profileupdate-form" action="/rest_profile" method="post">              
                 <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.cuisine %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                    <input type="text" name="rcuisine" id="rcuisine" value= <%= profile.cuisine %> required />
+                    <label for="rcuisine" class="form-label"> <%= formFields.rcuisine %></label>
                 </div>
                 <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.phone %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                    <input type="number" name="rphone" id="rphone" value= <%= profile.phone %> required />
+                    <label for="rphone" class="form-label"> <%= formFields.rphone %></label>
                 </div>
                 <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.emailid %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                    <input type="email" name="remailid" id="remailid" value= <%= profile.emailid %> required />
+                    <label for="remailid" class="form-label"> <%= formFields.remailid %></label>
                 </div>
                 <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.addr %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                    <input type="text" name="raddr" id="raddr" value= <%= profile.addr %> required />
+                    <label for="raddr" class="form-label"> <%= formFields.raddr %></label>
                 </div>
                 <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.city %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                    <input type="text" name="rcity" id="rcity" value= <%= profile.city %> required />
+                    <label for="rcity" class="form-label"> <%= formFields.rcity %></label>
                 </div>
-                <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.state %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                <div class="form-group form-input col-md-6">
+                    <input type="text" name="rstate" id="rstate" value= <%= profile.state %> required />
+                    <label for="rstate" class="form-label"> <%= formFields.rstate %></label>
                 </div>
-                <div class="form-group form-input">
-                    <input type="text" name="username" id="username" value= <%= profile.zip %> required />
-                    <label for="username" class="form-label"> <%= formFields.rname %></label>
+                <div class="form-group form-input col-md-6">
+                    <input type="number" name="rzip" id="rzip" value= <%= profile.zip %> required />
+                    <label for="rzip" class="form-label"> <%= formFields.rzip %></label>
                 </div>
-
-
+<br><br>
                 <div class="form-submit">
                     <a href="/rest_profile" class="vertify-booking"><input type="submit" value="Update" class="submit"
                             id="submit" name="submit" /></a>                   

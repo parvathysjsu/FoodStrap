@@ -259,8 +259,14 @@
         },
         "signup":{
             "en": {
-                "rname":"Restaurant name"
-                     
+                "rname":"Restaurant Name",
+                "rcuisine":"Cuisine",
+                "rphone":"Phone",
+                "remailid":"Email Id",
+                "raddr":"Address",
+                "rcity":"City",
+                "rstate":"State",
+                "rzip":"Zip"                                    
             },            
             "fr": {
                      
