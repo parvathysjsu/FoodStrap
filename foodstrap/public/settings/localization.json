@@ -103,11 +103,11 @@
             "en": {
                 "title":"Dashboard",
                 "heading": "Restaurant Manager Dashboard",
-                "donate":"Donate",
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
-                "settings":"Settings"  ,
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",
+                "settings":"SETTINGS"  ,
                 "m1":"A single restaurant in the U.S. wastes about 100,000 pounds of food a year, according to the Green Restaurant Association, making them auspicious donors for hunger relief groups.",
                 "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
                 "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
@@ -117,19 +117,19 @@
             "fr": {
                 "title":"Dashboard",
                 "heading": "Restaurant Manager Dashboard",
-                "donate":"Donate",
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",
                 "settings":"Settings" 
             },
             "hi": {
                 "title":"Dashboard",
                 "heading": "Restaurant Manager Dashboard",
-                "donate":"Donate",
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",
                 "settings":"Settings" 
             }
         },
@@ -137,9 +137,10 @@
             "en": {
                 "title":"Donate",
                 "heading": "Restaurant Manager Dashboard",               
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",
                 "settings":"Settings",
                 "menu":"Menu", 
                 "cuisine":"Cuisine",              
@@ -150,8 +151,7 @@
                 "addrline1":"Pick Up Address",              
                 "city":"City",              
                 "state":"State",              
-                "zip":"Zip" ,
-                "donate":"Donate"            
+                "zip":"Zip"           
             },
             "fr": {
                 "title":"Donate",
@@ -196,11 +196,10 @@
             "en": {
                 "title":"Donations History",
                 "heading": "Restaurant Manager Dashboard",               
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
-                "settings":"Settings",            
-                "donate":"Donate",
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",
                 "congrats":"Congragulations!" ,
                 "peopleFed":"people fed.",
                 "quote":"Giving is not just about making a donation. It's about making a difference.",
@@ -226,11 +225,10 @@
             "en": {
                 "title":"Donations Process",
                 "heading": "Restaurant Manager Dashboard",               
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
-                "settings":"Settings",            
-                "donate":"Donate",
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",
                 "m1":"Identify the food to be donated.",
                 "m2":"Safely package and label food. Also note allergy information and special instructions if any.",
                 "m3":"Properly chill, then freeze packaged food.",
@@ -249,11 +247,10 @@
             "en": {
                 "title":"Profile",
                 "heading": "Restaurant Manager Dashboard",               
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
-                "settings":"Settings",            
-                "donate":"Donate"                 
+                "donate":"DONATE",
+                "history":"HISTORY",
+                "process":"PROCESS",
+                "profile":"PROFILE",             
             },
             "fr": {
                      
