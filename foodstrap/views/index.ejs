@@ -9,9 +9,21 @@
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart'] });     
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
 </head>
 
 <body>
+
   <!--<nav class="navbar2 navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
@@ -26,20 +38,19 @@
   </nav>-->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-  <!--    <div class="navbar-header">
+      <!--    <div class="navbar-header">
         <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
       </div>-->
       <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
         <li><a href="/"><%= navLabels.home %></a></li>
         <li><a href="/problem"><%= navLabels.problem %></a></li>
         <li><a href="/donors"><%= navLabels.donate %></a></li>
         <li><a href="/shelters"><%= navLabels.shelters %></a></li>
         <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-center">
-        <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
-    </ul>
-   
+
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/signin"><%= navLabels.signin %> </a></li>
         <li><a href="/setting"><%= navLabels.settings %></a></li>
@@ -78,11 +89,11 @@
       </div>
       <!-- Left and right controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+
         <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+
         <span class="sr-only">Next</span>
       </a>
     </div>
@@ -93,51 +104,89 @@
       <footer><%= msgs.quoteAuthor %></footer>
     </blockquote>
     <br>
-    <div class="row">
-      <strong> <%= msgs.descWhatAreWe %></strong>
-      <p> <%= msgs.descWhatAreWeAnswer %>.</p>
-      <br>
-      <p>
-        <strong> <%= msgs.descWhatdoWeDo %></strong>
-        <br>
-        <%= msgs.descWhatdoWeDoAnswer %>
-        <br>
-        <br>
-        <strong> <%= msgs.descFromWhereFood %> </strong>
-        <br>
-        <%= msgs.descFromWhereFoodAnswer %>
-      </p>
-    </div>
+
     <div class="row">
       <div class="sectionDivider33">
-        <h4>
+        <h3>
           <%= msgs.shareYourFood %>
-        </h4>
+        </h3>
         <p>
           <%= msgs.shareYourFoodAnswer %>
         </p>
       </div>
       <div class="sectionDivider33">
-        <h4>
+        <h3>
           <%= msgs.donateFood %>
-        </h4>
+        </h3>
         <p>
           <%= msgs.donateFoodAnswer %>
         </p>
       </div>
       <div class="sectionDivider33">
-        <h4>
+        <h3>
           <%= msgs.recieveFood %>
-        </h4>
+        </h3>
         <p>
           <%= msgs.recieveFoodAnswer %>
         </p>
       </div>
     </div>
+    <div class="row" align="center">
+      <div class="sectionDividerC" align="center">
+        <div id="regions_div_home"></div>
+        <b>
+          <%= msgs.caption_map %>
+        </b>
+        <br>
+        <br>
+      </div>
+
+    </div>
+    <div class="row">
+      <h4> <%= msgs.descWhatAreWe %></h4>
+      <p> <%= msgs.descWhatAreWeAnswer %>.</p>
+      <br>
+      <p>
+        <h4> <%= msgs.descWhatdoWeDo %></h4>
+
+        <%= msgs.descWhatdoWeDoAnswer %>
+        <br>
+        <br>
+        <h4> <%= msgs.descFromWhereFood %> </h4>
+
+        <%= msgs.descFromWhereFoodAnswer %>
+      </p>
+    </div>
     <br>
     <br>
   </div>
+  <%- include footer.ejs %>
   </div>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['geochart'],
+      // Note: you will need to get a mapsApiKey for your project.
+      // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+    function drawRegionsMap() {
+      var c = <%- donCount %>;
+      //var c = 5;
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Portions Donated'],
+        ['United States', c]
+      ]);
+
+      var options = {
+        colors: ['#4CAF50'],
+        legend: 'none'
+      };
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div_home'));
+      chart.draw(data, options);
+    }
+  </script>
+
 </body>
 
 </html>

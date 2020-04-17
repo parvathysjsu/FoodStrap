@@ -7,6 +7,18 @@
 .bgBrown {
     background-color: #1e1408;
 }
+
+.bggreen {
+  background-color: #4CAF50;
+}
+.bggrey {
+  background-color: #DCDCDC;
+  
+}
+.bggreyfooter {
+  background-color: #DCDCDC;
+  min-height: 65px;
+}
 .bgBrown3 {
   background-color: #857056;
 }
@@ -14,6 +26,10 @@
     width: 50%;
     padding: 15px;
     float: left;
+  }
+  .sectionDividerC {
+    width: 50%;
+    padding: 15px;
   }
   .sectionDivider33 {
     width: 33%;
@@ -89,10 +105,10 @@
     top: 23px; }
     .submit {
         width: auto;
-        background: #d8dde3;
-        color: #1e1408;
+        background: #4CAF50;
+        color: #fff;
         padding: 15px 43px;
-        font-weight: bold;
+        font-size: 14px;
         border: none;
         border-radius: 5px;
         -moz-border-radius: 5px;
@@ -101,7 +117,7 @@
         -ms-border-radius: 5px;
         cursor: pointer; }
         .submit:hover {
-          background: #898a8b; }
+          background: rgb(21, 131, 25); }
     input {
         transition: 0.3s ease;
         -moz-transition: 0.3s ease;
@@ -119,8 +135,7 @@
             box-sizing: border-box;
             width: 100%;
             display: block;
-            border: none;
-            font-family: Poppins;
+            border: none;            
             color: #fff;
             background: transparent;
             border-bottom: 1px solid #999;
@@ -219,9 +234,40 @@
             .navbar-default .navbar-nav>li>a{color:#fff;
               vertical-align: middle; 
              }
-            .navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{color:#555;background-color:#fff}
+            .navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{color: #000000;}
+
             .navbar{position:relative;min-height:70px;margin-bottom:20px;border:1px solid transparent}
             .container-fluid {
-              vertical-align: middle; 
+              vertical-align: middle; min-height:70px;
+            }
+            .navbar-brand {
+              margin-right:35px;
             }
             .navbar2 {position:relative;min-height:60px;margin-bottom:0px;border:1px solid transparent}
+            h3 {
+              color:rgb(44, 128, 47);
+            }
+            h4 {
+              color:rgb(44, 128, 47);
+            }
+            .carousel-indicators li {             
+              width: 16px;
+              height: 16px;              
+          }
+          .carousel-indicators .active {
+            width: 18px;
+              height: 18px; 
+            background-color: #fff;
+        }
+        blockquote {
+          border-left: 5px solid #4CAF50;
+      }
+      .topmarginFooter {
+        margin-top:20px
+      }
+      .footer {     
+        left: 0;
+        bottom: 0;
+        width: 100%;        
+        text-align: center;
+      }

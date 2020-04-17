@@ -17,7 +17,8 @@
                 "donateFood": "Donate Surplus food",
                 "donateFoodAnswer": "Instead of throwing away surplus food that is safe to eat, donate to local hunger relief organizations. This delivers a triple benefit: Food stays out of landfills to prevent environmental impact, nonprofits benefit from the donations and  restaurants give back to local communities.",
                 "recieveFood": "Recieve food",
-                "recieveFoodAnswer": "The quality, wholesome prepared food donated from restaurants can serve those who experience hunger. If you have to choose between paying rent or buying healthy groceries, we can help."
+                "recieveFoodAnswer": "The quality, wholesome prepared food donated from restaurants can serve those who experience hunger. If you have to choose between paying rent or buying healthy groceries, we can help.",
+                "caption_map":"Portions Donated per Country"
             },
             "fr": {
                 "title": "FoodStrap",
@@ -34,7 +35,8 @@
                 "donateFood": "Donnez un surplus de nourriture",
                 "donateFoodAnswer": "Au lieu de jeter les surplus de nourriture qui sont sûrs à manger, faites un don aux organisations locales de lutte contre la faim. Cela offre un triple avantage: la nourriture reste hors des décharges pour éviter l'impact environnemental, les organisations à but non lucratif bénéficient des dons et les restaurants redonnent aux communautés locales.",
                 "recieveFood": "Recevoir de la nourriture",
-                "recieveFoodAnswer": "La nourriture saine et de qualité préparée donnée par les restaurants peut servir ceux qui ont faim. Si vous devez choisir entre payer un loyer ou acheter une épicerie saine, nous pouvons vous aider."
+                "recieveFoodAnswer": "La nourriture saine et de qualité préparée donnée par les restaurants peut servir ceux qui ont faim. Si vous devez choisir entre payer un loyer ou acheter une épicerie saine, nous pouvons vous aider.",
+                "caption_map":""
             },
             "hi": {
                 "title": "फूड्सत्रप",
@@ -51,7 +53,8 @@
                 "donateFood": "अधिशेष भोजन का दान करें",
                 "donateFoodAnswer": "खाने के लिए सुरक्षित अधिशेष भोजन को फेंकने के बजाय, स्थानीय भूख राहत संगठनों को दान करें। यह एक ट्रिपल लाभ देता है: खाद्य पर्यावरणीय प्रभाव को रोकने के लिए लैंडफिल से बाहर रहता है, दान और रेस्तरां से गैर-लाभकारी लाभ स्थानीय समुदायों को वापस देते हैं।",
                 "recieveFood": "भोजन ग्रहण करें",
-                "recieveFoodAnswer": "रेस्तरां से दान किए गए गुणवत्ता पूर्ण, तैयार भोजन उन लोगों की सेवा कर सकते हैं जो भूख का अनुभव करते हैं। यदि आपको किराए का भुगतान करने या स्वस्थ किराने का सामान खरीदने के बीच चयन करना है, तो हम मदद कर सकते हैं।"
+                "recieveFoodAnswer": "रेस्तरां से दान किए गए गुणवत्ता पूर्ण, तैयार भोजन उन लोगों की सेवा कर सकते हैं जो भूख का अनुभव करते हैं। यदि आपको किराए का भुगतान करने या स्वस्थ किराने का सामान खरीदने के बीच चयन करना है, तो हम मदद कर सकते हैं।",
+                "caption_map":""
             }
         },
         "nav": {
@@ -97,8 +100,54 @@
                 "update": "अपडेट"
             }
         },
-        "donors": {},
-        "shelters": {},
+        "donors": {
+            "en": {
+                "title":"Donate Fodd",
+                "quote": "The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.",
+                "author":"Mahatma Gandhi",
+                "m1": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
+                "m2":"In the US, food waste is estimated at between 30-40% of our food supply, estimated at around 72 billion-133 billion pounds of wasted food each year, according to the USDA.",
+                "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
+                "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
+                "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
+                "buttonm":"SIGN UP NOW!"		
+            },
+            "fr": {
+                "title":"Donate Fodd",
+                "quote": "The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.",
+                "author":"Mahatma Gandhi",
+                "m1": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
+                "m2":"In the US, food waste is estimated at between 30-40% of our food supply, estimated at around 72 billion-133 billion pounds of wasted food each year, according to the USDA.",
+                "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
+                "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
+                "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
+                "buttonm":"Sign Up Now!"
+            },
+            "hi": {
+                "title":"Donate Food",
+                "quote": "The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.",
+                "author":"Mahatma Gandhi",
+                "m1": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
+                "m2":"In the US, food waste is estimated at between 30-40% of our food supply, estimated at around 72 billion-133 billion pounds of wasted food each year, according to the USDA.",
+                "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
+                "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
+                "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
+                "buttonm":"Sign Up Now!"
+            }
+        },
+        "shelters": {
+            "en":{
+                "title":"Recieve Food",
+                "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
+                "m2":"If you need food assistance for your shelter, sign up now!"
+            },
+            "fr":{"title":"Recieve Food",
+                "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
+                "m2":"If you need food assistance for your shelter, sign up now!"},
+            "hi":{"title":"Recieve Food",
+                "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
+                "m2":"If you need food assistance for your shelter, sign up now!"}
+        },
         "restaurant_dashboard":{
             "en": {
                 "title":"Dashboard",
@@ -269,6 +318,25 @@
                 "rcity":"City",
                 "rstate":"State",
                 "rzip":"Zip"                                    
+            },            
+            "fr": {
+                     
+            },
+            "hi": {
+                    
+            }
+        },
+        "signin":{
+            "en": {
+                
+                "username":"Your username",
+                "pwd":"Your password",
+                "usertype":"User Type",
+                "rest":"Restaurant",
+                "shelter":"Shelter",
+                "vol":"Volunteer",
+                "signin":"SIGN IN",
+                "signup":"New User? SIGN UP"                              
             },            
             "fr": {
                      
