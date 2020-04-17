@@ -100,7 +100,7 @@
     -webkit-transition: 0.25s ease;
     -o-transition: 0.25s ease;
     -ms-transition: 0.25s ease;
-    color: #bebebe;
+    color: #000000;
     left: 0;
     top: 23px; }
     .submit {
@@ -129,7 +129,7 @@
         input:focus + .form-label, input:valid + .form-label {
           top: 1px;
           font-size: 11px;
-          color: #d8dde3; }
+          color: #000000; }
 
           input {
             box-sizing: border-box;
@@ -148,9 +148,9 @@
                 width: 100%;
                 display: block;
                 border: none;
-                font-family: Poppins;
-                color: #d8dde3;
-                background: #1e1408;
+                
+                color: #000000;
+                background: transparent;
                 border-bottom: 1px solid #999;
                 padding: 4px 0; }
                
@@ -270,4 +270,10 @@
         bottom: 0;
         width: 100%;        
         text-align: center;
+      }
+      .greyShadow {
+        background-color: #f1f1f1; 
+        -webkit-box-shadow: 0 8px 6px -6px #999;
+        -moz-box-shadow: 0 8px 6px -6px #999;
+        box-shadow:  10px 0px 10px rgb(131, 192, 133);   
       }
