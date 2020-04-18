@@ -121,7 +121,14 @@ router.get('/signin', function (req, res, next) {
 });
 /* show signup page */
 router.get('/signup', function (req, res, next) {
-  res.render('signup');
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.signup[lang];
+  res.render('signup', {
+    msgs: msgsVar,
+    navLabels: messages.page.nav[lang],
+    msgsUserType:messages.page.signin[lang]
+  });    
 });
 router.get('/setting', function (req, res, next) {
   // console.log(req.session);

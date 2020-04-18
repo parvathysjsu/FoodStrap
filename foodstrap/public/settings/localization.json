@@ -310,6 +310,7 @@
         },
         "signup":{
             "en": {
+                "title":"SIGN UP",
                 "rname":"Restaurant Name",
                 "rcuisine":"Cuisine",
                 "rphone":"Phone",
@@ -317,13 +318,47 @@
                 "raddr":"Address",
                 "rcity":"City",
                 "rstate":"State",
-                "rzip":"Zip"                                    
+                "rzip":"Zip",
+                "Username":"Username",
+                "Password":"Password",
+                "sname":"Shelter Name",
+                "yourname":"Your Name",
+				 "Yourphonenumber":"Your Phone Number",
+                "Youremailid":"Your Email Id"
             },            
             "fr": {
-                     
+                "title":"SIGN UP",
+                "rname":"Restaurant Name",
+                "rcuisine":"Cuisine",
+                "rphone":"Phone",
+                "remailid":"Email Id",
+                "raddr":"Address",
+                "rcity":"City",
+                "rstate":"State",
+                "rzip":"Zip",
+                "Username":"Username",
+                "Password":"Password",
+                "sname":"Shelter Name",
+                "yourname":"Your Name",
+				 "Yourphonenumber":"Your Phone Number",
+                "Youremailid":"Your Email Id"   
             },
             "hi": {
-                    
+                "title":"SIGN UP",
+                "rname":"Restaurant Name",
+                "rcuisine":"Cuisine",
+                "rphone":"Phone",
+                "remailid":"Email Id",
+                "raddr":"Address",
+                "rcity":"City",
+                "rstate":"State",
+                "rzip":"Zip",
+                "Username":"Username",
+                "Password":"Password",
+                "sname":"Shelter Name",
+                "yourname":"Your Name",
+				 "Yourphonenumber":"Your Phone Number",
+                "Youremailid":"Your Email Id"
             }
         },
         "signin":{
@@ -339,10 +374,24 @@
                 "signup":"New User? SIGN UP"                              
             },            
             "fr": {
-                     
+                "username":"Your username",
+                "pwd":"Your password",
+                "usertype":"User Type",
+                "rest":"Restaurant",
+                "shelter":"Shelter",
+                "vol":"Volunteer",
+                "signin":"SIGN IN",
+                "signup":"New User? SIGN UP"      
             },
             "hi": {
-                    
+                "username":"Your username",
+                "pwd":"Your password",
+                "usertype":"User Type",
+                "rest":"Restaurant",
+                "shelter":"Shelter",
+                "vol":"Volunteer",
+                "signin":"SIGN IN",
+                "signup":"New User? SIGN UP"   
             }
         }
     }

@@ -136,9 +136,9 @@
             width: 100%;
             display: block;
             border: none;            
-            color: #fff;
+            color:#000000;
             background: transparent;
-            border-bottom: 1px solid #999;
+            border-bottom: 1px solid #4CAF50;
             padding: 4px 0; }
             input:focus, select:focus {
               border-bottom: 1px solid #d8dde3; }
@@ -151,7 +151,7 @@
                 
                 color: #000000;
                 background: transparent;
-                border-bottom: 1px solid #999;
+                border-bottom: 1px solid #4CAF50;
                 padding: 4px 0; }
                
                 h3 {
