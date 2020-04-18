@@ -2,17 +2,29 @@
 <html lang="en">
 
 <head>
-  <title>FoodStrap</title>
+  <title><%= msgs.title %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <style>
+    #map {
+      height: 600px;
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  </style>
+  <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDRKweM2yGEerUMgF-IArgf4YclbQU5PA"></script>-->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDRKweM2yGEerUMgF-IArgf4YclbQU5PA&callback=initMap">
+    </script>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+  <!--<nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header logobg">
         <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
@@ -29,6 +41,27 @@
         <li><a href="/setting">SETTINGS</a></li>
       </ul>
     </div>
+  </nav>-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!--    <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+      </div>-->
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+        <li><a href="/"><%= navLabels.home %></a></li>
+        <li><a href="/problem"><%= navLabels.problem %></a></li>
+        <li class="active"><a href="/donors"><%= navLabels.donate %></a></li>
+        <li><a href="/shelters"><%= navLabels.shelters %></a></li>
+        <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/signin"><%= navLabels.signin %> </a></li>
+        <li><a href="/setting"><%= navLabels.settings %></a></li>
+      </ul>
+    </div>
   </nav>
   <div class="container">
     <div class="item">
@@ -37,51 +70,80 @@
     <br>
     <br>
     <blockquote>
-      <p>The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.</p>
-      <footer>Mahatma Gandhi</footer>
+      <p><%= msgs.quote %></p>
+      <footer><%= msgs.author %></footer>
     </blockquote>
 
     <div class="row">
       <p>
-        Many families in our area need a little help putting food on the table. They shouldn’t have to choose between
-        paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed
-        and appreciated.<br>
-        In the US, food waste is estimated at between 30-40% of our food supply, estimated at around 72 billion-133
-        billion pounds of wasted food each year, according to the USDA.<br>
-        Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those
-        in need.
+        <%= msgs.m1 %><br>
+        <%= msgs.m2 %> <br>
+        <%= msgs.m3 %>
       </p>
-      <div class="row" align="center">
-        <br>
-        <strong color="#1e1408"> If you have food you'd like to donate to a local shelter, sign up now!</strong><br>
-        <a href="/signup" class="vertify-booking"><input type="submit" value="Sign Up Now!" class="submit" id="submit"
-            name="submit" /></a>
-        <br>
-
-      </div>
-      <div class="row">
-        From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every
-        street corner in America, check out these establishments that are committed to cut down on food waste by
-        donating at the end of the day.
-        <br><br>
-        <dl class="row" align = "center">
-          <% for(var item in restList) { %>
-          <dd class="col-sm-3"> <%= restList[item].name %></dd>
-          <dd class="col-sm-2"> <%= restList[item].addr %> </dd>
-          <dd class="col-sm-6"> <%= restList[item].contact %> </dd>
-          <% } %>
-        </dl>
-        <div>
-          <br>
-          <br>
-        </div>
-      </div>
-
-
-
+      <p> <%= msgs.m5 %> </p>
+      <br>
     </div>
-  </div>
+    <div class="row">
 
+      <div class="sectionDivider80">
+        <div id="map"></div>
+      </div>
+      <div class="sectionDivider20">
+        <table class="table" align="center">
+          <% for(var item in restList) { %>
+          <tr>
+            <td><%= parseInt(item)+1 %></td>
+            <td><%= restList[item].name %></td>
+          </tr>
+          <% } %>
+        </table>
+
+      </div>
+    </div>
+    <div class="row" align="center">
+      <br> <br>
+      <br>
+      <strong color="#1e1408"> <%= msgs.m4 %> </strong><br><br>
+      <a href="/signup" class="vertify-booking"><input type="submit" value='<%= msgs.buttonm %>' class="submit"
+          id="submit" name="submit" /></a>
+      <br><br><br>
+    </div>
+
+  </div>
+  <%- include footer.ejs %>
+  <script>
+    function initMap() {
+
+      var restList2 = [];
+      fetch('http://localhost:5000/restList')
+        .then((response) => {
+          restList2 = response.json();
+          return restList2;
+        })
+        .then((data) => {
+          console.log(data);
+          var restList = data.restList;
+          var sf = { lat: 37.773972, lng: -122.431297 };
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 9,
+            center: restList[0].position
+          });
+          var marker = "";
+
+          for (var i = 0; i < restList.length; i++) {
+            var rec = restList[i];
+            console.log(rec);
+            marker = new google.maps.Marker({
+              position: rec.position,
+              label: (i + 1).toString(),
+              map: map
+            });
+
+          }
+        })
+
+    }
+  </script>
 </body>
 
 </html>

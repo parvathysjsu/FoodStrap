@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>FoodStrap</title>
+    <title><%= msgs.title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -12,25 +12,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
+   
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <div class="navbar-header logobg">
-            <a class="navbar-brand" href="/"><img class = "logoimage" src="img/logo.JPG"></a>
-          </div>
+      <!--    <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+          </div>-->
           <ul class="nav navbar-nav">
-            <li><a href="/">HOME</a></li>
-            <li><a href="/problem">THE PROBLEM</a></li>
-            <li><a href="/donors">DONATE FOOD</a></li>
-            <li class="active"><a href="/shelters">RECIEVE FOOD</a></li>
-            <li><a href="/volunteers">VOLUNTEER</a></li>
+            <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+            <li><a href="/"><%= navLabels.home %></a></li>
+            <li><a href="/problem"><%= navLabels.problem %></a></li>
+            <li><a  href="/donors"><%= navLabels.donate %></a></li>
+            <li class="active"><a href="/shelters"><%= navLabels.shelters %></a></li>
+            <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
           </ul>
+       
+       
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signin">SIGN IN</a></li>    
-            <li><a href="/setting">SETTINGS</a></li>             
+            <li><a href="/signin"><%= navLabels.signin %> </a></li>
+            <li><a href="/setting"><%= navLabels.settings %></a></li>
           </ul>
         </div>
       </nav>
-    
       <div class="container">
         <div class="item">
           <img src="img/recievefood.jpg" alt="Donate Food" style="width:100%;">
@@ -38,29 +41,28 @@
         <br>
         <br>
         <blockquote>
-          <p>The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.</p>
-          <footer>Mahatma Gandhi</footer>
+          <p><%= msgsQuote.quote %></p>
+          <footer><%= msgsQuote.author %></footer>
         </blockquote>
         
         <div class="row">    
           <p>
-            Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.
+            <%= msgs.m1 %>
           </p>
           <div class="row" align="center">
             <br>
-            <strong color = "#1e1408"> If you need food assistance for your shelter, sign up now!</strong><br>
-            <a href="/signup" class="vertify-booking"><input type="submit" value="Sign Up Now!" class="submit" id="submit"
+            <strong color = "#1e1408">   <%= msgs.m2 %></strong><br><br>
+            <a href="/signup" class="vertify-booking"><input type="submit" value='<%= msgsQuote.buttonm %>' class="submit" id="submit"
                 name="submit" /></a>
                 <br>
                
           </div>
-          
-    
+              
     
     
       </div>
       </div>
-     
+      <%- include footer.ejs %>
    
 </body>
 

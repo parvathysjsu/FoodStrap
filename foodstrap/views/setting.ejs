@@ -23,23 +23,24 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header logobg">
-                <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="/"><%= navLabels.home %></a></li>
-                <li><a href="/problem"><%= navLabels.problem %></a></li>
-                <li><a href="/donors"><%= navLabels.donate %></a></li>
-                <li><a href="/shelters"><%= navLabels.shelters %></a></li>
-                <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/signin"><%= navLabels.signin %> </a></li>
-                <li><a class="active" href="/setting"><%= navLabels.settings %></a></li>
-            </ul>
+          <!--    <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+          </div>-->
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+            <li><a href="/"><%= navLabels.home %></a></li>
+            <li><a href="/problem"><%= navLabels.problem %></a></li>
+            <li ><a href="/donors"><%= navLabels.donate %></a></li>
+            <li><a href="/shelters"><%= navLabels.shelters %></a></li>
+            <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
+          </ul>        
+          <ul class="nav navbar-nav navbar-right">
+            <li ><a href="/signin"><%= navLabels.signin %> </a></li>
+            <li class="active"><a href="/setting"><%= navLabels.settings %></a></li>
+          </ul>
         </div>
-    </nav>
-    <div class="container bgBrown">
+      </nav>
+    <div class="container greyShadow">
         <div>
             <div class="sectionDivider65">
                 <img class="imgWidth" src="img/settings.jpg">

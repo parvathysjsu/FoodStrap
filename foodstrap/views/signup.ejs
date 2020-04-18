@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
+    <title><%= msgs.title %></title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <script src="js/jquery.min.js"></script>
@@ -23,22 +23,24 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header logobg">
-                <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/problem">THE PROBLEM</a></li>
-                <li><a href="/donors">DONATE FOOD</a></li>
-                <li><a href="/shelters">RECIEVE FOOD</a></li>
-                <li><a href="/volunteers">VOLUNTEER</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/signin">Sign In</a></li>
-            </ul>
+          <!--    <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+          </div>-->
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+            <li><a href="/"><%= navLabels.home %></a></li>
+            <li><a href="/problem"><%= navLabels.problem %></a></li>
+            <li ><a href="/donors"><%= navLabels.donate %></a></li>
+            <li><a href="/shelters"><%= navLabels.shelters %></a></li>
+            <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
+          </ul>        
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/signin"><%= navLabels.signin %> </a></li>
+            <li><a href="/setting"><%= navLabels.settings %></a></li>
+          </ul>
         </div>
-    </nav>
-    <div class="container bgBrown">
+      </nav>
+    <div class="container greyShadow">
         <div>
             <div class="sectionDivider55">
                 <img class="imgWidth" src="img/signup.jpg">
@@ -49,104 +51,104 @@
                         <div class="form-group form-input">
                             <div class="select-list">
                                 <select name="usertype" id="usertype" required onchange="changeForm(this.value)">
-                                    <option value="">User Type</option>
-                                    <option value="restaurant">Restaurant</option>
-                                    <option value="shelter">Shelter</option>
-                                    <option value="volunteer">Volunteer</option>
+                                    <option value=""><%= msgsUserType.usertype %></option>
+                                    <option value="restaurant"><%= msgsUserType.rest %></option>
+                                    <option value="shelter"><%= msgsUserType.shelter %></option>
+                                    <option value="volunteer"><%= msgsUserType.vol %></option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group form-input">
                             <input type="text" name="username" id="username" value="" required />
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label"><%= msgs.Username %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="password" name="pass" id="pass" value="" required />
-                            <label for="pass" class="form-label">Password</label>
+                            <label for="pass" class="form-label">	<%= msgs.Password %></label>
                         </div>
                     </div> 
                     <div id= "restaurantForm" style="display:none;">
                         <div class="form-group form-input">
                             <input type="text" name="rname" id="rname" value="" />
-                            <label for="rname" class="form-label">Restaurant name</label>
+                            <label for="rname" class="form-label"><%= msgs.rname %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="text" name="rcuisine" id="rcuisine" value="" />
-                            <label for="rcuisine" class="form-label">Restaurant cuisine</label>
+                            <label for="rcuisine" class="form-label"><%= msgs.rcuisine %></label>
                         </div>
                         <div class="form-group form-input ">
                             <input type="number" name="rphone" id="rphone" value="" />
-                            <label for="rphone" class="form-label">Restaurant phone number</label>
+                            <label for="rphone" class="form-label"><%= msgs.rphone %></label>
                         </div>
                         <div class="form-group form-input ">
                             <input type="email" name="remailid" id="remailid" value="" />
-                            <label for="remailid" class="form-label">Restaurant email id</label>
+                            <label for="remailid" class="form-label"><%= msgs.remailid %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="text" name="raddr" id="raddr" value="" />
-                            <label for="raddr" class="form-label">Address line 1</label>
+                            <label for="raddr" class="form-label"><%= msgs.raddr %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="text" name="rcity" id="rcity" value="" />
-                            <label for="rcity" class="form-label">City</label>
+                            <label for="rcity" class="form-label"><%= msgs.rcity %></label>
                         </div>
                         <div class="form-group form-input col-md-6">
                             <input type="text" name="rstate" id="rstate" value="" />
-                            <label for="rstate" class="form-label">State</label>
+                            <label for="rstate" class="form-label"><%= msgs.rstate %></label>
                         </div>
                         <div class="form-group form-input col-md-6">
                             <input type="text" name="rzip" id="rzip" value="" />
-                            <label for="rzip" class="form-label">Zip</label>
+                            <label for="rzip" class="form-label"><%= msgs.rzip %></label>
                         </div>
                     </div>
                     <div id= "shelterForm" style="display:none;">
                         <div class="form-group form-input">
                             <input type="text" name="sname" id="sname" value="" />
-                            <label for="sname" class="form-label">Shelter name</label>
+                            <label for="sname" class="form-label"><%= msgs.sname %></label>
                         </div>                       
                         <div class="form-group form-input ">
                             <input type="number" name="sphone" id="sphone" value=""  />
-                            <label for="sphone" class="form-label">Shelter phone number</label>
+                            <label for="sphone" class="form-label"><%= msgs.rphone %></label>
                         </div>
                         <div class="form-group form-input ">
                             <input type="email" name="semailid" id="semailid" value=""  />
-                            <label for="semailid" class="form-label">Shelter email id</label>
+                            <label for="semailid" class="form-label"><%= msgs.remailid %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="text" name="saddr" id="saddr" value=""  />
-                            <label for="saddr" class="form-label">Address line 1</label>
+                            <label for="saddr" class="form-label"><%= msgs.raddr %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="text" name="scity" id="scity" value=""  />
-                            <label for="scity" class="form-label">City</label>
+                            <label for="scity" class="form-label"><%= msgs.rcity %></label>
                         </div>
                         <div class="form-group form-input col-md-6">
                             <input type="text" name="sstate" id="sstate" value=""  />
-                            <label for="sstate" class="form-label">State</label>
+                            <label for="sstate" class="form-label"><%= msgs.rstate %></label>
                         </div>
                         <div class="form-group form-input col-md-6">
                             <input type="text" name="szip" id="szip" value=""  />
-                            <label for="szip" class="form-label">Zip</label>
+                            <label for="szip" class="form-label"><%= msgs.rzip %></label>
                         </div>
                     </div>
                     <div id= "volunteerForm" style="display:none;">
                         <div class="form-group form-input">
                             <input type="text" name="name" id="name" value=""  />
-                            <label for="name" class="form-label">Your name</label>
+                            <label for="name" class="form-label"><%= msgs.yourname %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="number" name="phone" id="phone" value=""  />
-                            <label for="phone" class="form-label">Your phone number</label>
+                            <label for="phone" class="form-label"><%= msgs.Yourphonenumber %></label>
                         </div>
                         <div class="form-group form-input">
                             <input type="email" name="emailid" id="emailid" value=""  />
-                            <label for="emailid" class="form-label">Your email id</label>
+                            <label for="emailid" class="form-label"><%= msgs.Youremailid %></label>
                         </div>
                     </div>
                                                           
 
                     <div class="form-submit">
-                        <a href="/signup" class="vertify-booking"><input type="submit" value="Sign Up" class="submit"
+                        <a href="/signup" class="vertify-booking"><input type="submit" value='<%= msgs.title %>' class="submit"
                                 id="submit" name="submit" /></a>
                     </div>
                 </form>
