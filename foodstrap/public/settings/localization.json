@@ -150,7 +150,7 @@
         },
         "restaurant_dashboard":{
             "en": {
-                "title":"Dashboard",
+                "title":"DASHBOARD",
                 "heading": "Restaurant Manager Dashboard",
                 "donate":"DONATE",
                 "history":"HISTORY",
@@ -160,8 +160,8 @@
                 "m1":"A single restaurant in the U.S. wastes about 100,000 pounds of food a year, according to the Green Restaurant Association, making them auspicious donors for hunger relief groups.",
                 "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
                 "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
-                "m4":"Donate surplus food and save lives!"
-
+                "m4":"Donate surplus food and save lives!",
+                "hello":"  Hello "
             },
             "fr": {
                 "title":"Dashboard",

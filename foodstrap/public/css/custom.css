@@ -52,6 +52,11 @@
     padding: 15px;
     float: left;
   }
+  .fullh {
+    height: 100%;
+    overflow:hidden;
+    position: absolute;
+  }
   .sectionDivider35 {
     width: 35%;
     padding: 15px;
@@ -180,7 +185,9 @@
                   color: #d8dde3;
                   display: block;
                 }
-                
+                .sidenavwidth {
+width: 10%;
+                }
                 .sidenav a:hover {
                   color: #818181;
                 }    
@@ -200,6 +207,12 @@
                 vertical-align: middle;
                 text-align: left;                
           color: #d8dde3;
+              }
+
+              .verticalAlign5 {
+                vertical-align: middle;
+                text-align: left;                
+          color: #000000;
               }
               .verticalAlignCenter {
                 vertical-align: middle;
@@ -276,4 +289,23 @@
         -webkit-box-shadow: 0 8px 6px -6px #999;
         -moz-box-shadow: 0 8px 6px -6px #999;
         box-shadow:  10px 0px 10px rgb(131, 192, 133);   
+      }
+      
+      .greyShadowSidenav {
+        background-color: #f1f1f1; 
+        -webkit-box-shadow: 0 8px 6px -6px #999;
+        -moz-box-shadow: 0 8px 6px -6px #999;
+        box-shadow:  10px 0px 10px rgb(131, 192, 133);   
+      }
+      
+      .whiteBig {
+        font-size: 16px;
+        color: #fff; 
+      }
+      .whiteBig2 {
+        font-size: 20px;
+        color: #fff; 
+      }
+      .minh {
+        min-height:20px;
       }
