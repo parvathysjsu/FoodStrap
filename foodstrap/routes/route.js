@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
 const fetch = require("node-fetch");
 const fs = require('fs');
 var constants = require('../public/settings/Constants');
@@ -86,7 +87,7 @@ router.get('/', function (req, res, next) {
         console.log(restList);
         var user = {};
         user.restList = restList;
-        req.session.user  = user;
+        req.session.user = user;
         res.render('index', {
           msgs: msgsVar,
           navLabels: messages.page.nav[lang],
@@ -94,7 +95,7 @@ router.get('/', function (req, res, next) {
           restAll: restList
         });
       }).catch((result) => {
-        logger.debug(result);
+        console.log(result);
       });
 
     });
@@ -105,9 +106,17 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/restList', function (req, res, next) {
-var restList = req.session.user.restList;
-res.send({restList
+  var restList = req.session.user.restList;
+  res.send({
+    restList
+  });
 });
+
+router.get('/donPosition', function (req, res, next) {
+  var donPosition = req.session.user.donPosition;
+  res.send(
+    donPosition
+  );
 });
 /* show signin page */
 router.get('/signin', function (req, res, next) {
@@ -117,7 +126,7 @@ router.get('/signin', function (req, res, next) {
   res.render('signin', {
     msgs: msgsVar,
     navLabels: messages.page.nav[lang]
-  });  
+  });
 });
 /* show signup page */
 router.get('/signup', function (req, res, next) {
@@ -127,8 +136,8 @@ router.get('/signup', function (req, res, next) {
   res.render('signup', {
     msgs: msgsVar,
     navLabels: messages.page.nav[lang],
-    msgsUserType:messages.page.signin[lang]
-  });    
+    msgsUserType: messages.page.signin[lang]
+  });
 });
 router.get('/setting', function (req, res, next) {
   // console.log(req.session);
@@ -218,7 +227,10 @@ router.get('/donationshistory', function (req, res, next) {
             "pickuptime": result[i].pickuptime,
             "addr": result[i].pickupaddr + ', ' + result[i].pickupaddrcity + ', ' + result[i].pickupaddrstate + ' ' + result[i].pickupaddrzip,
             "allergy": result[i].allergy,
-            "notes": result[i].notes
+            "notes": result[i].notes,
+            "shelter": result[i].shelter.name,
+            "status": result[i].status,
+            "volunteer": result[i].volunteer.name
           });
         }
       }
@@ -298,9 +310,157 @@ router.get('/donationprocess', function (req, res, next) {
   }
   );
 });
+
+router.get('/pickup/:donid', function (req, res, next) {
+  console.log("get pickup");
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.vol_dashboard[lang];
+  let donid = req.params.donid;
+  console.log("--pick up --" + donid);
+  console.log("-- vol--" + req.session.user.name + "--" + req.session.user.username);
+  let don = {};
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+
+    dbo.collection("donations").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      for (var i = 0; i < result.length; i++) {
+        if (donid == result[i]._id) {
+          don = {
+            "restaurant": result[i].restaurant,
+            "menu": result[i].menu,
+            "cuisine": result[i].cuisine,
+            "count": result[i].count,
+            "pickuptime": result[i].pickuptime,
+            "zip": result[i].pickupaddrzip,
+            "addr": result[i].pickupaddr + ', ' + result[i].pickupaddrcity + ', ' + result[i].pickupaddrstate + ' ' + result[i].pickupaddrzip,
+            "allergy": result[i].allergy,
+            "notes": result[i].notes,
+            "shelter": result[i].shelter.name,
+            "status": result[i].status,
+            "id": result[i]._id
+          };
+          console.log("------id" + result[i]._id);
+        }
+      }
+      var geoCoder = NodeGeocoder({
+        provider: 'openstreetmap'
+      });
+      console.log("---addr searched: " + don.zip + ' United States of America');
+      geoCoder.geocode(don.zip + ' United States of America')
+        .then((mapres) => {
+          console.log(mapres);
+          let position = {};
+          if (mapres.length != 0) {
+            let answer = _.head(mapres);
+            position.lat = answer.latitude;
+            position.lng = answer.longitude;
+            console.log("--------pos" + JSON.stringify(position));
+          }
+          req.session.user.donPosition = position;
+          res.render('pickup', {
+            msgs: msgsVar,
+            msgsForm: messages.page.donate[lang],
+            msgsForm2: messages.page.donationshistory[lang],
+            user: req.session.user,
+            langCode: lang,
+            don: don
+          }
+          );
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  });
+})
 router.get('/volunteer_dashboard', function (req, res, next) {
   console.log("get volunteer_dashboard");
-  res.render('volunteer_dashboard');
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.vol_dashboard[lang];
+  var msgsTable = messages.page.donationshistory[lang];
+  let shName = "";
+  let don = [];
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("volunteers").find({}).toArray(function (err, result2) {
+      if (err) throw err;
+      for (var i = 0; i < result2.length; i++) {
+        if (req.session.user.username == result2[i].username) {
+          req.session.user.name = result2[i].name;
+          req.session.user.shid = result2[i].shelter.username;
+          shName = result2[i].shelter.username;
+        }
+      }
+      dbo.collection("donations").find({}).toArray(function (err, result) {
+        if (err) throw err;
+        for (var i = 0; i < result.length; i++) {
+          if (shName == result[i].shelter.username && "CLAIMED" == result[i].status) {
+            don.push({
+              "menu": result[i].menu,
+              "cuisine": result[i].cuisine,
+              "count": result[i].count,
+              "pickuptime": result[i].pickuptime,
+              "addr": result[i].pickupaddr + ', ' + result[i].pickupaddrcity + ', ' + result[i].pickupaddrstate + ' ' + result[i].pickupaddrzip,
+              "allergy": result[i].allergy,
+              "notes": result[i].notes,
+              "shelter": result[i].shelter.name,
+              "status": result[i].status,
+              "id": result[i]._id,
+              //"link":"/pickupdonation/"+result[i]._id
+              "link": "/pickup/" + result[i]._id
+            });
+            console.log("------id" + result[i]._id);
+          }
+        }
+        // console.log("don: "+don);
+        //console.log("c: " + count);
+        res.render('volunteer_dashboard', {
+          msgs: msgsVar,
+          msgsTable: msgsTable,
+          user: req.session.user,
+          langCode: lang,
+          donList: don
+        }
+        );
+      });
+    });
+  });
+});
+//router.get('/pickupdonation/:donid', function (req, res, next) {
+router.post('/pickupdonation', function (req, res, next) {
+  console.log("---------------pickupdonation--------------")
+  let donid = req.body.id;
+  console.log("--donid  --" + donid);
+  console.log("--pick up --" + donid);
+  console.log("-- vol--" + req.session.user.name + "--" + req.session.user.username);
+  let don = {};
+  don.status = "DONE";
+  don.volunteer = {
+    "username": req.session.user.username,
+    "name": req.session.user.name
+  };
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    var myquery = { _id: new ObjectId(donid) };
+    var newvalues = { $set: don };
+    dbo.collection("donations").updateOne(myquery, newvalues, function (err, resp) {
+      if (err) throw err;
+      console.log("1 document updated");
+      res.redirect("/volunteer_dashboard");
+    });
+  });
 });
 
 router.get('/shelter_dashboard', function (req, res, next) {
@@ -321,6 +481,15 @@ router.post('/donate', function (req, res, next) {
   donation.pickupaddrcity = req.body.city;
   donation.pickupaddrstate = req.body.state;
   donation.pickupaddrzip = req.body.zip;
+  donation.status = "OPEN";
+  donation.shelter = {
+    "username": "",
+    "name": ""
+  };
+  donation.volunteer = {
+    "username": "",
+    "name": ""
+  };
   MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
     if (!err) {
       console.log("We are connected");
@@ -367,6 +536,10 @@ router.post('/signup', function (req, res, next) {
     vol.name = req.body.name;
     vol.phone = req.body.phone;
     vol.emailid = req.body.emailid;
+    vol.shelter = {
+      "username": "",
+      "name": ""
+    };
   }
   MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
     if (!err) {
@@ -548,6 +721,60 @@ function jsonReader(filePath, cb) {
     }
   })
 }
+router.get('/vol_profile', function (req, res, next) {
+  console.log("get vol_profile");
+  var lang = constants.properties.lang;
+  console.log(lang);
+  console.log(req.session.user);
+  var msgsVar = messages.page.vol_dashboard[lang];
+  var msgsFormVar = messages.page.signup[lang];
+  var msgsButton = messages.page.settings[lang];
+  //var msgsVar = "hello";
+  //console.log(msgsVar);  
+  var vol = {};
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("volunteers").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      for (var i = 0; i < result.length; i++) {
+        if (req.session.user.username == result[i].username) {
+          vol.name = result[i].name;
+          vol.phone = result[i].phone;
+          vol.emailid = result[i].emailid;
+          vol.shelter = result[i].shelter;
+        }
+      }
+      var rname = vol.name.toUpperCase();
+      console.log("vol: " + vol);
+      let shelters = [];
+      dbo.collection("shelters").find({}).toArray(function (err, result) {
+        if (err) throw err;
+        for (var i = 0; i < result.length; i++) {
+          let sh = {};
+          sh.name = result[i].name;
+          sh.username = result[i].username;
+          console.log("shelters: " + sh.username);
+          shelters.push(sh);
+        }
+        console.log("shelters: " + shelters);
+        res.render('vol_profile', {
+          msgs: msgsVar,
+          formFields: msgsFormVar,
+          user: req.session.user,
+          langCode: lang,
+          profile: vol,
+          name: rname,
+          shelters: shelters,
+          msgsButton: msgsButton
+        }
+        );
+      });
+    });
+  });
+});
 router.get('/rest_profile', function (req, res, next) {
   console.log("get rest_profile");
   var lang = constants.properties.lang;
@@ -620,5 +847,34 @@ router.post('/rest_profile', function (req, res, next) {
 
   });
 });
+router.post('/vol_profile', function (req, res, next) {
+  console.log(req.body);
+  var vol = {};
+  var username = req.session.user.username;
+  // rest.username = username;
+  // rest.name = req.body.rname; 
+  vol.phone = req.body.rphone;
+  vol.emailid = req.body.remailid;
+  vol.shelter = {
+    "username": req.body.shelter,
+    "name": ""
+  };
+
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    var myquery = { username: username };
+    var newvalues = { $set: vol };
+    dbo.collection("volunteers").updateOne(myquery, newvalues, function (err, resp) {
+      if (err) throw err;
+      console.log("1 document updated");
+      res.redirect("/volunteer_dashboard");
+    });
+
+  });
+});
+
 module.exports = router;
 

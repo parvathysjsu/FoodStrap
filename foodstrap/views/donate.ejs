@@ -23,29 +23,43 @@
 </head>
 
 <body>
+    <nav class = "minh bggreen"></nav>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 bggreen verticalAlignCenter">    
+        <ul class="nav navbar-nav">
+         <li><p class = "whiteBig"> <%= msgs.hello %> <%= user.username %> </p>   </li>       
+        </ul>
+        <ul class="nav navbar-nav navbar-center verticalAlignCenter">
+      <li><p class = "whiteBig2"><%= msgs.heading %> </p> </li>                
+      </ul>  
+      </nav>      
+      <div class="container-fluid">
+        <div class="row">
+          <div class = "sectionDivider10 fullh">
+          <nav class="d-none d-md-block bg-light sidebar greyShadowSidenav fullh">
+            <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="/restaurant_dashboard"><p><%= msgs.title %></p></a>
+                </li>
+                <li class="nav-item active">
+                  <a href="/donate"><p><%= msgs.donate %></p></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/donationshistory"><p><%= msgs.history %></p></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/donationprocess"><p><%= msgs.process %></p></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/rest_profile"><p><%= msgs.profile %></p></a>
+                </li>
+              </ul>
   
-    <nav class="navbar navbar-default ">
-        <div class="container-fluid ">
-            <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard"><p class = "greyColor" ><%= msgs.heading %></p></a></li>
-            </ul>
-           
+            </div>
+          </nav>
         </div>
-    </nav>
-    <div class="sidenav">
-        <div class="navbar-header" align='center'>           
-            <a class="navbar-brand" href="/"><img class="logoimage" src="img/userlogo.jpg">
-               <%= user.username %></a>
-       
-        </div>
-        <br><br>
-        <br><br>
-        <a class="active" href="/donate"><p><%= msgs.donate %></p></a>
-        <a href="/donationshistory"><%= msgs.history %></a>
-        <a href="/donationprocess"><%= msgs.process %></a>
-        <a href="/rest_profile"><%= msgs.profile %></a>
-    </div>  
-    <div class="container bgBrown">
+  <div class = "sectionDivider80">
+    <div class="container greyShadow">
         <div>
             <div class="sectionDivider20">
                 <img class="imgWidth" src="img/donatelogo3.jpg">
@@ -78,9 +92,9 @@
                             <label for="notes" class="form-label"><%= msgs.splnotes %></label>
                         </div>
                     </div>   
-                    <div class="row">
+                    <div class="row verticalAlign5">
                         <div class='col-md-2'>
-                            <label for="pickuptime" class="form-label verticalAlign"><%= msgs.time %></label>
+                            <label for="pickuptime" ><%= msgs.time %></label>
                         </div>
                         <div class='col-md-6'>
                             <div class="form-group">
@@ -131,6 +145,9 @@
 
         </div>
     </div>
+</div>
+</div>
+</div>
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker();

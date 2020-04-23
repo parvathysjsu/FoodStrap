@@ -24,7 +24,7 @@
 </head>
 
 <body>    
-    <nav class="navbar navbar-default">
+    <!--<nav class="navbar navbar-default">
         <div class="container-fluid">     
             <ul class="nav navbar-nav navbar-center">
                 <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>                
@@ -38,12 +38,46 @@
         </div>
         <br><br>
         <br><br>
-        <a href="/donate"><p><%= msgs.donate %></p></a>
-        <a href="/donationshistory"><%= msgs.history %></a>
-        <a href="/donationprocess"><%= msgs.process %></a>
-        <a href="/rest_profile"><%= msgs.profile %></a>
-    </div>
-      <div class="container bgBrown">
+       
+                  
+    </div>-->
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 bggreen verticalAlignCenter">    
+      <ul class="nav navbar-nav">
+       <br> <li><p class = "whiteBig"> <%= msgs.hello %> <%= user.username %> </p>   </li>       
+      </ul>
+      <ul class="nav navbar-nav navbar-center verticalAlignCenter">
+    <br>  <li><p class = "whiteBig2"><%= msgs.heading %> </p> </li>                
+    </ul>  
+    </nav>
+   
+    <div class="container-fluid">
+      <div class="row">
+        <div class = "sectionDivider20 fullh">
+        <nav class="d-none d-md-block bg-light sidebar greyShadowSidenav fullh" style="width: 170px;">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="/restaurant_dashboard"><p><%= msgs.title %></p></a>
+              </li>
+              <li class="nav-item">
+                <a href="/donate"><p><%= msgs.donate %></p></a>
+              </li>
+              <li class="nav-item">
+                <a href="/donationshistory"><p><%= msgs.history %></p></a>
+              </li>
+              <li class="nav-item">
+                <a href="/donationprocess"><p><%= msgs.process %></p></a>
+              </li>
+              <li class="nav-item">
+                <a href="/rest_profile"><p><%= msgs.profile %></p></a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+      </div>
+<div class = "sectionDivider80">
+      <div class="container">
         <br><br>
         <div class="sectionDivider65">
         <div id="regions_div" ></div>
@@ -58,6 +92,11 @@
         </div>   
       </div>       
       </div>
+      </div>
+      </div>
+     
+      </div>
+     
       <script type="text/javascript">
         google.charts.load('current', {
           'packages':['geochart'],
@@ -75,7 +114,7 @@
            
           ]);
   
-          var options = { colors: ['#857056'],backgroundColor: '#1e1408'};
+          var options = { colors: ['#4CAF50'],  legend: 'none'};
   
           var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
   
