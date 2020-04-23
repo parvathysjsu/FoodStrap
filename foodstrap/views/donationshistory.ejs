@@ -16,6 +16,8 @@
         }
     </style>
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>    
@@ -54,10 +56,9 @@
       </div>
       <br>
       <br>
-      <div class="container">        
-                              
+      <div class="container">                                      
 
-        <table class="table" align="center">
+        <table id="myTable" class="table table-striped" align="center">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -68,6 +69,9 @@
                 <th scope="col"> <%= msgs.addr %></th>
                 <th scope="col"> <%= msgs.allergyinfo %></th>
                 <th scope="col"> <%= msgs.splnotes %></th>
+                <th scope="col"> <%= msgs.shelter %></th>
+                <th scope="col"> <%= msgs.volunteer %></th>
+                <th scope="col"> <%= msgs.status %></th>
               </tr>
             </thead>
             <tbody>
@@ -82,6 +86,9 @@
                         <td> <%= donList[item].addr %></td>
                         <td> <%= donList[item].allergy %></td>
                         <td> <%= donList[item].notes %></td>
+                        <td> <%= donList[item].shelter %></td>
+                        <td> <%= donList[item].volunteer %></td>
+                        <td> <%= donList[item].status %></td>
                       </tr>
                     <% } %>
                           
@@ -111,6 +118,11 @@
           chart.draw(data, google.charts.Bar.convertOptions(options));
         }
       </script>
+      <script>
+        $(document).ready(function(){
+            $('#myTable').dataTable();
+        });
+        </script>
 </body>
 
 </html>

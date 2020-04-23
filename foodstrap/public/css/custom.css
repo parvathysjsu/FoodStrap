@@ -47,8 +47,19 @@
     float: left;
     height: 100%; 
   }
+  .sectionDivider30 {
+    width: 30%;
+    padding: 15px;
+    float: left;
+    height: 100%; 
+  }
   .sectionDivider80 {
     width: 80%;
+    padding: 15px;
+    float: left;
+  }
+  .sectionDivider70 {
+    width: 70%;
     padding: 15px;
     float: left;
   }

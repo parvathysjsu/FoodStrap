@@ -261,7 +261,10 @@
                 "splnotes":"Special Instructions",
                 "title1":"Year",
                 "title2":"Number of People Fed",
-                "title3":"Donations Summary"
+                "title3":"Donations Summary",
+                "shelter":"Shelter",
+                "volunteer":"Volunteer",
+                "status":"Status"
             },
             "fr": {
                      
@@ -392,6 +395,30 @@
                 "vol":"Volunteer",
                 "signin":"SIGN IN",
                 "signup":"New User? SIGN UP"   
+            }
+        },
+        "vol_dashboard":{
+            "en": {                
+                "dashboard":"DASHBOARD",
+                "profile":"PROFILE"  ,
+                "pickup":"PICK UP"  ,
+                "pickupconfirm":"CONFIRM PICK UP" ,
+                "CANCEL":"CANCEL"                                 
+            },            
+            "fr": {
+            },
+            "hi": {
+            }
+        },
+        "vol_profile":{
+            "en": {
+                      
+            },
+            "fr": {
+                     
+            },
+            "hi": {
+                    
             }
         }
     }
