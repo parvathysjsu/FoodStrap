@@ -19,6 +19,7 @@
                 "recieveFood": "Recieve food",
                 "recieveFoodAnswer": "The quality, wholesome prepared food donated from restaurants can serve those who experience hunger. If you have to choose between paying rent or buying healthy groceries, we can help.",
                 "caption_map":"Portions Donated per Country"
+               
             },
             "fr": {
                 "title": "FoodStrap",
@@ -37,6 +38,7 @@
                 "recieveFood": "Recevoir de la nourriture",
                 "recieveFoodAnswer": "La nourriture saine et de qualité préparée donnée par les restaurants peut servir ceux qui ont faim. Si vous devez choisir entre payer un loyer ou acheter une épicerie saine, nous pouvons vous aider.",
                 "caption_map":""
+              
             },
             "hi": {
                 "title": "फूड्सत्रप",
@@ -450,6 +452,38 @@
             },
             "hi": {
                     
+            }
+        },
+        "images":{
+            "en": {
+                "img_foodstrap":"img/foodstrap_banner.jpg",
+                "img_problem":"img/problem.jpg",
+                "img_donate":"img/donatefood.jpg",
+                "img_rcv":"img/recievefood.jpg",
+                "img_vol":"img/volunteer.jpg",
+                "img_signin":"img/signin.jpg",
+                "img_settings":"img/settings.jpg",
+                "img_signup":"img/signup.jpg"
+            },
+            "fr": {
+                "img_foodstrap":"img/foodstrap_banner.jpg",
+                "img_problem":"img/problem.jpg",
+                "img_donate":"img/donatefood.jpg",
+                "img_rcv":"img/recievefood.jpg",
+                "img_vol":"img/volunteer.jpg",
+                "img_signin":"img/signin.jpg",
+                "img_settings":"img/settings.jpg",
+                "img_signup":"img/signup.jpg"
+            },
+            "hi": {
+                "img_foodstrap":"img/foodstrap_banner_hi.jpg",
+                "img_problem":"img/problem.jpg",
+                "img_donate":"img/donatefood_hi.jpg",
+                "img_rcv":"img/recievefood_hi.jpg",
+                "img_vol":"img/volunteer.jpg",
+                "img_signin":"img/signin_hi.jpg",
+                "img_settings":"img/settings_hi.jpg",
+                "img_signup":"img/signup_hi.jpg"
             }
         }
     }

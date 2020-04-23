@@ -92,7 +92,8 @@ router.get('/', function (req, res, next) {
           msgs: msgsVar,
           navLabels: messages.page.nav[lang],
           donCount: count,
-          restAll: restList
+          restAll: restList,
+          imgNames: messages.page.images[lang]
         });
       }).catch((result) => {
         console.log(result);
@@ -125,7 +126,8 @@ router.get('/signin', function (req, res, next) {
   var msgsVar = messages.page.signin[lang];
   res.render('signin', {
     msgs: msgsVar,
-    navLabels: messages.page.nav[lang]
+    navLabels: messages.page.nav[lang],
+    imgNames: messages.page.images[lang]
   });
 });
 /* show signup page */
@@ -136,7 +138,8 @@ router.get('/signup', function (req, res, next) {
   res.render('signup', {
     msgs: msgsVar,
     navLabels: messages.page.nav[lang],
-    msgsUserType: messages.page.signin[lang]
+    msgsUserType: messages.page.signin[lang],
+    imgNames: messages.page.images[lang]
   });
 });
 router.get('/setting', function (req, res, next) {
@@ -151,7 +154,8 @@ router.get('/setting', function (req, res, next) {
     {
       langCode: lang,
       msgs: msgsVar,
-      navLabels: messages.page.nav[lang]
+      navLabels: messages.page.nav[lang],
+      imgNames: messages.page.images[lang]
     }
   );
 });
@@ -687,7 +691,8 @@ router.get('/donors', function (req, res, next) {
       res.render('donors', {
         restList: rest,
         msgs: msgsVar,
-        navLabels: messages.page.nav[lang]
+        navLabels: messages.page.nav[lang],
+        imgNames: messages.page.images[lang]
       });
     });
   });
@@ -701,7 +706,8 @@ router.get('/shelters', function (req, res, next) {
   res.render('shelters', {
     msgs: msgsVar,
     navLabels: messages.page.nav[lang],
-    msgsQuote: messages.page.donors[lang]
+    msgsQuote: messages.page.donors[lang],
+    imgNames: messages.page.images[lang]
   });
 });
 
