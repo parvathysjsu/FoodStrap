@@ -21,7 +21,7 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDRKweM2yGEerUMgF-IArgf4YclbQU5PA&callback=initMap">
     </script>
-   
+
 </head>
 
 <body>
@@ -84,12 +84,12 @@
       <p> <%= msgs.m5 %> </p>
       <br>
     </div>
-    <div class="row">
+    <div class="row" align= "center">
 
-      <div class="sectionDivider80">
+   
         <div id="map"></div>
-      </div>
-      <div class="sectionDivider20">
+      
+    <!--  <div class="sectionDivider20">
         <table class="table" align="center">
           <% for(var item in restList) { %>
           <tr>
@@ -99,7 +99,7 @@
           <% } %>
         </table>
 
-      </div>
+      </div>-->
     </div>
     <div class="row" align="center">
       <br> <br>
@@ -111,7 +111,7 @@
     </div>
 
   </div>
-  
+
   <script>
     function initMap() {
 
@@ -127,22 +127,25 @@
           var sf = { lat: 37.773972, lng: -122.431297 };
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 9,
-            center: restList[0].position
+            center: sf
           });
           var marker = "";
-
+          var markerImage = 'http://maps.google.com/mapfiles/kml/pal2/icon32.png';
+          // 'http://maps.google.com/mapfiles/ms/icons/restaurant.png';
           for (var i = 0; i < restList.length; i++) {
             var rec = restList[i];
             console.log(rec);
-            marker = new google.maps.Marker({
-              position: rec.position,
-              label: (i + 1).toString(),
-              map: map
-            });
-
+            if (rec.position) {
+              marker = new google.maps.Marker({
+                position: rec.position,
+                icon: markerImage,
+                title: rec.name,
+                // label: (i + 1).toString(),
+                map: map
+              });
+            }
           }
         })
-
     }
   </script>
 </body>

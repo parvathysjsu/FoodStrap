@@ -138,9 +138,10 @@
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 9,
             center: datapt
-          });
+          });          
           var marker = new google.maps.Marker({
             position: datapt,
+            title: "Pick Up Location",
            // label: "R",
             map: map
           });
