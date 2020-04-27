@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>FoodStrap</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
 
-/* side menu */
+        /* side menu */
 
 .sidenav2 {
   height: 100%; /* 100% Full-height */
@@ -65,19 +66,20 @@
   .sidenav2 a {font-size: 18px;}
 }
 
-</style>
+    </style>
+
 </head>
 
 <body>
 
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
         <div class="container-fluid">     
               <span onclick="openNav()"> <a class="navbar-brand"><img class="logoimage" src="img/userlogo.png"></a></span>
             <ul class="nav navbar-nav navbar-center">
                 <li><a href="/restaurant_dashboard">SHELTER DASHBOARD</a></li>                
             </ul>           
         </div>
-  </nav>
+</nav>
 
   <div id="mySidenav" class="sidenav2">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -86,15 +88,11 @@
     <a href="/shelter_profile">PROFILE</a>
   </div>
 
-  <div class="container">
-      <h3>
-  </div>
-  
+
+
+
 </body>
-
-<script>
-
-
+<script type="text/javascript">
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -106,4 +104,5 @@ function closeNav() {
 }
 
 </script>
+
 </html>

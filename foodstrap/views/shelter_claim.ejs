@@ -64,18 +64,17 @@
   .sidenav2 {padding-top: 15px;}
   .sidenav2 a {font-size: 18px;}
 }
-
-</style>
+    </style>
 </head>
 
 <body>
 
   <nav class="navbar navbar-default">
-        <div class="container-fluid">     
+        <div class="container-fluid">
               <span onclick="openNav()"> <a class="navbar-brand"><img class="logoimage" src="img/userlogo.png"></a></span>
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard">SHELTER DASHBOARD</a></li>                
-            </ul>           
+                <li><a href="/restaurant_dashboard">SHELTER DASHBOARD</a></li>
+            </ul>
         </div>
   </nav>
 
@@ -86,12 +85,45 @@
     <a href="/shelter_profile">PROFILE</a>
   </div>
 
-  <div class="container">
-      <h3>
-  </div>
-  
-</body>
 
+          <table class="table" align="center">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col"> <%= msgs.menu %></th>
+                  <th scope="col"> <%= msgs.cuisine %></th>
+                  <th scope="col"> <%= msgs.pcount %></th>
+                  <th scope="col"> <%= msgs.datetime %></th>
+                  <th scope="col"> <%= msgs.addr %></th>
+                  <th scope="col"> <%= msgs.allergyinfo %></th>
+                  <th scope="col"> <%= msgs.splnotes %></th>
+                  <th scope="col"> <%= msgs.shelter %></th>
+                  <th scope="col"> <%= msgs.volunteer %></th>
+                  <th scope="col"> <%= msgs.status %></th>
+                </tr>
+              </thead>
+              <tbody>
+
+                  <% for(var item in donList) { %>
+                      <tr>
+                          <th scope="row"><%= parseInt(item)+1 %></th>
+                          <td> <%= donList[item].menu %></td>
+                          <td> <%= donList[item].cuisine %></td>
+                          <td> <%= donList[item].count %></td>
+                          <td> <%= donList[item].pickuptime %></td>
+                          <td> <%= donList[item].addr %></td>
+                          <td> <%= donList[item].allergy %></td>
+                          <td> <%= donList[item].notes %></td>
+                          <td> <%= donList[item].shelter %></td>
+                          <td> <%= donList[item].volunteer %></td>
+                          <td> <%= donList[item].status %></td>
+                        </tr>
+                      <% } %>
+
+              </tbody>
+            </table>
+
+        </div>
 <script>
 
 
