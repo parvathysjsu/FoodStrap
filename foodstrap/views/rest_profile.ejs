@@ -19,30 +19,33 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="sidenav">
-        <div class="navbar-header" align='center'>
-            <a class="navbar-brand" href="/"><img class="logoimage" src="img/userlogo.jpg">
-                <%= user.username %></a>
-        </div>
-        <br><br>
-        <br><br>
-        <a href="/donate">
-            <p><%= msgs.donate %></p>
-        </a>
-        <a  href="/donationshistory">
-            <p><%= msgs.history %></p>
-        </a>
-        <a  href="/donationprocess"><p><%= msgs.process %></p></a>
-        <a class="active" href="/rest_profile"><p><%= msgs.profile %></p></a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <br><br><br>
+        <a href="/restaurant_dashboard"><%= msgs.dashboard %></a> <br>
+        <a href="/donate"><%= msgs.donate %></a> <br>
+        <a  href="/donationshistory"><%= msgs.history %></a> <br>
+        <a  href="/donationprocess"><%= msgs.process %></a> <br>
+        <a class="active" href="/rest_profile"><%= msgs.profile %></a> <br>
+        <a href="/"> <%= msgs.logout %></a> <br>
     </div>
-    <div class="container bgBrown" style="color:#d8dde3">
+    <div id="main">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-center">
+                  
+                            <p class="fontDashheading"><%= (msgs.title).toUpperCase() %></p>
+                      
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="container greyShadow">
 
         <div class="sectionDivider verticalAlignCenter">
            
@@ -90,7 +93,18 @@
             </form>
         </div>
     </div>
-
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
 </body>
 
 </html>

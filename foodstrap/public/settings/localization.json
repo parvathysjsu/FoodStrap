@@ -153,7 +153,7 @@
         "restaurant_dashboard":{
             "en": {
                 "title":"DASHBOARD",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -163,11 +163,12 @@
                 "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
                 "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
                 "m4":"Donate surplus food and save lives!",
-                "hello":"  Hello "
+                "hello":"  Hello ",
+                "logout":"LOG OUT"  
             },
             "fr": {
                 "title":"Dashboard",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -181,13 +182,19 @@
                 "history":"इतिहास",
                 "process":"प्रक्रिया",
                 "profile":"शख्सियत",
-                "settings":"समायोजन" 
+                "settings":"समायोजन"  ,
+                "m1":"A single restaurant in the U.S. wastes about 100,000 pounds of food a year, according to the Green Restaurant Association, making them auspicious donors for hunger relief groups.",
+                "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
+                "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
+                "m4":"Donate surplus food and save lives!",
+                "hello":"  Hello ",
+                "logout":"LOG OUT"  
             }
         },
         "donate":{
             "en": {
                 "title":"Donate",
-                "heading": "Restaurant Manager Dashboard",               
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -202,11 +209,13 @@
                 "addrline1":"Pick Up Address",              
                 "city":"City",              
                 "state":"State",              
-                "zip":"Zip"           
+                "zip":"Zip" ,
+                "logout":"LOG OUT"      ,
+                "dashboard":"DASHBOARD"    
             },
             "fr": {
                 "title":"Donate",
-                "heading": "Restaurant Manager Dashboard",               
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "history":"History",
                 "process":"Process",
                 "profile":"Profile",
@@ -240,13 +249,15 @@
                 "city":"शहर",              
                 "state":"प्रदेश",              
                 "zip":"ज़िप" ,
-                "donate":"दान"      
+                "donate":"दान" ,
+                "logout":"LOG OUT"      ,
+                "dashboard":"DASHBOARD"       
             }
         },
         "donationshistory":{
             "en": {
                 "title":"Donations History",
-                "heading": "Restaurant Manager Dashboard",               
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -266,7 +277,9 @@
                 "title3":"Donations Summary",
                 "shelter":"Shelter",
                 "volunteer":"Volunteer",
-                "status":"Status"
+                "status":"Status",
+                "logout":"LOG OUT" ,
+                "dashboard":"DASHBOARD"
             },
             "fr": {
                      
@@ -293,13 +306,14 @@
                 "title3":"दान सारांश",
                 "shelter":"आश्रय",
                 "volunteer":"वालंटियर",
-                "status":"स्थिति"
+                "status":"स्थिति",
+                "logout":"LOG OUT" 
             }
         },
         "donationprocess":{
             "en": {
                 "title":"Donations Process",
-                "heading": "Restaurant Manager Dashboard",               
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -309,7 +323,9 @@
                 "m3":"Properly chill, then freeze packaged food.",
                 "m4":"Document the donation on FoodStrap providing all relevant information. Hold for pick up.",
                 "m5":"A volunteer or shelter claims the donation.",
-                "m6":"The volunteer picks up the food and people are fed."       
+                "m6":"The volunteer picks up the food and people are fed."    ,
+                "logout":"LOG OUT"    ,
+                "dashboard":"DASHBOARD"
             },
             "fr": {
                      
@@ -321,11 +337,13 @@
         "rest_profile":{
             "en": {
                 "title":"Profile",
-                "heading": "Restaurant Manager Dashboard",               
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
-                "profile":"PROFILE"           
+                "profile":"PROFILE"   ,
+                "logout":"LOG OUT" ,
+                "dashboard":"DASHBOARD"    
             },
             "fr": {
                      
@@ -431,7 +449,9 @@
                 "profile":"PROFILE"  ,
                 "pickup":"PICK UP"  ,
                 "pickupconfirm":"CONFIRM PICK UP" ,
-                "CANCEL":"CANCEL"                                 
+                "CANCEL":"CANCEL" ,
+                "logout":"LOG OUT",
+                "vdash":"VOLUNTEER DASHBOARD"                                
             },            
             "fr": {
             },

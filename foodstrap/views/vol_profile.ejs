@@ -15,21 +15,34 @@
             box-sizing: border-box;
         }
     </style>
-
 </head>
 
-<body>
+<body > 
+    <div id="mySidenav" class="sidenav" >
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <br><br><br>
+        <a href="/volunteer_dashboard"> <%= msgs.dashboard %></a><br>
+        <a class = "active" href="/vol_profile"> <%= msgs.profile %></a>  <br>
+        <a href="/"> <%= msgs.logout %></a>     <br>       
+      </div>
+    <div id="main">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!--    <div class="navbar-header">
             <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
           </div>-->
             <ul class="nav navbar-nav">
-                <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
-                <li><a href="/volunteer_dashboard"> <%= msgs.dashboard %> </a></li>
-                <li class="active"><a href="/vol_profile"> <%= msgs.profile %> </a></li>
+                <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span></li>
+               
+             <!--   <li><a href="/volunteer_dashboard"> <%= msgs.dashboard %> </a></li>
+                <li class="active"><a href="/vol_profile"> <%= msgs.profile %> </a></li>-->
             </ul>
-
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="/volunteer_dashboard"><p class = "fontDashheading"><%= msgs.profile %></p></a></li>                
+            </ul> 
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>               
+              </ul>
         </div>
     </nav>
     <div class="container greyShadow" style="color:#000">
@@ -73,7 +86,18 @@
             </form>
         </div>
     </div>
-
+</div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
 </body>
 
 </html>

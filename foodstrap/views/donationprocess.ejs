@@ -19,96 +19,61 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard"><%= msgs.heading %></a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="sidenav">
-        <div class="navbar-header" align='center'>
-            <a class="navbar-brand" href="/"><img class="logoimage" src="img/userlogo.jpg">
-                <%= user.username %></a>
-        </div>
-        <br><br>
-        <br><br>
-        <a href="/donate">
-            <p><%= msgs.donate %></p>
-        </a>
-        <a  href="/donationshistory">
-            <p><%= msgs.history %></p>
-        </a>
-        <a class="active" href="/donationprocess"><p><%= msgs.process %></p></a>
-        <a href="/rest_profile"><%= msgs.profile %></a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <br><br><br>
+        <a href="/restaurant_dashboard"><%= msgs.dashboard %></a> <br>
+        <a href="/donate"><%= msgs.donate %></a> <br>
+        <a  href="/donationshistory"><%= msgs.history %></a> <br>
+        <a class="active" href="/donationprocess"><%= msgs.process %></a> <br>
+        <a href="/rest_profile"><%= msgs.profile %></a> <br>
+        <a href="/"> <%= msgs.logout %></a> <br>
     </div>
-    <div class="container bgBrown" style="color:#d8dde3">
-
-        <div class="sectionDivider">
-            <img class="imgWidth" src="img/donprocess.jpg">
-        </div>
-        <div class="sectionDivider verticalAlignCenter">
-            <% if(langCode == 'en'){ %>
+    <div id="main">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-center">
+                   
+                            <p class="fontDashheading"><%= (msgs.title).toUpperCase() %></p>
+                      
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container greyShadow" style= "background-color: white;" align = "center">
+            <div class="sectionDivider" >
+                <img class="imgWidth" src="img/donprocess.jpg">
+            </div>
+            <div class="sectionDivider verticalAlignCenter align = "center"">
+                <% if(langCode == 'en'){ %>
                 <img class="imgWidth" src="img/process3.jpg">
                 <% } %>
                 <% if(langCode == 'fr'){ %>
-                    <img class="imgWidth" src="img/process_fr.jpg">
+                <img class="imgWidth" src="img/process_fr.jpg">
                 <% } %>
                 <% if(langCode == 'hi'){ %>
-                    <img class="imgWidth" src="img/process_hi.jpg">
+                <img class="imgWidth" src="img/process_hi.jpg">
                 <% } %>
-           
-        <!-- <div class="row">
-                <div class="sectionDivider10 align = 'center'">
-                    <h2>1</h2>
-                </div>
-                <div class="sectionDivider80 leftMiddleAlign">
-                 <br>  <%= msgs.m1 %>
-                </div>
+
             </div>
-            <div class="row">
-                <div class="sectionDivider10 align = 'center'">
-                    <h2>2</h2>
-                </div>
-                <div class="sectionDivider80 leftMiddleAlign">
-                    <br>    <%= msgs.m2 %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="sectionDivider10 align = 'center'">
-                    <h2>3</h2>
-                </div>
-                <div class="sectionDivider80 leftMiddleAlign">
-                    <br>   <%= msgs.m3 %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="sectionDivider10 align = 'center'">
-                    <h2>4</h2>
-                </div>
-                <div class="sectionDivider80 leftMiddleAlign">
-                    <br>   <%= msgs.m4 %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="sectionDivider10 align = 'center'">
-                    <h2>5</h2>
-                </div>
-                <div class="sectionDivider80 leftMiddleAlign">
-                    <br>   <%= msgs.m5 %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="sectionDivider10 align = 'center'">
-                    <h2>6</h2>
-                </div>
-                <div class="sectionDivider80 leftMiddleAlign">
-                    <br>    <%= msgs.m6 %>
-                </div>
-            </div>    -->  
         </div>
     </div>
-
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
 </body>
 
 </html>
