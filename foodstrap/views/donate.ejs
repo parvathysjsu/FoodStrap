@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>   
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%= msgs.title %></title>
+    <title><%= msgs.title %></title>
     <style>
         * {
             box-sizing: border-box;
@@ -23,131 +23,131 @@
 </head>
 
 <body>
-    <nav class = "minh bggreen"></nav>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 bggreen verticalAlignCenter">    
-        <ul class="nav navbar-nav">
-         <li><p class = "whiteBig"> <%= msgs.hello %> <%= user.username %> </p>   </li>       
-        </ul>
-        <ul class="nav navbar-nav navbar-center verticalAlignCenter">
-      <li><p class = "whiteBig2"><%= msgs.heading %> </p> </li>                
-      </ul>  
-      </nav>      
-      <div class="container-fluid">
-        <div class="row">
-          <div class = "sectionDivider10 fullh">
-          <nav class="d-none d-md-block bg-light sidebar greyShadowSidenav fullh">
-            <div class="sidebar-sticky">
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a href="/restaurant_dashboard"><p><%= msgs.title %></p></a>
-                </li>
-                <li class="nav-item active">
-                  <a href="/donate"><p><%= msgs.donate %></p></a>
-                </li>
-                <li class="nav-item">
-                  <a href="/donationshistory"><p><%= msgs.history %></p></a>
-                </li>
-                <li class="nav-item">
-                  <a href="/donationprocess"><p><%= msgs.process %></p></a>
-                </li>
-                <li class="nav-item">
-                  <a href="/rest_profile"><p><%= msgs.profile %></p></a>
-                </li>
-              </ul>
-  
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <br><br><br>
+        <a href="/restaurant_dashboard"><%= msgs.dashboard %></a> <br>
+        <a class="active" href="/donate"><%= msgs.donate %></a> <br>
+        <a href="/donationshistory"><%= msgs.history %></a> <br>
+        <a href="/donationprocess"><%= msgs.process %></a> <br>
+        <a href="/rest_profile"><%= msgs.profile %></a> <br>
+        <a href="/"> <%= msgs.logout %></a> <br>
+    </div>
+    <div id="main">
+        <nav class="navbar navbar-default" style="background-color: #4CAF50; color: white;">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-center">
+                    <p class="fontDashheading" style=" color: white;"><%= (msgs.title).toUpperCase() %></p>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+                </ul>
             </div>
-          </nav>
-        </div>
-  <div class = "sectionDivider80">
-    <div class="container greyShadow">
-        <div>
-            <div class="sectionDivider20">
-                <img class="imgWidth" src="img/donatelogo3.jpg">
-            </div>
-            <div class="sectionDivider80">
-                <form id="signup-form" action="/donate" method="post">
-                    <div class="row">
-                        <div class="form-group form-input">
-                            <input type="text" name="menu" id="menu" value="" required />
-                            <label for="menu" class="form-label"><%= msgs.menu %></label>
+        </nav>
+
+        <div class="container greyShadow">
+            <div>
+                <div class="sectionDivider20">
+                    <img class="imgWidth" src="img/donatelogo3.jpg">
+                </div>
+                <div class="sectionDivider80">
+                    <form id="signup-form" action="/donate" method="post">
+                        <div class="row">
+                            <div class="form-group form-input">
+                                <input type="text" name="menu" id="menu" value="" required />
+                                <label for="menu" class="form-label"><%= msgs.menu %></label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group form-input col-md-6 ">
-                            <input type="text" name="cuisine" id="cuisine" value="" />
-                            <label for="cuisine" class="form-label"><%= msgs.cuisine %></label>
+                        <div class="row">
+                            <div class="form-group form-input col-md-6 ">
+                                <input type="text" name="cuisine" id="cuisine" value="" />
+                                <label for="cuisine" class="form-label"><%= msgs.cuisine %></label>
+                            </div>
+                            <div class="form-group form-input col-md-6 ">
+                                <input type="number" name="count" id="count" value="" required />
+                                <label for="count" class="form-label"><%= msgs.pcount %></label>
+                            </div>
                         </div>
-                        <div class="form-group form-input col-md-6 ">
-                            <input type="number" name="count" id="count" value="" required />
-                            <label for="count" class="form-label"><%= msgs.pcount %></label>
+                        <div class="row">
+                            <div class="form-group form-input">
+                                <input type="text" name="allergy" id="allergy" value="" />
+                                <label for="allergy" class="form-label"><%= msgs.allergy %></label>
+                            </div>
+                            <div class="form-group form-input">
+                                <input type="text" name="notes" id="notes" value="" />
+                                <label for="notes" class="form-label"><%= msgs.splnotes %></label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group form-input">
-                            <input type="text" name="allergy" id="allergy" value="" />
-                            <label for="allergy" class="form-label"><%= msgs.allergy %></label>
-                        </div>
-                        <div class="form-group form-input">
-                            <input type="text" name="notes" id="notes" value="" />
-                            <label for="notes" class="form-label"><%= msgs.splnotes %></label>
-                        </div>
-                    </div>   
-                    <div class="row verticalAlign5">
-                        <div class='col-md-2'>
-                            <label for="pickuptime" ><%= msgs.time %></label>
-                        </div>
-                        <div class='col-md-6'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" name="pickuptime" id="pickuptime" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
+                        <div class="row verticalAlign5">
+                            <div class='col-md-2'>
+                                <label for="pickuptime"><%= msgs.time %></label>
+                            </div>
+                            <div class='col-md-6'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" name="pickuptime" id="pickuptime" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group form-input">
-                            <input type="text" name="addr" id="addr" value=""  />
-                            <label for="addr" class="form-label"><%= msgs.addrline1 %></label>
+                        <div class="row">
+                            <div class="form-group form-input">
+                                <input type="text" name="addr" id="addr" value="" />
+                                <label for="addr" class="form-label"><%= msgs.addrline1 %></label>
+                            </div>
+                            <div class="form-group form-input  col-md-4">
+                                <input type="text" name="city" id="city" value="" />
+                                <label for="city" class="form-label"><%= msgs.city %></label>
+                            </div>
+                            <div class="form-group form-input col-md-4">
+                                <input type="text" name="state" id="state" value="" />
+                                <label for="state" class="form-label"><%= msgs.state %></label>
+                            </div>
+                            <div class="form-group form-input col-md-4">
+                                <input type="number" name="zip" id="zip" value="" />
+                                <label for="zip" class="form-label"><%= msgs.zip %></label>
+                            </div>
                         </div>
-                        <div class="form-group form-input  col-md-4">
-                            <input type="text" name="city" id="city" value=""  />
-                            <label for="city" class="form-label"><%= msgs.city %></label>
-                        </div>
-                        <div class="form-group form-input col-md-4">
-                            <input type="text" name="state" id="state" value=""  />
-                            <label for="state" class="form-label"><%= msgs.state %></label>
-                        </div>
-                        <div class="form-group form-input col-md-4">
-                            <input type="number" name="zip" id="zip" value=""  />
-                            <label for="zip" class="form-label"><%= msgs.zip %></label>
-                        </div>
-                    </div>
-                    <div class="form-submit">
-                        <% if(langCode == 'en'){ %>
+                        <div class="form-submit">
+                            <% if(langCode == 'en'){ %>
                             <a href="/donate" class="vertify-booking"><input type="submit" value="Donate" class="submit"
-                                id="submit" name="submit" /></a>
+                                    id="submit" name="submit" /></a>
                             <% } %>
                             <% if(langCode == 'fr'){ %>
-                                <a href="/donate" class="vertify-booking"><input type="submit" value="Donner" class="submit"
+                            <a href="/donate" class="vertify-booking"><input type="submit" value="Donner" class="submit"
                                     id="submit" name="submit" /></a>
                             <% } %>
                             <% if(langCode == 'hi'){ %>
-                                <a href="/donate" class="vertify-booking"><input type="submit" value="दान" class="submit"
+                            <a href="/donate" class="vertify-booking"><input type="submit" value="दान" class="submit"
                                     id="submit" name="submit" /></a>
-                            <% } %>                      
-                    </div>
-                </form>
+                            <% } %>
+                        </div>
+                    </form>
+
+                </div>
 
             </div>
-
         </div>
+
     </div>
-</div>
-</div>
-</div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker();

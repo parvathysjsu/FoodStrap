@@ -41,19 +41,48 @@
        
                   
     </div>-->
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 bggreen verticalAlignCenter">    
+    <!--<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 bggreen verticalAlignCenter">    
       <ul class="nav navbar-nav">
        <br> <li><p class = "whiteBig"> <%= msgs.hello %> <%= user.username %> </p>   </li>       
       </ul>
       <ul class="nav navbar-nav navbar-center verticalAlignCenter">
     <br>  <li><p class = "whiteBig2"><%= msgs.heading %> </p> </li>                
     </ul>  
+    </nav> -->
+    <div id="mySidenav" class="sidenav" >
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <br><br><br>
+      <a class = "active" href="/restaurant_dashboard"><%= msgs.title %></a> <br> 
+      <a href="/donate"><%= msgs.donate %></a> <br> 
+      <a href="/donationshistory"><%= msgs.history %></a> <br> 
+      <a href="/donationprocess"><%= msgs.process %></a> <br> 
+      <a href="/rest_profile"><%= msgs.profile %></a>   <br>   
+      <a href="/"> <%= msgs.logout %></a>     <br>       
+    </div>
+  <div id="main">
+    
+  
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!--    <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+          </div>-->
+            <ul class="nav navbar-nav">
+                <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span></li>
+               
+             <!--   <li><a href="/volunteer_dashboard"> <%= msgs.dashboard %> </a></li>
+                <li class="active"><a href="/vol_profile"> <%= msgs.profile %> </a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-center">
+                <p class = "fontDashheading"><%= msgs.heading %></p>        
+            </ul> 
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>               
+              </ul>
+        </div>
     </nav>
-   
-    <div class="container-fluid">
-      <div class="row">
-        <div class = "sectionDivider20 fullh">
-        <nav class="d-none d-md-block bg-light sidebar greyShadowSidenav fullh" style="width: 170px;">
+
+        <!--<nav class="d-none d-md-block bg-light sidebar greyShadowSidenav fullh" style="width: 170px;">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -74,9 +103,12 @@
             </ul>
 
           </div>
-        </nav>
-      </div>
-<div class = "sectionDivider80">
+        </nav>-->
+
+
+
+
+
       <div class="container">
         <br><br>
         <div class="sectionDivider65">
@@ -92,11 +124,22 @@
         </div>   
       </div>       
       </div>
-      </div>
-      </div>
      
-      </div>
      
+     
+      
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
       <script type="text/javascript">
         google.charts.load('current', {
           'packages':['geochart'],
