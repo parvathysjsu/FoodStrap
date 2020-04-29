@@ -53,51 +53,55 @@ router.get('/', function (req, res, next) {
       if (err) { console.log(err); }
       //console.log("---restaurants: "+result);
       for (var i = 0; i < result.length; i++) {
+        console.log("------position:"+JSON.stringify(result[i].location));
         rest.push({
           "name": result[i].name,
           "addr": result[i].city + ', ' + result[i].state,
           "contact": 'Ph: ' + result[i].phone + ', Email: ' + result[i].emailid,
-          "zip": result[i].zip
+          "zip": result[i].zip,
+          "position":result[i].location
         });
-        if (result[i].zip != "") {
-          var addrQ = result[i].zip + ' United States of America';
-          requests.push(geoCoder.geocode(addrQ));
-        }
+        // if (result[i].zip != "") {
+        //   var addrQ = result[i].zip + ' United States of America';
+        //   // var addrQ = result[i].zip;
+        //   requests.push(geoCoder.geocode(addrQ));
+        // }
       }
 
-      console.log("restaurants: " + rest);
-      Promise.all(requests).then((result) => {
+      console.log("restaurants: " + JSON.stringify(rest));
+      //Promise.all(requests).then((result) => {
         console.log("--------success==");
         //console.log(result);
-        result.forEach(resultsForOne => {
-          let answer = _.head(resultsForOne);
-          let oneRecord = {};
-          oneRecord.position = {};
-          oneRecord.position.lat = answer.latitude;
-          oneRecord.position.lng = answer.longitude;
-          oneRecord.zip = answer.zipcode;
-          let restRec = rest.find(element => element.zip == answer.zipcode);
-          oneRecord.name = restRec.name;
-          const index = rest.indexOf(restRec);
-          if (index > -1) {
-            rest.splice(index, 1);
-          }
-          restList.push(oneRecord);
-        });
-        console.log(restList);
+        // result.forEach(resultsForOne => {
+        //   let answer = _.head(resultsForOne);
+        //   let oneRecord = {};
+        //   oneRecord.position = {};
+        //   oneRecord.position.lat = answer.latitude;
+        //   oneRecord.position.lng = answer.longitude;
+        //   oneRecord.zip = answer.zipcode;
+        //   let restRec = rest.find(element => element.zip == answer.zipcode);
+        //   oneRecord.name = restRec.name;
+        //   const index = rest.indexOf(restRec);
+        //   if (index > -1) {
+        //     rest.splice(index, 1);
+        //   }
+        //   restList.push(oneRecord);
+        // });
+       // console.log(rest);
         var user = {};
-        user.restList = restList;
+        user.restList = rest;
         req.session.user = user;
         res.render('index', {
           msgs: msgsVar,
           navLabels: messages.page.nav[lang],
           donCount: count,
-          restAll: restList
+          restAll: rest,
+          imgNames: messages.page.images[lang]
         });
-      }).catch((result) => {
-        console.log(result);
-      });
-
+      // }).catch((result) => {
+      //   console.log("-----error-----")
+      //   console.log(result);
+      // });
     });
 
 
@@ -131,7 +135,8 @@ router.get('/signin', function (req, res, next) {
   var msgsVar = messages.page.signin[lang];
   res.render('signin', {
     msgs: msgsVar,
-    navLabels: messages.page.nav[lang]
+    navLabels: messages.page.nav[lang],
+    imgNames: messages.page.images[lang]
   });
 });
 /* show signup page */
@@ -142,7 +147,8 @@ router.get('/signup', function (req, res, next) {
   res.render('signup', {
     msgs: msgsVar,
     navLabels: messages.page.nav[lang],
-    msgsUserType: messages.page.signin[lang]
+    msgsUserType: messages.page.signin[lang],
+    imgNames: messages.page.images[lang]
   });
 });
 router.get('/setting', function (req, res, next) {
@@ -157,7 +163,8 @@ router.get('/setting', function (req, res, next) {
     {
       langCode: lang,
       msgs: msgsVar,
-      navLabels: messages.page.nav[lang]
+      navLabels: messages.page.nav[lang],
+      imgNames: messages.page.images[lang]
     }
   );
 });
@@ -745,12 +752,35 @@ router.post('/signup', function (req, res, next) {
       // res.redirect("/signin");
     });
     if (user.usertype == "restaurant") {
-      dbo.collection("restaurants").insertOne(rest, function (err, result) {
-        if (err) throw err;
-        // res.send("Successfully inserted");
-        //res.render('signin');
-        res.redirect("/signin");
+      var geoCoder = NodeGeocoder({
+        provider: 'openstreetmap'
       });
+      console.log("---addr searched: " + rest.zip + ' United States of America');
+      geoCoder.geocode(rest.zip + ' United States of America')
+        .then((mapres) => {
+          console.log(mapres);
+          let position = {};
+          if (mapres.length != 0) {
+            let answer = _.head(mapres);
+            position.lat = answer.latitude;
+            position.lng = answer.longitude;
+          }
+          console.log("------pos:"+JSON.stringify(position));
+          return position;
+        })
+        .then((pos) => {
+          rest.location = pos;
+          console.log("------rest:"+JSON.stringify(rest));
+          dbo.collection("restaurants").insertOne(rest, function (err, result) {
+            if (err) throw err;
+            // res.send("Successfully inserted");
+            //res.render('signin');      
+            res.redirect("/signin");
+          });
+        }).catch((result) => {
+          console.log("-----error-----")
+          console.log(result);
+        });
     }
     if (user.usertype == "shelter") {
       dbo.collection("shelters").insertOne(shelter, function (err, result) {
@@ -999,7 +1029,8 @@ router.get('/donors', function (req, res, next) {
       res.render('donors', {
         restList: rest,
         msgs: msgsVar,
-        navLabels: messages.page.nav[lang]
+        navLabels: messages.page.nav[lang],
+        imgNames: messages.page.images[lang]
       });
     });
   });
@@ -1013,7 +1044,8 @@ router.get('/shelters', function (req, res, next) {
   res.render('shelters', {
     msgs: msgsVar,
     navLabels: messages.page.nav[lang],
-    msgsQuote: messages.page.donors[lang]
+    msgsQuote: messages.page.donors[lang],
+    imgNames: messages.page.images[lang]
   });
 });
 

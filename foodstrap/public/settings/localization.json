@@ -12,13 +12,14 @@
                 "descWhatdoWeDoAnswer": "We help people who are having a financial crisis. They may have lost their job, or had a medical emergency, or their car may have broken down. We help the people who are needy or who are poor and need some help getting food. People that go hungry for a long period of time will change as a person completely. More than seventy percent of people go hungry in the world. Going hungry for a certain period of time damages your mental health and physical health. When it damages your mental health it causes you to have negative thoughts about things. Going hungry also changes your physical health, it causes you to lose weight and it will mess up your respiratory system.",
                 "descFromWhereFood": "From where do we get our food?",
                 "descFromWhereFoodAnswer": "They have few sources from where we get the food. It can be restaurants who have surplus food, caterers who have leftover food, individual donations, local businesses around the area.",
-                "shareYourFood": "Share your food",
+                "shareYourFood": "Share Your Food",
                 "shareYourFoodAnswer": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
-                "donateFood": "Donate Surplus food",
+                "donateFood": "Donate Surplus Food",
                 "donateFoodAnswer": "Instead of throwing away surplus food that is safe to eat, donate to local hunger relief organizations. This delivers a triple benefit: Food stays out of landfills to prevent environmental impact, nonprofits benefit from the donations and  restaurants give back to local communities.",
-                "recieveFood": "Recieve food",
+                "recieveFood": "Recieve Food",
                 "recieveFoodAnswer": "The quality, wholesome prepared food donated from restaurants can serve those who experience hunger. If you have to choose between paying rent or buying healthy groceries, we can help.",
                 "caption_map":"Portions Donated per Country"
+               
             },
             "fr": {
                 "title": "FoodStrap",
@@ -37,6 +38,7 @@
                 "recieveFood": "Recevoir de la nourriture",
                 "recieveFoodAnswer": "La nourriture saine et de qualité préparée donnée par les restaurants peut servir ceux qui ont faim. Si vous devez choisir entre payer un loyer ou acheter une épicerie saine, nous pouvons vous aider.",
                 "caption_map":""
+              
             },
             "hi": {
                 "title": "फूड्सत्रप",
@@ -47,13 +49,13 @@
                 "descWhatdoWeDo": "हम समुदाय की मदद के लिए क्या करते हैं?",
                 "descWhatdoWeDoAnswer": "हम ऐसे लोगों की मदद करते हैं जो आर्थिक संकट में हैं। हो सकता है कि उन्होंने अपनी नौकरी खो दी हो, या कोई मेडिकल इमरजेंसी हो, या उनकी कार टूट गई हो। हम उन लोगों की मदद करते हैं जो जरूरतमंद हैं या जो गरीब हैं और उन्हें भोजन पाने में कुछ मदद की जरूरत है। लंबे समय तक भूखे रहने वाले लोग पूरी तरह से एक व्यक्ति के रूप में बदल जाएंगे। दुनिया में सत्तर प्रतिशत से अधिक लोग भूखे रहते हैं। एक निश्चित अवधि के लिए भूखे रहने से आपके मानसिक स्वास्थ्य और शारीरिक स्वास्थ्य को नुकसान होता है। जब यह आपके मानसिक स्वास्थ्य को नुकसान पहुंचाता है तो इससे आपको चीजों के बारे में नकारात्मक विचार रखने पड़ते हैं। भूखे रहने से आपका शारीरिक स्वास्थ्य भी बदल जाता है, इससे आपका वजन कम होता है और यह आपके श्वसन तंत्र को गड़बड़ कर देगा।",
                 "descFromWhereFood": "जहां से हमें अपना भोजन मिलता है?",
-                "descFromWhereFoodAnswer": "हमारे पास कुछ स्रोत हैं जहां से हमें भोजन मिलता है। यह ऐसे रेस्तरां हो सकते हैं जिनमें अधिशेष भोजन, कैटरर्स हैं जिनके पास बचा हुआ भोजन, व्यक्तिगत दान, क्षेत्र के आसपास के स्थानीय व्यवसाय हैं।",
+                "descFromWhereFoodAnswer": "हमारे पास कुछ स्रोत हैं जहां से हमें भोजन मिलता है। यह ऐसे भोजनालय हो सकते हैं जिनमें अधिशेष भोजन, कैटरर्स हैं जिनके पास बचा हुआ भोजन, व्यक्तिगत दान, क्षेत्र के आसपास के स्थानीय व्यवसाय हैं।",
                 "shareYourFood": "अपना भोजन साझा करें",
                 "shareYourFoodAnswer": "हमारे क्षेत्र के कई परिवारों को मेज पर खाना लगाने में थोड़ी मदद की ज़रूरत है। उन्हें किराया देने या स्वस्थ किराने का सामान खरीदने के बीच चयन नहीं करना चाहिए। आप भोजन दान करके मदद कर सकते हैं। आपके समर्थन की बहुत आवश्यकता है और सराहना की जाती है।",
                 "donateFood": "अधिशेष भोजन का दान करें",
-                "donateFoodAnswer": "खाने के लिए सुरक्षित अधिशेष भोजन को फेंकने के बजाय, स्थानीय भूख राहत संगठनों को दान करें। यह एक ट्रिपल लाभ देता है: खाद्य पर्यावरणीय प्रभाव को रोकने के लिए लैंडफिल से बाहर रहता है, दान और रेस्तरां से गैर-लाभकारी लाभ स्थानीय समुदायों को वापस देते हैं।",
+                "donateFoodAnswer": "खाने के लिए सुरक्षित अधिशेष भोजन को फेंकने के बजाय, स्थानीय भूख राहत संगठनों को दान करें। यह एक ट्रिपल लाभ देता है: खाद्य पर्यावरणीय प्रभाव को रोकने के लिए लैंडफिल से बाहर रहता है, दान और भोजनालय से गैर-लाभकारी लाभ स्थानीय समुदायों को वापस देते हैं।",
                 "recieveFood": "भोजन ग्रहण करें",
-                "recieveFoodAnswer": "रेस्तरां से दान किए गए गुणवत्ता पूर्ण, तैयार भोजन उन लोगों की सेवा कर सकते हैं जो भूख का अनुभव करते हैं। यदि आपको किराए का भुगतान करने या स्वस्थ किराने का सामान खरीदने के बीच चयन करना है, तो हम मदद कर सकते हैं।",
+                "recieveFoodAnswer": "भोजनालय से दान किए गए गुणवत्ता पूर्ण, तैयार भोजन उन लोगों की सेवा कर सकते हैं जो भूख का अनुभव करते हैं। यदि आपको किराए का भुगतान करने या स्वस्थ किराने का सामान खरीदने के बीच चयन करना है, तो हम मदद कर सकते हैं।",
                 "caption_map":""
             }
         },
@@ -102,7 +104,7 @@
         },
         "donors": {
             "en": {
-                "title":"Donate Fodd",
+                "title":"Donate Food",
                 "quote": "The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.",
                 "author":"Mahatma Gandhi",
                 "m1": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
@@ -113,26 +115,26 @@
                 "buttonm":"SIGN UP NOW!"
             },
             "fr": {
-                "title":"Donate Fodd",
-                "quote": "The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.",
-                "author":"Mahatma Gandhi",
-                "m1": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
-                "m2":"In the US, food waste is estimated at between 30-40% of our food supply, estimated at around 72 billion-133 billion pounds of wasted food each year, according to the USDA.",
-                "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
-                "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
-                "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
-                "buttonm":"Sign Up Now!"
-            },
-            "hi": {
                 "title":"Donate Food",
                 "quote": "The simplest acts of kindness are by far more powerful then a thousand heads bowing in prayer.",
                 "author":"Mahatma Gandhi",
                 "m1": "Many families in our area need a little help putting food on the table. They shouldn’t have to choose between paying rent or buying healthy groceries. You can help by making food donations. Your support is greatly needed and appreciated.",
                 "m2":"In the US, food waste is estimated at between 30-40% of our food supply, estimated at around 72 billion-133 billion pounds of wasted food each year, according to the USDA.",
-                "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
+                "m3": "Rather than toss unsold bread, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
                 "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
                 "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
                 "buttonm":"Sign Up Now!"
+            },
+            "hi": {
+                "title":"अन्न का दान करें",
+                "quote": "दयालुता का सबसे सरल कार्य प्रार्थना में झुकने वाले एक हजार से अधिक शक्तिशाली हैं।",
+                "author":"महात्मा गांधी",
+                "m1": "हमारे क्षेत्र के कई परिवारों को मेज पर खाना लगाने में थोड़ी मदद की ज़रूरत है। उन्हें किराया देने या स्वस्थ किराने का सामान खरीदने के बीच चयन नहीं करना चाहिए। आप भोजन दान करके मदद कर सकते हैं। आपके समर्थन की बहुत आवश्यकता है और सराहना की जाती है।",
+                "m2":"यूएसए के अनुसार, हमारे भोजन की आपूर्ति का 30-40% के बीच भोजन की बर्बादी का अनुमान है, प्रति वर्ष लगभग 72 बिलियन-133 बिलियन पाउंड व्यर्थ भोजन होता है।",
+                "m3": "अनसोल्ड ब्रेड, पेस्ट्री को टॉस करने के बजाय, और एक डंपस्टर में उत्पादन करें, उन्हें स्थानीय गैर-लाभकारी संस्थाओं और उन लोगों के लिए बॉक्स करें।",
+                "m4":"यदि आपके पास भोजन है तो आप स्थानीय आश्रय के लिए दान करना चाहेंगे, अभी साइन अप करें!",
+                "m5": "मिशेलिन-तारांकित, राष्ट्रीय भोजनालय श्रृंखला से लेकर दुनिया भर में मेगा कॉफ़ी शॉप्स तक, जो अमेरिका के हर सड़क के कोने में फैला हुआ है, इन प्रतिष्ठानों की जाँच करें जो दिन के अंत में दान करके खाद्य कचरे को काटने के लिए प्रतिबद्ध हैं।",
+                "buttonm":"अभी साइनअप करें!"
             }
         },
         "shelters": {
@@ -144,9 +146,9 @@
             "fr":{"title":"Recieve Food",
                 "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
                 "m2":"If you need food assistance for your shelter, sign up now!"},
-            "hi":{"title":"Recieve Food",
-                "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
-                "m2":"If you need food assistance for your shelter, sign up now!"}
+            "hi":{"title":"भोजन प्राप्त करें",
+                "m1": "पिछले साल, संयुक्त राज्य अमेरिका में लगभग 41 मिलियन टन भोजन उत्पन्न हुआ था। जबकि अमेरिकी लाखों टन भोजन का निपटान करते हैं, अमेरिकी कृषि विभाग का अनुमान है कि 11.8 प्रतिशत अमेरिकी घरों - लगभग 15 मिलियन घरों में - संसाधनों की कमी के कारण अपने सभी सदस्यों के लिए पर्याप्त भोजन प्रदान करने में कठिनाई हुई। कई मामलों में, हमारे देश के लैंडफिल में फेंक दिया गया भोजन पौष्टिक, खाद्य भोजन है।",
+                "m2":"यदि आपको अपने आश्रय के लिए भोजन सहायता की आवश्यकता है, तो अभी साइन अप करें!"}
         },
 	"volunteers":{
           "en":{
@@ -220,7 +222,7 @@
         "restaurant_dashboard":{
             "en": {
                 "title":"DASHBOARD",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -230,11 +232,12 @@
                 "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
                 "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
                 "m4":"Donate surplus food and save lives!",
-                "hello":"  Hello "
+                "hello":"  Hello ",
+                "logout":"LOG OUT"  
             },
             "fr": {
                 "title":"Dashboard",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -242,38 +245,46 @@
                 "settings":"Settings"
             },
             "hi": {
-                "title":"Dashboard",
-                "heading": "Restaurant Manager Dashboard",
-                "donate":"DONATE",
-                "history":"HISTORY",
-                "process":"PROCESS",
-                "profile":"PROFILE",
-                "settings":"Settings"
+                "title":"डैशबोर्ड",
+                "heading": "भोजनालय प्रबंधक डैशबोर्ड",
+                "donate":"दान",
+                "history":"इतिहास",
+                "process":"प्रक्रिया",
+                "profile":"शख्सियत",
+                "settings":"समायोजन"  ,
+                "m1":"A single restaurant in the U.S. wastes about 100,000 pounds of food a year, according to the Green Restaurant Association, making them auspicious donors for hunger relief groups.",
+                "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
+                "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
+                "m4":"Donate surplus food and save lives!",
+                "hello":"  Hello ",
+                "logout":"LOG OUT"  
             }
         },
         "donate":{
             "en": {
                 "title":"Donate",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
                 "profile":"PROFILE",
                 "settings":"Settings",
-                "menu":"Menu",
-                "cuisine":"Cuisine",
-                "pcount":"Portion Count",
-                "allergy":"Allergy Information",
-                "splnotes":"Special Instructions",
-                "time":"Pick Up Time",
-                "addrline1":"Pick Up Address",
-                "city":"City",
-                "state":"State",
-                "zip":"Zip"
+                "menu":"Menu", 
+                "cuisine":"Cuisine",              
+                "pcount":"Portion Count",              
+                "allergy":"Allergy Information",              
+                "splnotes":"Special Instructions",              
+                "time":"Pick Up Time",              
+                "addrline1":"Pick Up Address",              
+                "city":"City",              
+                "state":"State",              
+                "zip":"Zip" ,
+                "logout":"LOG OUT"      ,
+                "dashboard":"DASHBOARD"    
             },
             "fr": {
                 "title":"Donate",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "history":"History",
                 "process":"Process",
                 "profile":"Profile",
@@ -291,34 +302,36 @@
                 "donate":"Donate"
             },
             "hi": {
-                "title":"Donate",
-                "heading": "Restaurant Manager Dashboard",
-                "history":"History",
-                "process":"Process",
-                "profile":"Profile",
-                "settings":"Settings",
-                "menu":"Menu",
-                "cuisine":"Cuisine",
-                "pcount":"Portion Count",
-                "allergy":"Allergy Information",
-                "splnotes":"Special Instructions",
-                "time":"Pick Up Time",
-                "addrline1":"Pick Up Address",
-                "city":"City",
-                "state":"State",
-                "zip":"Zip" ,
-                "donate":"Donate"
+                "title":"दान",
+                "heading": "भोजनालय प्रबंधक डैशबोर्ड",               
+                "history":"इतिहास",
+                "process":"प्रक्रिया",
+                "profile":"शख्सियत",
+                "settings":"समायोजन",
+                "menu":"भोजनसूची", 
+                "cuisine":"भोजन के प्रकार",              
+                "pcount":"भोजन संख्या",              
+                "allergy":"एलर्जी की जानकारी",              
+                "splnotes":"विशेष निर्देश",              
+                "time":"समय लेने",              
+                "addrline1":"पता",              
+                "city":"शहर",              
+                "state":"प्रदेश",              
+                "zip":"ज़िप" ,
+                "donate":"दान" ,
+                "logout":"LOG OUT"      ,
+                "dashboard":"DASHBOARD"       
             }
         },
         "donationshistory":{
             "en": {
                 "title":"Donations History",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
                 "profile":"PROFILE",
-                "congrats":"Congragulations!" ,
+                "congrats":"Congratulations!" ,
                 "peopleFed":"people fed.",
                 "quote":"Giving is not just about making a donation. It's about making a difference.",
                 "menu":"Menu",
@@ -333,14 +346,16 @@
                 "title3":"Donations Summary",
                 "shelter":"Shelter",
                 "volunteer":"Volunteer",
-                "status":"Status"
+                "status":"Status",
+                "logout":"LOG OUT" ,
+                "dashboard":"DASHBOARD"
             },
             "fr": {
 
             },
             "hi": {
-              "title":"दान इतिहास",
-                "heading": "भोजनालय प्रबंधक डैशबोर्ड",
+                "title":"दान इतिहास",
+                "heading": "भोजनालय प्रबंधक डैशबोर्ड",               
                 "donate":"दान",
                 "history":"इतिहास",
                 "process":"प्रक्रिया",
@@ -361,13 +376,13 @@
                 "shelter":"आश्रय",
                 "volunteer":"वालंटियर",
                 "status":"स्थिति",
-                "logout":"LOG OUT"
+                "logout":"LOG OUT" 
             }
         },
         "donationprocess":{
             "en": {
                 "title":"Donations Process",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
@@ -377,7 +392,9 @@
                 "m3":"Properly chill, then freeze packaged food.",
                 "m4":"Document the donation on FoodStrap providing all relevant information. Hold for pick up.",
                 "m5":"A volunteer or shelter claims the donation.",
-                "m6":"The volunteer picks up the food and people are fed."
+                "m6":"The volunteer picks up the food and people are fed."    ,
+                "logout":"LOG OUT"    ,
+                "dashboard":"DASHBOARD"
             },
             "fr": {
 
@@ -389,17 +406,24 @@
         "rest_profile":{
             "en": {
                 "title":"Profile",
-                "heading": "Restaurant Manager Dashboard",
+                "heading": "RESTAURANT MANAGER DASHBOARD",               
                 "donate":"DONATE",
                 "history":"HISTORY",
                 "process":"PROCESS",
-                "profile":"PROFILE"
+                "profile":"PROFILE"   ,
+                "logout":"LOG OUT" ,
+                "dashboard":"DASHBOARD"    
             },
             "fr": {
 
             },
             "hi": {
-
+                "title":"शख्सियत",
+                "heading": "भोजनालय प्रबंधक डैशबोर्ड",               
+                "donate":"दान",
+                "history":"इतिहास",
+                "process":"प्रक्रिया",
+                "profile":"शख्सियत"  
             }
         },
         "signup":{
@@ -438,21 +462,21 @@
                 "Youremailid":"Your Email Id"
             },
             "hi": {
-                "title":"SIGN UP",
-                "rname":"Restaurant Name",
-                "rcuisine":"Cuisine",
-                "rphone":"Phone",
-                "remailid":"Email Id",
-                "raddr":"Address",
-                "rcity":"City",
-                "rstate":"State",
-                "rzip":"Zip",
-                "Username":"Username",
-                "Password":"Password",
-                "sname":"Shelter Name",
-                "yourname":"Your Name",
-				 "Yourphonenumber":"Your Phone Number",
-                "Youremailid":"Your Email Id"
+                "title":"साइन अप करें",
+                "rname":"भोजनालय नाम",
+                "rcuisine":"भोजन के प्रकार",
+                "rphone":"फ़ोन",
+                "remailid":"ईमेल",
+                "raddr":"पता",
+                "rcity":"शहर",
+                "rstate":"प्रदेश",
+                "rzip":"ज़िप",
+                "Username":"उपयोगकर्ता नाम",
+                "Password":"पासवर्ड",
+                "sname":"आश्रय नाम",
+                "yourname":"आपका नाम",
+				 "Yourphonenumber":"आपका दूरभाष संख्या",
+                "Youremailid":"आपका ईमेल"
             }
         },
         "signin":{
@@ -478,14 +502,14 @@
                 "signup":"New User? SIGN UP"
             },
             "hi": {
-                "username":"Your username",
-                "pwd":"Your password",
-                "usertype":"User Type",
-                "rest":"Restaurant",
-                "shelter":"Shelter",
-                "vol":"Volunteer",
-                "signin":"SIGN IN",
-                "signup":"New User? SIGN UP"
+                "username":"आपका उपयोगकर्ता नाम",
+                "pwd":"आपका पासवर्ड",
+                "usertype":"उपयोगकर्ता का प्रकार",
+                "rest":"भोजनालय",
+                "shelter":"आश्रय",
+                "vol":"वालंटियर",
+                "signin":"साइन इन करें",
+                "signup":"नया उपयोगकर्ता? साइन अप करें"   
             }
         },
         "shelter_dashboard":{
@@ -544,11 +568,18 @@
                 "profile":"PROFILE"  ,
                 "pickup":"PICK UP"  ,
                 "pickupconfirm":"CONFIRM PICK UP" ,
-                "CANCEL":"CANCEL"
-            },
+                "CANCEL":"CANCEL" ,
+                "logout":"LOG OUT",
+                "vdash":"VOLUNTEER DASHBOARD"                                
+            },            
             "fr": {
             },
             "hi": {
+                "dashboard":"डैशबोर्ड",
+                "profile":"शख्सियत"  ,
+                "pickup":"उठाओ"  ,
+                "pickupconfirm":"उठाओ" ,
+                "CANCEL":"रद्द करें" 
             }
         },
         "vol_profile":{
@@ -560,6 +591,38 @@
             },
             "hi": {
 
+            }
+        },
+        "images":{
+            "en": {
+                "img_foodstrap":"img/foodstrap_banner.jpg",
+                "img_problem":"img/problem.jpg",
+                "img_donate":"img/donatefood.jpg",
+                "img_rcv":"img/recievefood.jpg",
+                "img_vol":"img/volunteer.jpg",
+                "img_signin":"img/signin.jpg",
+                "img_settings":"img/settings.jpg",
+                "img_signup":"img/signup.jpg"
+            },
+            "fr": {
+                "img_foodstrap":"img/foodstrap_banner.jpg",
+                "img_problem":"img/problem.jpg",
+                "img_donate":"img/donatefood.jpg",
+                "img_rcv":"img/recievefood.jpg",
+                "img_vol":"img/volunteer.jpg",
+                "img_signin":"img/signin.jpg",
+                "img_settings":"img/settings.jpg",
+                "img_signup":"img/signup.jpg"
+            },
+            "hi": {
+                "img_foodstrap":"img/foodstrap_banner_hi.jpg",
+                "img_problem":"img/problem.jpg",
+                "img_donate":"img/donatefood_hi.jpg",
+                "img_rcv":"img/recievefood_hi.jpg",
+                "img_vol":"img/volunteer.jpg",
+                "img_signin":"img/signin_hi.jpg",
+                "img_settings":"img/settings_hi.jpg",
+                "img_signup":"img/signup_hi.jpg"
             }
         }
     }
