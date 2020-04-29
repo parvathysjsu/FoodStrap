@@ -9,21 +9,28 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDRKweM2yGEerUMgF-IArgf4YclbQU5PA&callback=initMap">
+      </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
 
 /* side menu */
-
-.sidenav2 {
+#map {
+  height: 400px;
+  width: 65%;
+  margin-left: 20%;
+  margin-right: 10%;
+}
+.sidenav2{
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: #4CAF50; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav2 */
@@ -34,14 +41,14 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #000000;
   display: block;
   transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav2 a:hover {
-  color: #f1f1f1;
+  color: #FFFFFF;
 }
 
 /* Position and style the close button (top right corner) */
@@ -71,28 +78,88 @@
 <body>
 
   <nav class="navbar navbar-default">
-        <div class="container-fluid">     
-              <span onclick="openNav()"> <a class="navbar-brand"><img class="logoimage" src="img/userlogo.png"></a></span>
-            <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard">SHELTER DASHBOARD</a></li>                
-            </ul>           
-        </div>
-  </nav>
-
+          <div class="container-fluid">
+                <span onclick="openNav()"> <a class="navbar-brand"><%= user.username %> </a></span>
+              <ul class="nav navbar-nav navbar-center">
+                  <li><a href="/shelter_dashboard"><%= msgs.title %></a></li>
+              </ul>
+          </div>
+    </nav>
   <div id="mySidenav" class="sidenav2">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/claim">CLAIM</a>
-    <a href="/past_claim">HISTORY</a>
-    <a href="/shelter_profile">PROFILE</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/shelter_claim"><%= msgs.claim %></a>
+      <a href="/past_claim"><%= msgs.history%></a>
+      <a href="/shelter_profile"><%= msgs.profile %></a>
+      <a href="/"><%= msgs.LOGOUT %></a>
+
+    </div>
+  <div class="container">
+      <div class="row">
+        <h4></h4>
+      </div>
+        <div class="row">
+
+          <div class="sectionDivider80">
+            <h4 align="center"> <%=msgs.loc%><h4>
+              <p align="center"><%= shelter.addr %> ,<%= shelter.city %>, <%= shelter.state%> - <%=shelter.zip%> <p>
+            <br></br>
+            <div id="map"></div>
+          </div>
+          <div class="sectionDivider20">
+            <h4><%=msgs.partner%></h4>
+            <table class="table" align="center">
+              <% for(var item in donList) { %>
+              <tr>
+                <th><%= parseInt(item)+1 %></th>
+                <td><%=donList[item].restaurant %></td>
+              </tr>
+              <% } %>
+            </table>
+          <div class="sectionDivider20">
+            <h4><%=msgs.side%></h4>
+            <table class="table" align="center">
+              <% for(var item in Volunteers) { %>
+              <tr>
+                <th><%= parseInt(item)+1 %></th>
+                <td><%=Volunteers[item].name %></td>
+              </tr>
+              <% } %>
+            </table>
+
+          </div>
+        </div>
   </div>
 
-  <div class="container">
-      <h3>
-  </div>
-  
 </body>
 
 <script>
+
+function initMap() {
+  var shelterPosition = {};
+  fetch('http://localhost:5000/shelterPosition')
+    .then((response) => {
+      shelterPosition = response.json();
+      return shelterPosition;
+    })
+    .then((data) => {
+      console.log(data);
+      //var restList = data.restList;
+      var datapt = {
+        lat: data.lat,
+        lng: data.lng
+      };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 9,
+        center: datapt
+      });
+      var marker = new google.maps.Marker({
+        position: datapt,
+       // label: "R",
+        map: map
+      });
+    })
+}
+
 
 
 function openNav() {

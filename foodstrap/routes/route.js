@@ -118,6 +118,12 @@ router.get('/donPosition', function (req, res, next) {
     donPosition
   );
 });
+router.get('/shelterPosition', function (req, res, next) {
+  var shelterPosition = req.session.user.shelterPosition;
+  res.send(
+    shelterPosition
+  );
+});
 /* show signin page */
 router.get('/signin', function (req, res, next) {
   var lang = constants.properties.lang;
@@ -378,6 +384,81 @@ router.get('/pickup/:donid', function (req, res, next) {
     });
   });
 })
+router.get('/claim/:donid', function (req, res, next) {
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.shelter_dashboard[lang];
+  let donid = req.params.donid;
+  console.log("--pick up --" + donid);
+  console.log("-- shelter--" + req.session.user.name + "--" + req.session.user.username);
+  let don = {};
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("shelters").find({}).toArray(function (err, resultshelter) {
+      if (err) throw err;
+      for (var i = 0; i < resultshelter.length; i++) {
+        if (req.session.user.username == resultshelter[i].username) {
+          req.session.user.name = resultshelter[i].name;
+          req.session.user.shid = resultshelter[i].username;
+          shName = resultshelter[i].username;
+        }
+      }
+    dbo.collection("donations").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      for (var i = 0; i < result.length; i++) {
+        if (donid == result[i]._id) {
+          don = {
+            "restaurant": result[i].restaurant,
+            "menu": result[i].menu,
+            "cuisine": result[i].cuisine,
+            "count": result[i].count,
+            "pickuptime": result[i].pickuptime,
+            "zip": result[i].pickupaddrzip,
+            "addr": result[i].pickupaddr + ', ' + result[i].pickupaddrcity + ', ' + result[i].pickupaddrstate + ' ' + result[i].pickupaddrzip,
+            "allergy": result[i].allergy,
+            "notes": result[i].notes,
+            "shelter": result[i].shelter.name,
+            "status": result[i].status,
+            "id": result[i]._id
+          };
+          console.log("------id" + result[i]._id);
+        }
+      }
+      var geoCoder = NodeGeocoder({
+        provider: 'openstreetmap'
+      });
+      console.log("---addr searched: " + don.zip + ' United States of America');
+      geoCoder.geocode(don.zip + ' United States of America')
+        .then((mapres) => {
+          console.log(mapres);
+          let position = {};
+          if (mapres.length != 0) {
+            let answer = _.head(mapres);
+            position.lat = answer.latitude;
+            position.lng = answer.longitude;
+            console.log("--------pos" + JSON.stringify(position));
+          }
+          req.session.user.donPosition = position;
+          res.render('claim', {
+            msgs: msgsVar,
+            msgsForm: messages.page.donate[lang],
+            msgsForm2: messages.page.donationshistory[lang],
+            user: req.session.user,
+            langCode: lang,
+            don: don
+          }
+          );
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  });
+});
+})
 router.get('/volunteer_dashboard', function (req, res, next) {
   console.log("get volunteer_dashboard");
   var lang = constants.properties.lang;
@@ -463,10 +544,121 @@ router.post('/pickupdonation', function (req, res, next) {
   });
 });
 
+router.post('/claimdonation', function (req, res, next) {
+
+  let donid = req.body.id;
+
+  console.log("-- shelter--" + req.session.user.name + "--" + req.session.user.username);
+  let don = {};
+  don.status = "CLAIMED";
+
+  don.shelter = {
+    "username": req.session.user.username,
+    "name": req.session.user.name
+  };
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    var myquery = { _id: new ObjectId(donid) };
+    var newvalues = { $set: don };
+    dbo.collection("donations").updateOne(myquery, newvalues, function (err, resp) {
+      if (err) throw err;
+      console.log("1 document updated");
+      res.redirect("/shelter_dashboard");
+    });
+  });
+});
 router.get('/shelter_dashboard', function (req, res, next) {
   console.log("get shelter_dashboard");
-  res.render('shelter_dashboard');
-});
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.shelter_dashboard[lang];
+
+  let shelter = {};
+  let volunteer = [];
+  var username = req.session.user.username;
+  console.log("uname" + username)
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+
+    dbo.collection("shelters").find().toArray(function (err, result2) {
+      if (err) throw err;
+      for (var i = 0; i < result2.length; i++) {
+        console.log("inside shelter");
+         if(req.session.user.username == result2[i].username){
+          shelter = {
+             "addr":result2[i].addr,
+             "city":result2[i].city,
+             "state":result2[i].state,
+            "zip":result2[i].zip
+          };
+      }
+    }
+      var query2 = {"shelter.username": username}
+    dbo.collection("volunteers").find(query2).toArray(function (err, result) {
+      if (err) throw err;
+
+      for (var i = 0; i < result.length; i++) {
+        console.log("inside volunteer");
+          volunteer.push({
+            "name":result[i].name
+          });
+      }
+      let don = [];
+      dbo.collection("donations").find({}).toArray(function (err, result) {
+        if (err) throw err;
+        for (var i = 0; i < result.length; i++) {
+          // console.log("count: "+count);
+          //console.log("record:" + JSON.stringify(result[i]));
+          // console.log(req.session.user.username+ ' '+result[i].restaurant);
+          if (req.session.user.username == result[i].shelter.username) {
+            // console.log(" ------match--"+req.session.user.username);
+            // console.log(count);
+            // console.log(result[i].count);
+            don.push({
+              "restaurant":result[i].restaurant
+            });
+          }
+        }
+
+      var geoCoder = NodeGeocoder({
+        provider: 'openstreetmap'
+      });
+      console.log("---addr searched: " + shelter.zip + ' United States of America');
+      geoCoder.geocode(shelter.zip + ' United States of America')
+        .then((mapres) => {
+          console.log(mapres);
+          let position = {};
+          if (mapres.length != 0) {
+            let answer = _.head(mapres);
+            position.lat = answer.latitude;
+            position.lng = answer.longitude;
+            console.log("--------pos" + JSON.stringify(position));
+          }
+          req.session.user.shelterPosition = position;
+          res.render('shelter_dashboard', {
+            msgs: msgsVar,
+            user: req.session.user,
+            langCode: lang,
+            shelter: shelter,
+            donList:don,
+            Volunteers:volunteer
+          }
+          );
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      });
+    });
+  });
+  });
+})
 router.post('/donate', function (req, res, next) {
   console.log(req.body);
   var donation = {};
@@ -657,26 +849,30 @@ router.get('/login', function (req, res, next) {
 });
 //problem page
 router.get('/problem', function (req, res, next) {
-  res.render('problem');
+  console.log("get problem");
+  var lang = constants.properties.lang;
+  var msgsVar = messages.page.problem[lang];
+  console.log(msgsVar);
+res.render('problem',{
+  msgs:msgsVar,
+  navLabels:messages.page.nav[lang]
 });
-router.get('/shelter_profile',function (req, res, next){
-  res.render('shelter_profile');
 });
-router.get('/claim',function (req, res, next){
-  console.log("get claim");
+
+router.get('/shelter_claim',function (req, res, next){
   var lang = constants.properties.lang;
   console.log(lang);
-  console.log(req.session.user);
-  var msgsVar = messages.page.donationshistory[lang];
-  //var msgsVar = "hello";
-  //console.log(msgsVar);
-  var don = [];
+  var msgsVar = messages.page.shelter_dashboard[lang];
+  var msgsTable = messages.page.donationshistory[lang];
+  let shName = "";
+  let don = [];
   var count =0;
   MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
     if (!err) {
       console.log("We are connected");
     }
     var dbo = db.db("foodstrap");
+
     dbo.collection("donations").find({}).toArray(function (err, result) {
       if (err) throw err;
       for (var i = 0; i < result.length; i++) {
@@ -698,18 +894,19 @@ router.get('/claim',function (req, res, next){
             "addr":result[i].pickupaddr+', '+result[i].pickupaddrcity+', '+result[i].pickupaddrstate+' '+result[i].pickupaddrzip,
             "allergy":result[i].allergy,
             "notes":result[i].notes,
-            "status":result[i].status
+            "status":result[i].status,
+            "link": "/claim/" + result[i]._id
             });
         }
       }
      console.log("don: "+don);
       console.log("c: "+count);
       res.render('shelter_claim',{
-        msgs:msgsVar,
-        user:  req.session.user,
+        msgs: msgsVar,
+        msgsTable: msgsTable,
+        user: req.session.user,
         langCode: lang,
-        donList:don,
-        donCount: count
+        donList: don
       }
       );
     });
@@ -717,7 +914,63 @@ router.get('/claim',function (req, res, next){
 
 });
 router.get('/past_claim',function (req, res, next){
-res.render('past_claim');
+  console.log("get claim history");
+  var lang = constants.properties.lang;
+  console.log(lang);
+  console.log(req.session.user.username);
+  var msgsVar = messages.page.donationshistory[lang];
+  var msgs = messages.page.shelter_dashboard[lang];
+  //var msgsVar = "hello";
+  //console.log(msgsVar);
+  var don = [];
+  var count = 0;
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("donations").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      for (var i = 0; i < result.length; i++) {
+        // console.log("count: "+count);
+        //console.log("record:" + JSON.stringify(result[i]));
+        // console.log(req.session.user.username+ ' '+result[i].restaurant);
+        if (req.session.user.username == result[i].shelter.username) {
+          // console.log(" ------match--"+req.session.user.username);
+          // console.log(count);
+          // console.log(result[i].count);
+          don.push({
+            "menu": result[i].menu,
+            "cuisine": result[i].cuisine,
+            "count": result[i].count,
+            "pickuptime": result[i].pickuptime,
+            "addr": result[i].pickupaddr + ', ' + result[i].pickupaddrcity + ', ' + result[i].pickupaddrstate + ' ' + result[i].pickupaddrzip,
+            "allergy": result[i].allergy,
+            "notes": result[i].notes,
+            "shelter": result[i].shelter.name,
+            "status": result[i].status,
+            "volunteer": result[i].volunteer.name
+          });
+        }
+        if(req.session.user.username == result[i].shelter.username && "DONE" == result[i].status){
+          count = count + parseInt(result[i].count);
+        }
+      }
+      // console.log("don: "+don);
+      console.log("c: " + count);
+      res.render('past_claim', {
+        msgsValues:msgs,
+        msgs: msgsVar,
+        user: req.session.user,
+        langCode: lang,
+        donList: don,
+        donCount: count
+      }
+      );
+    });
+
+  });
+
 });
 //donote food page
 router.get('/donors', function (req, res, next) {
@@ -911,6 +1164,80 @@ router.post('/rest_profile', function (req, res, next) {
 
   });
 });
+router.get('/shelter_profile', function (req, res, next) {
+  console.log("get shelter_profile");
+  var lang = constants.properties.lang;
+  console.log(lang);
+  console.log(req.session.user);
+  var msgs = messages.page.shelter_dashboard[lang];
+  var msgsVar = messages.page.rest_profile[lang];
+  var msgsFormVar = messages.page.signup[lang];
+  //var msgsVar = "hello";
+  //console.log(msgsVar);
+
+  var shelter = {};
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    dbo.collection("shelters").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      for (var i = 0; i < result.length; i++) {
+        console.log("inside collection");
+        if (req.session.user.username == result[i].username) {
+          shelter.name = result[i].name;
+          shelter.phone = result[i].phone;
+          shelter.emailid = result[i].emailid;
+          shelter.addr = result[i].addr;
+          shelter.city = result[i].city;
+          shelter.state = result[i].state;
+          shelter.zip = result[i].zip;
+        }
+      }
+      var sname = shelter.name.toUpperCase();
+      console.log(sname);
+      res.render('shelter_profile', {
+        msgsValues:msgs,
+        msgs: msgsVar,
+        formFields: msgsFormVar,
+        user: req.session.user,
+        langCode: lang,
+        profile: shelter,
+        name: sname
+      }
+      );
+    });
+  });
+
+});
+router.post('/shelter_profile', function (req, res, next) {
+  console.log(req.body);
+  var shelter = {};
+  var username = req.session.user.username;
+  // rest.username = username;
+  // rest.name = req.body.rname;
+  shelter.phone = req.body.rphone;
+  shelter.emailid = req.body.remailid;
+  shelter.addr = req.body.raddr;
+  shelter.city = req.body.rcity;
+  shelter.state = req.body.rstate;
+  shelter.zip = req.body.rzip;
+  MongoClient.connect("mongodb://localhost:27017/foodstrap", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("foodstrap");
+    var myquery = { username: username };
+    var newvalues = { $set: shelter };
+    dbo.collection("shelters").updateOne(myquery, newvalues, function (err, resp) {
+      if (err) throw err;
+      console.log("1 document updated");
+      res.redirect("/shelter_dashboard");
+    });
+
+  });
+});
 router.post('/vol_profile', function (req, res, next) {
   console.log(req.body);
   var vol = {};
@@ -939,5 +1266,6 @@ router.post('/vol_profile', function (req, res, next) {
 
   });
 });
+
 
 module.exports = router;

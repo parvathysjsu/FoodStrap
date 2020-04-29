@@ -9,7 +9,10 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
@@ -23,7 +26,7 @@
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: #4CAF50; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav2 */
@@ -34,14 +37,14 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #000000;
   display: block;
   transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav2 a:hover {
-  color: #f1f1f1;
+  color: #FFFFFF;
 }
 
 /* Position and style the close button (top right corner) */
@@ -70,29 +73,105 @@
 <body>
 
   <nav class="navbar navbar-default">
-        <div class="container-fluid">     
-              <span onclick="openNav()"> <a class="navbar-brand"><img class="logoimage" src="img/userlogo.png"></a></span>
+        <div class="container-fluid">
+              <span onclick="openNav()"> <a class="navbar-brand"><%=user.username%></a></span>
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard">SHELTER DASHBOARD</a></li>                
-            </ul>           
+                <li><a href="/shelter_dashboard"><%=msgsValues.title%></a></li>
+            </ul>
         </div>
   </nav>
 
   <div id="mySidenav" class="sidenav2">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/claim">CLAIM</a>
-    <a href="/past_claim">HISTORY</a>
-    <a href="/shelter_profile">PROFILE</a>
+    <a href="/shelter_claim"><%=msgsValues.claim%></a>
+    <a href="/past_claim"><%=msgsValues.history%></a>
+    <a href="/shelter_profile"><%=msgsValues.profile%></a>
+    <a href="/"><%=msgsValues.LOGOUT%></a>
   </div>
 
   <div class="container">
-      <h3>
+    <div class="sectionDivider35">
+        <div id="barchart_material"></div>
+    </div>
+      <div class="sectionDivider65 verticalAlignCenter">
+          <% if(donCount != '0'){ %>
+       <br>
+       <br>
+       <p class = "brownAndbig">   <%= msgs.congrats %>
+              <%= donCount %>  <%= msgs.peopleFed %>    </p>
+          <% } %>
+          <blockquote>
+          <p class = "brownAndbig">   <%= msgsValues.quote %>   </p>
+        </blockquote>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+
+      <table id="myTable" class="table table-striped" align="center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col"> <%= msgs.menu %></th>
+              <th scope="col"> <%= msgs.cuisine %></th>
+              <th scope="col"> <%= msgs.pcount %></th>
+              <th scope="col"> <%= msgs.datetime %></th>
+              <th scope="col"> <%= msgs.addr %></th>
+              <th scope="col"> <%= msgs.allergyinfo %></th>
+              <th scope="col"> <%= msgs.splnotes %></th>
+              <th scope="col"> <%= msgs.shelter %></th>
+              <th scope="col"> <%= msgs.volunteer %></th>
+              <th scope="col"> <%= msgs.status %></th>
+            </tr>
+          </thead>
+          <tbody>
+
+              <% for(var item in donList) { %>
+                  <tr>
+                      <th scope="row"><%= parseInt(item)+1 %></th>
+                      <td> <%= donList[item].menu %></td>
+                      <td> <%= donList[item].cuisine %></td>
+                      <td> <%= donList[item].count %></td>
+                      <td> <%= donList[item].pickuptime %></td>
+                      <td> <%= donList[item].addr %></td>
+                      <td> <%= donList[item].allergy %></td>
+                      <td> <%= donList[item].notes %></td>
+                      <td> <%= donList[item].shelter %></td>
+                      <td> <%= donList[item].volunteer %></td>
+                      <td> <%= donList[item].status %></td>
+                    </tr>
+                  <% } %>
+
+          </tbody>
+        </table>
+
+    </div>
   </div>
-  
+
 </body>
 
 <script>
-
+var c = <%- donCount %>;
+   google.charts.load('current', {'packages':['bar']});
+   google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+     var data = google.visualization.arrayToDataTable([
+       ['Year', 'Number of People Fed'],
+       ['2018', 0],
+       ['2019', 0],
+       ['2020', c]
+     ]);
+     var options = {
+       chart: {
+         title: 'Donations Summary'
+       },
+       colors: ['#1e1408']
+      // bars: 'horizontal' // Required for Material Bar Charts.
+     };
+     var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+     chart.draw(data, google.charts.Bar.convertOptions(options));
+   }
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -103,6 +182,8 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
-
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
 </script>
 </html>

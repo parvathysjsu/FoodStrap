@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -23,7 +25,7 @@
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: #4CAF50; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav2 */
@@ -34,14 +36,14 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #000000;
   display: block;
   transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav2 a:hover {
-  color: #f1f1f1;
+  color: #FFFFFF;
 }
 
 /* Position and style the close button (top right corner) */
@@ -71,35 +73,38 @@
 
   <nav class="navbar navbar-default">
         <div class="container-fluid">
-              <span onclick="openNav()"> <a class="navbar-brand"><img class="logoimage" src="img/userlogo.png"></a></span>
+              <span onclick="openNav()"> <a class="navbar-brand"><%=user.username%></a></span>
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/restaurant_dashboard">SHELTER DASHBOARD</a></li>
+                <li><a href="/shelter_dashboard"><%=msgs.title%></a></li>
             </ul>
         </div>
   </nav>
 
   <div id="mySidenav" class="sidenav2">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/claim">CLAIM</a>
-    <a href="/past_claim">HISTORY</a>
-    <a href="/shelter_profile">PROFILE</a>
+    <a href="/shelter_claim"><%=msgs.claim%></a>
+    <a href="/past_claim"><%=msgs.history%></a>
+    <a href="/shelter_profile"><%=msgs.profile%></a>
+    <a href="/"><%=msgs.LOGOUT%></a>
   </div>
 
+  <div class="container">
 
-          <table class="table" align="center">
+    <table id="myTable" class="table table-striped" align="center">
+
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col"> <%= msgs.menu %></th>
-                  <th scope="col"> <%= msgs.cuisine %></th>
-                  <th scope="col"> <%= msgs.pcount %></th>
-                  <th scope="col"> <%= msgs.datetime %></th>
-                  <th scope="col"> <%= msgs.addr %></th>
-                  <th scope="col"> <%= msgs.allergyinfo %></th>
-                  <th scope="col"> <%= msgs.splnotes %></th>
-                  <th scope="col"> <%= msgs.shelter %></th>
-                  <th scope="col"> <%= msgs.volunteer %></th>
-                  <th scope="col"> <%= msgs.status %></th>
+                  <th scope="col"> <%= msgsTable.menu %></th>
+                  <th scope="col"> <%= msgsTable.cuisine %></th>
+                  <th scope="col"> <%= msgsTable.pcount %></th>
+                  <th scope="col"> <%= msgsTable.datetime %></th>
+                  <th scope="col"> <%= msgsTable.addr %></th>
+                  <th scope="col"> <%= msgsTable.allergyinfo %></th>
+                  <th scope="col"> <%= msgsTable.splnotes %></th>
+                  <th scope="col"> <%= msgsTable.status %></th>
+                  <th scope="col"> </th>
+                    <th scope="col"> </th>
                 </tr>
               </thead>
               <tbody>
@@ -114,9 +119,11 @@
                           <td> <%= donList[item].addr %></td>
                           <td> <%= donList[item].allergy %></td>
                           <td> <%= donList[item].notes %></td>
-                          <td> <%= donList[item].shelter %></td>
-                          <td> <%= donList[item].volunteer %></td>
                           <td> <%= donList[item].status %></td>
+
+                          <td><a href='<%= donList[item].link %>'><input type="submit" value='<%= msgs.btn %>' class="submit" id="<%= parseInt(item)+1 %>"
+                              name="<%= parseInt(item)+1 %>" /></a></td>
+
                         </tr>
                       <% } %>
 
@@ -126,7 +133,9 @@
         </div>
 <script>
 
-
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";

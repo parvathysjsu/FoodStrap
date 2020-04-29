@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>FoodStrap</title>
+    <title><%= msgs.title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -34,19 +34,21 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <div class="navbar-header logobg">
-            <a class="navbar-brand" href="/"><img class = "logoimage" src="img/logo.JPG"></a>
-          </div>
+          <!--    <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+          </div>-->
           <ul class="nav navbar-nav">
-            <li ><a href="/">HOME</a></li>
-            <li class="active"><a href="/problem">THE PROBLEM</a></li>
-            <li><a href="/donors">DONATE FOOD</a></li>
-            <li><a href="/shelters">RECIEVE FOOD</a></li>
-            <li><a href="/volunteers">VOLUNTEER</a></li>
+            <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+
+            <li ><a href="/"><%= navLabels.home %></a></li>
+            <li class="active"><a href="/problem"><%= navLabels.problem %></a></li>
+            <li><a href="/donors"><%= navLabels.donate %></a></li>
+            <li><a href="/shelters"><%= navLabels.shelters %></a></li>
+            <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signin">SIGN IN</a></li>
-            <li><a href="/setting">SETTINGS</a></li>
+            <li><a href="/signin"><%= navLabels.signin %></a></li>
+            <li><a href="/setting"><%= navLabels.settings %></a></li>
           </ul>
         </div>
       </nav>
@@ -55,31 +57,28 @@
           <header align="center"><img src="/img/problem_header.jpg" alt="PROBLEM" style="width:90%; height:30%"/></header>
           <div class="sectiontop" align="center">
             <div class="sectionsec" align="center">
-           <h1 style="text-align:justify"> Food Insecurity </h1>
+           <h1 style="text-align:justify"><%= msgs.sectitle %> </h1>
            <div id="cloud">
 
            </div>
 
-            <p align="left"> The world currently produces more than enough food to feed everyone, yet 815 million people (roughly 11% of the global population) went hungry in 2016, according to the U.N.
-            The U.S. Department of Agriculture (USDA) defines food insecurity as a lack of consistent access to enough food for an active, healthy life.
-
+            <p align="left"><%= msgs.secpara %>
            </p>
          </div>
 
-           <h1 style="text-align:justify"> Food Waste </h1>
+           <h1 style="text-align:justify"> <%= msgs.wtitle %></h1>
 
            <div id="chart_waste" style="width:90%; height: 300px; align: justify">
 
            </div>
 
             <p align="left">
-              Up to 40 percent of the food in the United States is never eaten.
-              Of the estimated 125 to 160 billion pounds of food that goes to waste every year, much of it is perfectly edible and nutritious. Food is lost or wasted sometimes because of overproduction.
+          <%= msgs.wpara1 %>
 
            </p>
            <div id="chart_rest" style="width:90%; height: 300px; align: justify">
            </div>
-           <p align="left">US restaurants generate an estimated 22 to 33 billion pounds of food waste each year.Approximately 4 to 10 percent of food purchased by restaurants is wasted before reaching the consumer. In restaurant ,food waste occurs due to three key factors: food spoilage, portion/plate size and food preparation.</p>
+           <p align="left"><%= msgs.wpara2 %></p>
           </div>
 
 
