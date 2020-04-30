@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FoodStrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+
+/* side menu */
+
+.sidenav2 {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #4CAF50; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav2 */
+}
+
+/* The navigation menu links */
+.sidenav2 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav2 a:hover {
+  color: #FFFFFF;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav2 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav2 (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav2 {padding-top: 15px;}
+  .sidenav2 a {font-size: 18px;}
+}
+    </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+              <span onclick="openNav()"> <a class="navbar-brand"><%=user.username%></a></span>
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="/shelter_dashboard"><%=msgs.title%></a></li>
+            </ul>
+        </div>
+  </nav>
+
+  <div id="mySidenav" class="sidenav2">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/shelter_claim"><%=msgs.claim%></a>
+    <a href="/past_claim"><%=msgs.history%></a>
+    <a href="/shelter_profile"><%=msgs.profile%></a>
+    <a href="/"><%=msgs.LOGOUT%></a>
+  </div>
+
+  <div class="container">
+
+    <table id="myTable" class="table table-striped" align="center">
+
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col"> <%= msgsTable.menu %></th>
+                  <th scope="col"> <%= msgsTable.cuisine %></th>
+                  <th scope="col"> <%= msgsTable.pcount %></th>
+                  <th scope="col"> <%= msgsTable.datetime %></th>
+                  <th scope="col"> <%= msgsTable.addr %></th>
+                  <th scope="col"> <%= msgsTable.allergyinfo %></th>
+                  <th scope="col"> <%= msgsTable.splnotes %></th>
+                  <th scope="col"> <%= msgsTable.status %></th>
+                  <th scope="col"> </th>
+                    <th scope="col"> </th>
+                </tr>
+              </thead>
+              <tbody>
+
+                  <% for(var item in donList) { %>
+                      <tr>
+                          <th scope="row"><%= parseInt(item)+1 %></th>
+                          <td> <%= donList[item].menu %></td>
+                          <td> <%= donList[item].cuisine %></td>
+                          <td> <%= donList[item].count %></td>
+                          <td> <%= donList[item].pickuptime %></td>
+                          <td> <%= donList[item].addr %></td>
+                          <td> <%= donList[item].allergy %></td>
+                          <td> <%= donList[item].notes %></td>
+                          <td> <%= donList[item].status %></td>
+
+                          <td><a href='<%= donList[item].link %>'><input type="submit" value='<%= msgs.btn %>' class="submit" id="<%= parseInt(item)+1 %>"
+                              name="<%= parseInt(item)+1 %>" /></a></td>
+
+                        </tr>
+                      <% } %>
+
+              </tbody>
+            </table>
+
+        </div>
+<script>
+
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+</script>
+</html>

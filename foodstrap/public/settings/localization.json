@@ -112,7 +112,7 @@
                 "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
                 "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
                 "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
-                "buttonm":"SIGN UP NOW!"		
+                "buttonm":"SIGN UP NOW!"
             },
             "fr": {
                 "title":"Donate Food",
@@ -150,6 +150,75 @@
                 "m1": "पिछले साल, संयुक्त राज्य अमेरिका में लगभग 41 मिलियन टन भोजन उत्पन्न हुआ था। जबकि अमेरिकी लाखों टन भोजन का निपटान करते हैं, अमेरिकी कृषि विभाग का अनुमान है कि 11.8 प्रतिशत अमेरिकी घरों - लगभग 15 मिलियन घरों में - संसाधनों की कमी के कारण अपने सभी सदस्यों के लिए पर्याप्त भोजन प्रदान करने में कठिनाई हुई। कई मामलों में, हमारे देश के लैंडफिल में फेंक दिया गया भोजन पौष्टिक, खाद्य भोजन है।",
                 "m2":"यदि आपको अपने आश्रय के लिए भोजन सहायता की आवश्यकता है, तो अभी साइन अप करें!"}
         },
+	"volunteers":{
+          "en":{
+            "title":"Volunteers",
+            "head":"Volunteer Drivers to the rescue",
+            "snip1":"Volunteers are the heart and soul of FoodStrap as they are the bridge between the donor restaurants and the shelters. To support the transport of the surplus food from various restaurants to the shelters, volunteer drivers come into picture. As a volunteer driver, you will be part of this exciting project that is taking a jab at solving food insecurity problem.",
+            "snip2":"Interested ? One stop check before sign up.",
+            "snip3":"Before volunteering as driver for us, we would like to list some requirements or qualifications that one might need to be a successful volunteer.",
+            "list1":"Driver License and Insurance.",
+            "list2":"Own a smartphone.",
+            "list3":"Vehicle Access.",
+            "list4":"Ability to use apps.",
+            "snip4":"And that is all.",
+            "link1":"Drive for us."
+
+          },
+          "fr":{
+            "title":"Bénévoles",
+            "head":"Des chauffeurs bénévoles à la rescousse",
+            "snip1":"es bénévoles sont le cœur et l'âme de FoodStrap car ils sont le pont entre les restaurants donateurs et les refuges. Pour soutenir le transport des surplus de nourriture de divers restaurants aux refuges, des chauffeurs bénévoles entrent en scène. En tant que chauffeur bénévole, vous ferez partie de ce projet passionnant qui tente de résoudre le problème de l'insécurité alimentaire.",
+            "snip2":"Intéressé ? Un contrôle unique avant de vous inscrire.",
+            "snip3":"Avant de faire du bénévolat en tant que chauffeur pour nous, nous aimerions énumérer certaines exigences ou qualifications dont on pourrait avoir besoin pour être un bénévole réussi.",
+            "list1":"Driver License and Insurance.",
+            "list2":"Permis de conduire et assurance.",
+            "list3":"accès véhicule.",
+            "list4":"Possibilité d'utiliser des applications.",
+            "snip4":"Et c'est tout.",
+            "link1":"Conduisez pour nous."
+          },
+          "hi":{
+            "title":"स्वयंसेवक",
+            "head":"बचाव के लिए स्वयंसेवक ड्राइवर",
+            "snip1":"स्वयंसेवक फूडस्ट्रेप के दिल और आत्मा हैं क्योंकि वे दाता रेस्तरां और आश्रयों के बीच पुल हैं। विभिन्न रेस्तरां से आश्रयों को अधिशेष भोजन के परिवहन का समर्थन करने के लिए, स्वयंसेवक चालक तस्वीर में आते हैं। एक स्वयंसेवक चालक के रूप में, आप इस रोमांचक परियोजना का हिस्सा होंगे, जो खाद्य असुरक्षा की समस्या को हल करने में एक उत्साह ले रही है.",
+            "snip2":"रुचि है? साइन अप करने से पहले एक स्टॉप चेक.",
+            "snip3":"हमारे लिए ड्राइवर के रूप में स्वयं सेवा करने से पहले, हम कुछ आवश्यकताओं या योग्यताओं को सूचीबद्ध करना चाहेंगे जो एक सफल स्वयंसेवक होने की आवश्यकता हो सकती है.",
+            "list1":"चालक लाइसेंस और बीमा.",
+            "list2":"खुद का स्मार्टफोन.",
+            "list3":"वाहन का उपयोग.",
+            "list4":"एप्लिकेशन का उपयोग करने की क्षमता.",
+            "snip4":"इतना ही.",
+            "link1":"हमारे लिए ड्राइव करें."
+          }
+        },
+        "problem":{
+                "en":{
+                  "title":"FoodStrap-Problem",
+                  "sectitle":"Food Insecurity",
+                  "secpara":"The world currently produces more than enough food to feed everyone, yet 815 million people (roughly 11% of the global population) went hungry in 2016, according to the U.N.The U.S. Department of Agriculture (USDA) defines food insecurity as a lack of consistent access to enough food for an active, healthy life.",
+                  "wtitle":" Food Waste.",
+                  "wpara1":"Up to 40 percent of the food in the United States is never eaten.Of the estimated 125 to 160 billion pounds of food that goes to waste every year, much of it is perfectly edible and nutritious. Food is lost or wasted sometimes because of overproduction.",
+                  "wpara2":"US restaurants generate an estimated 22 to 33 billion pounds of food waste each year.Approximately 4 to 10 percent of food purchased by restaurants is wasted before reaching the consumer. In restaurant ,food waste occurs due to three key factors: food spoilage, portion/plate size and food preparation."
+                },
+                "fr":{
+                  "title":"Problème de FoodStrap",
+                  "sectitle":"Insécurité alimentaire",
+                  "secpara":"Le monde produit actuellement plus qu'assez de nourriture pour nourrir tout le monde, mais 815 millions de personnes (environ 11% de la population mondiale) ont souffert de la faim en 2016, selon l'U.N.Le département américain de l'Agriculture (USDA) définit l'insécurité alimentaire comme un manque d'accès constant à suffisamment de nourriture pour une vie active et saine.",
+                  "wtitle":"Déchets alimentaires.",
+                  "wpara1":"Aux États-Unis, jusqu'à 40% de la nourriture n'est jamais consommée.Sur les 125 à 160 milliards de livres de nourriture qui sont gaspillées chaque année, une grande partie est parfaitement comestible et nutritive. La nourriture est perdue ou gaspillée parfois à cause de la surproduction.",
+                  "wpara2":"Les restaurants américains génèrent environ 22 à 33 milliards de livres de déchets alimentaires chaque année. Environ 4 à 10 pour cent des aliments achetés par les restaurants sont gaspillés avant d'atteindre le consommateur. Au restaurant, le gaspillage alimentaire se produit en raison de trois facteurs clés: la détérioration des aliments, la taille des portions / assiettes et la préparation des aliments."
+                },
+                "hi":{
+                  "title":"FoodStrap-समस्या",
+                  "sectitle":"भोजन की असुरक्षा",
+                  "secpara":"वर्तमान में, दुनिया में सभी को खिलाने के लिए पर्याप्त से अधिक भोजन का उत्पादन होता है, फिर भी 815 मिलियन लोग (वैश्विक आबादी का लगभग 11%) 2016 में भूख से मर गए, यू.एन.अमेरिकी कृषि विभाग (यूएसडीए) एक सक्रिय, स्वस्थ जीवन के लिए पर्याप्त भोजन की लगातार पहुंच की कमी के रूप में खाद्य असुरक्षा को परिभाषित करता है।.",
+                  "wtitle":"खाना बर्बाद.",
+                  "wpara1":"संयुक्त राज्य अमेरिका में 40 प्रतिशत भोजन कभी नहीं खाया जाता है।.अनुमानित 125 से 160 बिलियन पाउंड भोजन जो हर साल बर्बाद हो जाता है, इसका ज्यादातर हिस्सा पूरी तरह से खाद्य और पौष्टिक होता है। ओवरप्रोडक्शन के कारण कभी-कभी भोजन खो जाता है या बर्बाद हो जाता है.",
+                  "wpara2":"अमेरिकी रेस्तरां प्रत्येक वर्ष अनुमानित 22 से 33 बिलियन पाउंड के भोजन की बर्बादी करते हैं। लगभग 4 से 10 प्रतिशत रेस्तरां द्वारा खरीदे गए भोजन को उपभोक्ता तक पहुंचने से पहले बर्बाद कर दिया जाता है। रेस्तरां में, भोजन की बर्बादी तीन प्रमुख कारकों के कारण होती है: भोजन खराब होना, भाग / प्लेट का आकार और भोजन तैयार करना."
+
+                }
+              },
         "restaurant_dashboard":{
             "en": {
                 "title":"DASHBOARD",
@@ -173,7 +242,7 @@
                 "history":"HISTORY",
                 "process":"PROCESS",
                 "profile":"PROFILE",
-                "settings":"Settings" 
+                "settings":"Settings"
             },
             "hi": {
                 "title":"डैशबोर्ड",
@@ -220,17 +289,17 @@
                 "process":"Process",
                 "profile":"Profile",
                 "settings":"Settings",
-                "menu":"Menu", 
-                "cuisine":"Cuisine",              
-                "pcount":"Portion Count",              
-                "allergy":"Allergy Information",              
-                "splnotes":"Special Instructions",              
-                "time":"Pick Up Time",              
-                "addrline1":"Pick Up Address",              
-                "city":"City",              
-                "state":"State",              
+                "menu":"Menu",
+                "cuisine":"Cuisine",
+                "pcount":"Portion Count",
+                "allergy":"Allergy Information",
+                "splnotes":"Special Instructions",
+                "time":"Pick Up Time",
+                "addrline1":"Pick Up Address",
+                "city":"City",
+                "state":"State",
                 "zip":"Zip" ,
-                "donate":"Donate"      
+                "donate":"Donate"
             },
             "hi": {
                 "title":"दान",
@@ -282,7 +351,7 @@
                 "dashboard":"DASHBOARD"
             },
             "fr": {
-                     
+
             },
             "hi": {
                 "title":"दान इतिहास",
@@ -328,10 +397,10 @@
                 "dashboard":"DASHBOARD"
             },
             "fr": {
-                     
+
             },
             "hi": {
-                    
+
             }
         },
         "rest_profile":{
@@ -346,7 +415,7 @@
                 "dashboard":"DASHBOARD"    
             },
             "fr": {
-                     
+
             },
             "hi": {
                 "title":"शख्सियत",
@@ -374,7 +443,7 @@
                 "yourname":"Your Name",
 				 "Yourphonenumber":"Your Phone Number",
                 "Youremailid":"Your Email Id"
-            },            
+            },
             "fr": {
                 "title":"SIGN UP",
                 "rname":"Restaurant Name",
@@ -390,7 +459,7 @@
                 "sname":"Shelter Name",
                 "yourname":"Your Name",
 				 "Yourphonenumber":"Your Phone Number",
-                "Youremailid":"Your Email Id"   
+                "Youremailid":"Your Email Id"
             },
             "hi": {
                 "title":"साइन अप करें",
@@ -412,7 +481,7 @@
         },
         "signin":{
             "en": {
-                
+
                 "username":"Your username",
                 "pwd":"Your password",
                 "usertype":"User Type",
@@ -420,8 +489,8 @@
                 "shelter":"Shelter",
                 "vol":"Volunteer",
                 "signin":"SIGN IN",
-                "signup":"New User? SIGN UP"                              
-            },            
+                "signup":"New User? SIGN UP"
+            },
             "fr": {
                 "username":"Your username",
                 "pwd":"Your password",
@@ -430,7 +499,7 @@
                 "shelter":"Shelter",
                 "vol":"Volunteer",
                 "signin":"SIGN IN",
-                "signup":"New User? SIGN UP"      
+                "signup":"New User? SIGN UP"
             },
             "hi": {
                 "username":"आपका उपयोगकर्ता नाम",
@@ -443,8 +512,58 @@
                 "signup":"नया उपयोगकर्ता? साइन अप करें"   
             }
         },
+        "shelter_dashboard":{
+            "en": {
+                "dashboard":"DASHBOARD",
+                "profile":"PROFILE"  ,
+                "history":"HISTORY",
+                "claim":"CLAIM DONATIONS"  ,
+                "btn":"CLAIM",
+                "claimconfirm":"CONFIRM CLAIM" ,
+                "CANCEL":"CANCEL",
+                "LOGOUT":"LOGOUT",
+                "title":"SHELTER DASHBOARD",
+                "update":"UPDATE",
+                "side":"Our Volunteers",
+                "loc":"Our Location",
+                "quote":"Service to others is the rent you pay for your room here on earth.-– Mohammad Ali",
+                "partner": "Our partners"
+            },
+            "fr": {
+              "dashboard":"DASHBOARD",
+              "profile":"PROFIL"  ,
+              "history":"HISTOIRE",
+              "claim":"DEMANDER DES DONS"  ,
+              "btn":"PRÉTENDRE",
+              "claimconfirm":"CONFIRMER LA RÉCLAMATION" ,
+              "CANCEL":"ANNULER",
+              "LOGOUT":"SE DÉCONNECTER",
+              "title":"SHELTER DASHBOARD",
+              "update":"MISE À JOUR",
+              "side":"Nos bénévoles",
+              "loc":"Notre emplacement",
+              "quote":"Le service aux autres est le loyer que vous payez pour votre chambre ici sur terre .-– Mohammad Ali",
+              "partner": "Nos partenaires"
+            },
+            "hi": {
+              "dashboard":"डैशबोर्ड",
+              "profile":"शख्सियत"  ,
+              "history":"इतिहास",
+              "claim":"दान स्वीकार करें"  ,
+              "btn":"दावा",
+              "claimconfirm":"स्वीकार करें" ,
+              "CANCEL":"रद्द करना",
+              "LOGOUT":"लॉग आउट",
+              "title":"शेल्टर डैशबोर्ड",
+              "update":"अपडेट करें",
+              "side":"हमारे स्वयंसेवक",
+              "loc":"हमारा स्थान",
+              "quote":"दूसरों के लिए सेवा वह किराया है जो आप यहाँ अपने कमरे के लिए भुगतान करते हैं। - मोहम्मद अली",
+              "partner": "हमारे सहयोगी"
+            }
+        },
         "vol_dashboard":{
-            "en": {                
+            "en": {
                 "dashboard":"DASHBOARD",
                 "profile":"PROFILE"  ,
                 "pickup":"PICK UP"  ,
@@ -465,13 +584,13 @@
         },
         "vol_profile":{
             "en": {
-                      
+
             },
             "fr": {
-                     
+
             },
             "hi": {
-                    
+
             }
         },
         "images":{
