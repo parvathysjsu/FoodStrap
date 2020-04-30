@@ -582,7 +582,7 @@ router.get('/shelter_dashboard', function (req, res, next) {
   var lang = constants.properties.lang;
   console.log(lang);
   var msgsVar = messages.page.shelter_dashboard[lang];
-
+  var count = 0;
   let shelter = {};
   let volunteer = [];
   var username = req.session.user.username;
@@ -611,7 +611,8 @@ router.get('/shelter_dashboard', function (req, res, next) {
       if (err) throw err;
 
       for (var i = 0; i < result.length; i++) {
-        console.log("inside volunteer");
+          console.log("inside volunteer");
+          count = count+1;
           volunteer.push({
             "name":result[i].name
           });
@@ -654,6 +655,7 @@ router.get('/shelter_dashboard', function (req, res, next) {
             langCode: lang,
             shelter: shelter,
             donList:don,
+            volCount:count,
             Volunteers:volunteer
           }
           );

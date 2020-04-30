@@ -102,6 +102,7 @@
             <br></br>
             <div id="map"></div>
           </div>
+
           <div class="sectionDivider35 greyAndbig">
           <br><br>
           <br><br>
@@ -112,6 +113,7 @@
           <p><%= msgs.p1 %> <%= msgs.p2 %> <%= msgs.p3 %></p>
        </div>
      </div>
+      <% if(volCount != '0'){ %>
      <div class = "row">
           <div>
             <h4><%=msgs.side%></h4>
@@ -126,7 +128,7 @@
 
           </div>
       </div>
-
+      <% } %>
   </div>
 </div>
 </body>
