@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
     <style>
 
 /* side menu */
@@ -63,10 +63,6 @@
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav2 (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav2 {padding-top: 15px;}
-  .sidenav2 a {font-size: 18px;}
-}
     </style>
 </head>
 
@@ -74,21 +70,26 @@
 
   <nav class="navbar navbar-default">
         <div class="container-fluid">
-              <span onclick="openNav()"> <a class="navbar-brand"><%=user.username%></a></span>
+              <span onclick="openNav()" style="font-size:30px;cursor:pointer"> <a class="navbar-brand">&#9776;</a></span>
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/shelter_dashboard"><%=msgsValues.title%></a></li>
+                <li><p class="fontDashheading" style=" color: white;"><%=msgsValues.historytitle%></p></li>
+
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                   <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+          </ul>
         </div>
   </nav>
 
-  <div id="mySidenav" class="sidenav2">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/shelter_claim"><%=msgsValues.claim%></a>
-    <a href="/past_claim"><%=msgsValues.history%></a>
-    <a href="/shelter_profile"><%=msgsValues.profile%></a>
-    <a href="/"><%=msgsValues.LOGOUT%></a>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
+     <a href="/shelter_dashboard"><%= msgs.dashboard %></a> <br>
+    <a href="/shelter_claim"><%=msgsValues.claim%></a><br>
+    <a href="/past_claim" class="active"><%=msgsValues.history%></a><br>
+    <a href="/shelter_profile"><%=msgsValues.profile%></a><br>
+    <a href="/"><%=msgsValues.LOGOUT%></a><br>
   </div>
-
+<div id="main">
   <div class="container">
     <div class="sectionDivider35">
         <div id="barchart_material"></div>
@@ -100,9 +101,9 @@
        <p class = "brownAndbig">   <%= msgs.congrats %>
               <%= donCount %>  <%= msgs.peopleFed %>    </p>
           <% } %>
-          <blockquote>
+
           <p class = "brownAndbig">   <%= msgsValues.quote %>   </p>
-        </blockquote>
+
       </div>
     </div>
     <br>
@@ -152,6 +153,9 @@
 </body>
 
 <script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
 var c = <%- donCount %>;
    google.charts.load('current', {'packages':['bar']});
    google.charts.setOnLoadCallback(drawChart);
@@ -164,9 +168,9 @@ var c = <%- donCount %>;
      ]);
      var options = {
        chart: {
-         title: 'Donations Summary'
+         title: 'Success Summary'
        },
-       colors: ['#1e1408']
+       colors: ['#4CAF50']
       // bars: 'horizontal' // Required for Material Bar Charts.
      };
      var chart = new google.charts.Bar(document.getElementById('barchart_material'));
@@ -182,8 +186,6 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
-$(document).ready(function(){
-    $('#myTable').dataTable();
-});
+
 </script>
 </html>
