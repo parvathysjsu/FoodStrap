@@ -112,7 +112,8 @@
                 "m3": "Rather than toss unsold breads, pastries, and produce to a dumpster, box them up for local nonprofits and those in need.",
                 "m4":"If you have food you'd like to donate to a local shelter, sign up now!",
                 "m5": "From the Michelin-starred, national restaurant chains to world-wide mega coffee shops that proliferate every street corner in America, check out these establishments that are committed to cut down on food waste by donating at the end of the day.",
-                "buttonm":"SIGN UP NOW!"
+                "buttonm":"SIGN UP NOW!",
+                "h1title":"Every Donation Makes a Difference"
             },
             "fr": {
                 "title":"Donate Food",
@@ -134,21 +135,25 @@
                 "m3": "अनसोल्ड ब्रेड, पेस्ट्री को टॉस करने के बजाय, और एक डंपस्टर में उत्पादन करें, उन्हें स्थानीय गैर-लाभकारी संस्थाओं और उन लोगों के लिए बॉक्स करें।",
                 "m4":"यदि आपके पास भोजन है तो आप स्थानीय आश्रय के लिए दान करना चाहेंगे, अभी साइन अप करें!",
                 "m5": "मिशेलिन-तारांकित, राष्ट्रीय भोजनालय श्रृंखला से लेकर दुनिया भर में मेगा कॉफ़ी शॉप्स तक, जो अमेरिका के हर सड़क के कोने में फैला हुआ है, इन प्रतिष्ठानों की जाँच करें जो दिन के अंत में दान करके खाद्य कचरे को काटने के लिए प्रतिबद्ध हैं।",
-                "buttonm":"अभी साइनअप करें!"
+                "buttonm":"अभी साइनअप करें!",                
+                "h1title":"हर दान से फर्क पड़ता है"
             }
         },
         "shelters": {
             "en":{
                 "title":"Recieve Food",
                 "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
-                "m2":"If you need food assistance for your shelter, sign up now!"
+                "m2":"If you need food assistance for your shelter, sign up now!",
+                "h1title":"Receive Food Assistance"
             },
             "fr":{"title":"Recieve Food",
                 "m1": "Last year, almost 41 million tons of food were generated in the United States. While Americans dispose of millions of tons of food, the U.S. Department of Agriculture estimates that 11.8 percent of American households - about 15 million households - had difficulty providing enough food for all their members due to a lack of resources. In many cases, the food tossed into our nation’s landfills is wholesome, edible food.",
                 "m2":"If you need food assistance for your shelter, sign up now!"},
             "hi":{"title":"भोजन प्राप्त करें",
                 "m1": "पिछले साल, संयुक्त राज्य अमेरिका में लगभग 41 मिलियन टन भोजन उत्पन्न हुआ था। जबकि अमेरिकी लाखों टन भोजन का निपटान करते हैं, अमेरिकी कृषि विभाग का अनुमान है कि 11.8 प्रतिशत अमेरिकी घरों - लगभग 15 मिलियन घरों में - संसाधनों की कमी के कारण अपने सभी सदस्यों के लिए पर्याप्त भोजन प्रदान करने में कठिनाई हुई। कई मामलों में, हमारे देश के लैंडफिल में फेंक दिया गया भोजन पौष्टिक, खाद्य भोजन है।",
-                "m2":"यदि आपको अपने आश्रय के लिए भोजन सहायता की आवश्यकता है, तो अभी साइन अप करें!"}
+                "m2":"यदि आपको अपने आश्रय के लिए भोजन सहायता की आवश्यकता है, तो अभी साइन अप करें!",
+                "h1title":"भोजन सहायता प्राप्त करें"
+            }
         },
 	"volunteers":{
           "en":{
@@ -233,7 +238,8 @@
                 "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
                 "m4":"Donate surplus food and save lives!",
                 "hello":"  Hello ",
-                "logout":"LOG OUT"  
+                "logout":"LOG OUT"  ,
+                "donatebutton":"Donate Today and Save lives!"
             },
             "fr": {
                 "title":"Dashboard",
@@ -252,12 +258,13 @@
                 "process":"प्रक्रिया",
                 "profile":"शख्सियत",
                 "settings":"समायोजन"  ,
-                "m1":"A single restaurant in the U.S. wastes about 100,000 pounds of food a year, according to the Green Restaurant Association, making them auspicious donors for hunger relief groups.",
-                "m2":"Restaurants are protected from civil and criminal liability should a recipient get ill or hurt as a result of consumed donated food.",
-                "m3":"Despite an increased national focus on food waste, U.S. restaurants still toss a startling 94 percent of their excess food.",
-                "m4":"Donate surplus food and save lives!",
-                "hello":"  Hello ",
-                "logout":"LOG OUT"  
+                "m1":"ग्रीन रेस्तरां एसोसिएशन के अनुसार, अमेरिका का एक एकल रेस्तरां साल में लगभग 100,000 पाउंड भोजन बर्बाद करता है, जिससे उन्हें भूख से राहत देने वाले समूहों के लिए शुभ दान मिल जाता है।",
+                "m2":"रेस्त्रां सिविल और आपराधिक दायित्व से सुरक्षित हैं, एक प्राप्तकर्ता को दान किए गए भोजन के परिणामस्वरूप बीमार या चोटिल होना चाहिए।",
+                "m3":"भोजन की बर्बादी पर एक राष्ट्रीय ध्यान केंद्रित करने के बावजूद, अमेरिकी रेस्तरां अभी भी अपने अतिरिक्त भोजन का 94 प्रतिशत चौंका देते हैं।",
+                "m4":"अधिशेष भोजन दान करें और जीवन बचाएं!",
+                "hello":"  नमस्ते ",
+                "logout":"लॉग आउट"   ,
+                "donatebutton":"आज दान करें और जीवन बचाएं!"
             }
         },
         "donate":{
@@ -319,8 +326,8 @@
                 "state":"प्रदेश",              
                 "zip":"ज़िप" ,
                 "donate":"दान" ,
-                "logout":"LOG OUT"      ,
-                "dashboard":"DASHBOARD"       
+                "logout":"लॉग आउट"      ,
+                "dashboard":"डैशबोर्ड"       
             }
         },
         "donationshistory":{
@@ -376,7 +383,8 @@
                 "shelter":"आश्रय",
                 "volunteer":"वालंटियर",
                 "status":"स्थिति",
-                "logout":"LOG OUT" 
+                "logout":"लॉग आउट" ,
+                "dashboard":"डैशबोर्ड"
             }
         },
         "donationprocess":{
@@ -400,7 +408,14 @@
 
             },
             "hi": {
-
+                "title":"दान प्रक्रिया",
+                "heading": "भोजनालय प्रबंधक डैशबोर्ड",               
+                "donate":"दान",
+                "history":"इतिहास",
+                "process":"प्रक्रिया",
+                "profile":"शख्सियत",               
+                "logout":"लॉग आउट" ,
+                "dashboard":"डैशबोर्ड" 
             }
         },
         "rest_profile":{
@@ -412,7 +427,8 @@
                 "process":"PROCESS",
                 "profile":"PROFILE"   ,
                 "logout":"LOG OUT" ,
-                "dashboard":"DASHBOARD"    
+                "dashboard":"DASHBOARD"  ,
+                "update":"UPDATE"  
             },
             "fr": {
 
@@ -423,7 +439,10 @@
                 "donate":"दान",
                 "history":"इतिहास",
                 "process":"प्रक्रिया",
-                "profile":"शख्सियत"  
+                "profile":"शख्सियत"   ,
+                "logout":"लॉग आउट" ,
+                "dashboard":"डैशबोर्ड"  ,
+                "update":"अपडेट करें"  
             }
         },
         "signup":{
@@ -579,7 +598,9 @@
                 "profile":"शख्सियत"  ,
                 "pickup":"उठाओ"  ,
                 "pickupconfirm":"उठाओ" ,
-                "CANCEL":"रद्द करें" 
+                "CANCEL":"रद्द करें" ,
+                "logout":"लॉग आउट",
+                "vdash":"स्वयंसेवक डैशबोर्ड"       
             }
         },
         "vol_profile":{
@@ -602,7 +623,9 @@
                 "img_vol":"img/volunteer.jpg",
                 "img_signin":"img/signin.jpg",
                 "img_settings":"img/settings.jpg",
-                "img_signup":"img/signup.jpg"
+                "img_signup":"img/signup.jpg",
+                "img_VOLDASH":"img/VOL_DASH_EN.jpg",
+                "img_RESTDASH":"img/restdashbanner_en.jpg"
             },
             "fr": {
                 "img_foodstrap":"img/foodstrap_banner.jpg",
@@ -622,7 +645,9 @@
                 "img_vol":"img/volunteer.jpg",
                 "img_signin":"img/signin_hi.jpg",
                 "img_settings":"img/settings_hi.jpg",
-                "img_signup":"img/signup_hi.jpg"
+                "img_signup":"img/signup_hi.jpg",
+                "img_VOLDASH":"img/VOL_DASH_hi.jpg",
+                "img_RESTDASH":"img/restdashbanner_HI.jpg"
             }
         }
     }
