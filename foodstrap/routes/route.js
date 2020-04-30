@@ -9,6 +9,18 @@ var messages = require('../public/settings/localization');
 const NodeGeocoder = require('node-geocoder');
 const _ = require("lodash");
 
+
+router.get('/error_msg', function (req, res, next) {
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.signin[lang];
+  res.render('error_msg', {
+    msgs: msgsVar,
+    navLabels: messages.page.nav[lang],
+    imgNames: messages.page.images[lang]
+  });
+  //res.render('error_msg');
+});
 /* SHOW landing PAGE */
 router.get('/', function (req, res, next) {
   var lang = constants.properties.lang;
@@ -838,7 +850,7 @@ router.post('/signin', function (req, res, next) {
       }
       if (notfound) {
         console.log("failure to find match");
-        res.redirect("/error");
+        res.redirect("/error_msg");
       }
 
     });

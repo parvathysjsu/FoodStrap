@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= msgs.signin %></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- Font Icon
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">     
+    <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!--    <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a>
+          </div>-->
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+            <li><a href="/"><%= navLabels.home %></a></li>
+            <li><a href="/problem"><%= navLabels.problem %></a></li>
+            <li ><a href="/donors"><%= navLabels.donate %></a></li>
+            <li><a href="/shelters"><%= navLabels.shelters %></a></li>
+            <li><a href="/volunteers"><%= navLabels.volunteer %></a></li>
+          </ul>        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/signin"><%= navLabels.signin %> </a></li>
+            <li><a href="/setting"><%= navLabels.settings %></a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container greyShadow">
+        <div>
+            <div class="sectionDivider65">
+                <img class="imgWidth" src="<%= imgNames.img_signin %>">
+            </div>
+            <div class="sectionDivider35">                
+                <h2>An error occured</h2>
+                <h4>Incorrect username or password </h4>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
