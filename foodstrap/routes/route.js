@@ -315,7 +315,8 @@ router.get('/restaurant_dashboard', function (req, res, next) {
         user: req.session.user,
         langCode: lang,
         donList: don,
-        donCount: count
+        donCount: count,
+        imgNames: messages.page.images[lang]
       }
       );
     });
@@ -528,7 +529,8 @@ router.get('/volunteer_dashboard', function (req, res, next) {
           msgsTable: msgsTable,
           user: req.session.user,
           langCode: lang,
-          donList: don
+          donList: don,
+          imgNames: messages.page.images[lang]
         }
         );
       });
