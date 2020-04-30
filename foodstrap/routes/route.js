@@ -9,6 +9,18 @@ var messages = require('../public/settings/localization');
 const NodeGeocoder = require('node-geocoder');
 const _ = require("lodash");
 
+
+router.get('/error_msg', function (req, res, next) {
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.signin[lang];
+  res.render('error_msg', {
+    msgs: msgsVar,
+    navLabels: messages.page.nav[lang],
+    imgNames: messages.page.images[lang]
+  });
+  //res.render('error_msg');
+});
 /* SHOW landing PAGE */
 router.get('/', function (req, res, next) {
   var lang = constants.properties.lang;
@@ -303,7 +315,8 @@ router.get('/restaurant_dashboard', function (req, res, next) {
         user: req.session.user,
         langCode: lang,
         donList: don,
-        donCount: count
+        donCount: count,
+        imgNames: messages.page.images[lang]
       }
       );
     });
@@ -516,7 +529,8 @@ router.get('/volunteer_dashboard', function (req, res, next) {
           msgsTable: msgsTable,
           user: req.session.user,
           langCode: lang,
-          donList: don
+          donList: don,
+          imgNames: messages.page.images[lang]
         }
         );
       });
@@ -840,7 +854,7 @@ router.post('/signin', function (req, res, next) {
       }
       if (notfound) {
         console.log("failure to find match");
-        res.redirect("/error");
+        res.redirect("/error_msg");
       }
 
     });

@@ -55,17 +55,17 @@
                             <select name="lang" id="lang" required>
                                 <% if(langCode == 'en'){ %>
                                 <option value="en" selected>English</option>
-                                <option value="fr">Français</option>
+                                <option value="fr" disabled>Français</option>
                                 <option value="hi">हिन्दी</option>
                                 <% } %>
                                 <% if(langCode == 'fr'){ %>
                                 <option value="en">English</option>
-                                <option value="fr" selected>Français</option>
+                                <option value="fr" selected disabled>Français</option>
                                 <option value="hi">हिन्दी</option>
                                 <% } %>
                                 <% if(langCode == 'hi'){ %>
                                 <option value="en">English</option>
-                                <option value="fr">Français</option>
+                                <option value="fr" disabled>Français</option>
                                 <option value="hi" selected>हिन्दी</option>
                                 <% } %>
                             </select>
