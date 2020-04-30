@@ -135,7 +135,7 @@
                 "m3": "अनसोल्ड ब्रेड, पेस्ट्री को टॉस करने के बजाय, और एक डंपस्टर में उत्पादन करें, उन्हें स्थानीय गैर-लाभकारी संस्थाओं और उन लोगों के लिए बॉक्स करें।",
                 "m4":"यदि आपके पास भोजन है तो आप स्थानीय आश्रय के लिए दान करना चाहेंगे, अभी साइन अप करें!",
                 "m5": "मिशेलिन-तारांकित, राष्ट्रीय भोजनालय श्रृंखला से लेकर दुनिया भर में मेगा कॉफ़ी शॉप्स तक, जो अमेरिका के हर सड़क के कोने में फैला हुआ है, इन प्रतिष्ठानों की जाँच करें जो दिन के अंत में दान करके खाद्य कचरे को काटने के लिए प्रतिबद्ध हैं।",
-                "buttonm":"अभी साइनअप करें!",                
+                "buttonm":"अभी साइनअप करें!",
                 "h1title":"हर दान से फर्क पड़ता है"
             }
         },
@@ -327,7 +327,7 @@
                 "zip":"ज़िप" ,
                 "donate":"दान" ,
                 "logout":"लॉग आउट"      ,
-                "dashboard":"डैशबोर्ड"       
+                "dashboard":"डैशबोर्ड"
             }
         },
         "donationshistory":{
@@ -409,13 +409,13 @@
             },
             "hi": {
                 "title":"दान प्रक्रिया",
-                "heading": "भोजनालय प्रबंधक डैशबोर्ड",               
+                "heading": "भोजनालय प्रबंधक डैशबोर्ड",
                 "donate":"दान",
                 "history":"इतिहास",
                 "process":"प्रक्रिया",
-                "profile":"शख्सियत",               
+                "profile":"शख्सियत",
                 "logout":"लॉग आउट" ,
-                "dashboard":"डैशबोर्ड" 
+                "dashboard":"डैशबोर्ड"
             }
         },
         "rest_profile":{
@@ -428,7 +428,7 @@
                 "profile":"PROFILE"   ,
                 "logout":"LOG OUT" ,
                 "dashboard":"DASHBOARD"  ,
-                "update":"UPDATE"  
+                "update":"UPDATE"
             },
             "fr": {
 
@@ -442,7 +442,7 @@
                 "profile":"शख्सियत"   ,
                 "logout":"लॉग आउट" ,
                 "dashboard":"डैशबोर्ड"  ,
-                "update":"अपडेट करें"  
+                "update":"अपडेट करें"
             }
         },
         "signup":{
@@ -551,7 +551,12 @@
                 "quote1":"Food is national security. Food is economy. It is employment, energy, history. Food is everything. ~ José Andrés",
                 "p1":"Food Insecurity has been on the rise and hunger is closely related to it.",
                 "p2":"To help address this growing problem, organizations such as homeless shelters,food banks and soup kitchens are doing their part by feeding the hungry,",
-                "p3":"With the aid of volunteers."
+                "p3":"With the aid of volunteers.",
+                "profiletitle": "SHELTER PROFILE",
+                "claimtitle": "CLAIM DONATIONS",
+                "confclaimtitle": "CLAIM DONATION",
+                "historytitle":"CLAIMS HISTORY"
+
             },
             "fr": {
               "dashboard":"DASHBOARD",
@@ -572,7 +577,11 @@
                 "quote1":"La nourriture est la sécurité nationale. La nourriture, c'est l'économie. C'est l'emploi, l'énergie, l'histoire. La nourriture est tout. ~ José Andrés",
               "p1":"L'insécurité alimentaire est en augmentation et la faim y est étroitement liée.",
               "p2":"Pour aider à résoudre ce problème croissant, des organisations telles que les refuges pour sans-abri, les banques alimentaires et les soupes populaires font leur part en nourrissant les affamés,",
-              "p3":"Avec l'aide de bénévoles."
+              "p3":"Avec l'aide de bénévoles.",
+              "profiletitle": "PROFIL DE L'ABRI",
+              "claimtitle": "DEMANDER DES DONS",
+              "confclaimtitle": "DEMANDER UN DON",
+                "historytitle":"HISTOIRE DES RÉCLAMATIONS"
             },
             "hi": {
               "dashboard":"डैशबोर्ड",
@@ -593,7 +602,12 @@
                 "quote1":"भोजन राष्ट्रीय सुरक्षा है। भोजन अर्थव्यवस्था है। यह रोजगार, ऊर्जा, इतिहास है। खाना ही सब कुछ है। ~ जोस एंड्रेस",
               "p1":"खाद्य असुरक्षा बढ़ रही है और भूख इसके साथ निकटता से संबंधित है।",
               "p2":"इस बढ़ती हुई समस्या का समाधान करने के लिए, बेघर आश्रयों, खाद्य बैंकों और सूप रसोई जैसे संगठन भूखों को भोजन देकर अपना काम कर रहे हैं,",
-              "p3":"स्वयंसेवकों की सहायता से।"
+              "p3":"स्वयंसेवकों की सहायता से।",
+              "profiletitle": "आश्रय शख्सियत",
+              "claimtitle": "दान स्वीकार करें",
+              "confclaimtitle": "स्वीकृति की पुष्टि करें",
+              "historytitle":"स्वीकृति का इतिहास"
+
             }
         },
         "vol_dashboard":{
@@ -615,7 +629,7 @@
                 "pickupconfirm":"उठाओ" ,
                 "CANCEL":"रद्द करें" ,
                 "logout":"लॉग आउट",
-                "vdash":"स्वयंसेवक डैशबोर्ड"       
+                "vdash":"स्वयंसेवक डैशबोर्ड"
             }
         },
         "vol_profile":{
