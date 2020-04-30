@@ -774,7 +774,7 @@ router.post('/signup', function (req, res, next) {
           dbo.collection("restaurants").insertOne(rest, function (err, result) {
             if (err) throw err;
             // res.send("Successfully inserted");
-            //res.render('signin');      
+            //res.render('signin');
             res.redirect("/signin");
           });
         }).catch((result) => {
@@ -885,7 +885,8 @@ router.get('/problem', function (req, res, next) {
   console.log(msgsVar);
 res.render('problem',{
   msgs:msgsVar,
-  navLabels:messages.page.nav[lang]
+  navLabels:messages.page.nav[lang],
+  imgNames: messages.page.images[lang]
 });
 });
 
@@ -1054,7 +1055,8 @@ router.get('/volunteers', function (req, res, next) {
   var msgsVar = messages.page.volunteers[lang];
 res.render('volunteers',{
   msgs:msgsVar,
-  navLabels:messages.page.nav[lang]
+  navLabels:messages.page.nav[lang],
+  imgNames: messages.page.images[lang]
 });
 });
 function jsonReader(filePath, cb) {
@@ -1090,7 +1092,9 @@ router.get('/vol_profile', function (req, res, next) {
       if (err) throw err;
       for (var i = 0; i < result.length; i++) {
         if (req.session.user.username == result[i].username) {
+          console.log(result[i].username);
           vol.name = result[i].name;
+          console.log("vol.name" + vol.name);
           vol.phone = result[i].phone;
           vol.emailid = result[i].emailid;
           vol.shelter = result[i].shelter;

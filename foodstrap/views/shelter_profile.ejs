@@ -61,10 +61,7 @@
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav2 (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav2 {padding-top: 15px;}
-  .sidenav2 a {font-size: 18px;}
-}
+
 
     </style>
 
@@ -74,21 +71,27 @@
 
 <nav class="navbar navbar-default">
         <div class="container-fluid">
-              <span onclick="openNav()"> <a class="navbar-brand"><img class="logoimage" src="img/userlogo.png"></a></span>
+              <span onclick="openNav()" style="font-size:30px;cursor:pointer"> <a class="navbar-brand">&#9776;</a></span>
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="/shelter_dashboard"><%=msgsValues.title%></a></li>
+                <li><p class="fontDashheading" style=" color: white;"><%=msgsValues.title%></p></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                   <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+            </ul>
+
         </div>
 </nav>
 
-  <div id="mySidenav" class="sidenav2">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/shelter_claim"><%=msgsValues.claim%></a>
-    <a href="/past_claim"><%=msgsValues.history%></a>
-    <a href="/shelter_profile"><%=msgsValues.profile%></a>
-    <a href="/"><%=msgsValues.LOGOUT%></a>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+    <a href="/shelter_dashboard"><%= msgs.dashboard %></a> <br>
+    <a href="/shelter_claim"><%=msgsValues.claim%></a><br>
+    <a href="/past_claim"><%=msgsValues.history%></a><br>
+    <a href="/shelter_profile" class="active"><%=msgsValues.profile%></a><br>
+    <a href="/"><%=msgsValues.LOGOUT%></a><br>
 
   </div>
+<div id="main">
   <div class="container greyShadow" style="color:#d8dde3">
 
       <div class="sectionDivider verticalAlignCenter">
@@ -96,7 +99,7 @@
           <br>
           <h4 class=" verticalAlignCenter"><%= name %> </h4>
 
-          <img class="imgWidth2" src="img/sheltprofile.jpg">
+          <img class="imgWidth2" src="img/sheltprofile1.png">
           <br><br><br>
       </div>
   <div class="sectionDivider verticalAlignCenter">
@@ -132,7 +135,8 @@
           </div>
       </form>
   </div>
-
+</div>
+</div>
 
 </body>
 <script type="text/javascript">
