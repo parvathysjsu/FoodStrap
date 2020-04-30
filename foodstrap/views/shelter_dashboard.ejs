@@ -20,7 +20,7 @@
 #map {
   height: 400px;
   width: 80%;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 10%;
 }
 .sidenav2{
@@ -75,7 +75,7 @@
 
   <nav class="navbar navbar-default">
           <div class="container-fluid">
-                <span onclick="openNav()" style="font-size:30px;cursor:pointer"> <a class="navbar-brand">&#9776; </a></span>
+                <span onclick="openNav()" style="font-size:30px;cursor:pointer"> <a class="navbar-brand"><b>&#9776; </b></a></span>
               <ul class="nav navbar-nav navbar-center">
                   <li><p class="fontDashheading" style=" color: white;"><%= msgs.title %></p></li>
               </ul>
@@ -85,7 +85,7 @@
           </div>
     </nav>
   <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>
       <a href="/shelter_dashboard" class="active"><%= msgs.dashboard %></a> <br>
       <a href="/shelter_claim"><%= msgs.claim %></a><br>
       <a href="/past_claim"><%= msgs.history%></a><br>
@@ -95,22 +95,26 @@
     </div>
 <div id="main">
   <div class="container">
+   
+      <img src="<%= imgNames.img_shDASH %>" alt="FoodStrap" style="width:100%;">
     <div class="row">
       <div class="sectionDivider65">
-            <h4 align="center"> <%=msgs.loc%></h4>
-              <p align="center"><%= shelter.addr %> ,<%= shelter.city %>, <%= shelter.state%> - <%=shelter.zip%> <p>
-            <br></br>
+           
             <div id="map"></div>
           </div>
 
           <div class="sectionDivider35 greyAndbig">
-          <br><br>
-          <br><br>
-          <br><br>
+         
+          
           <h4><%= msgs.text %></h4>
-          <br><br>
-          <p><%= msgs.quote1 %></p><br>
+         
+          <p><%= msgs.quote1 %></p>
           <p><%= msgs.p1 %> <%= msgs.p2 %> <%= msgs.p3 %></p>
+          <br>
+          <h4 > <%=msgs.loc%></h4>
+         
+          <p ><%= shelter.addr %> ,<%= shelter.city %>, <%= shelter.state%> - <%=shelter.zip%> <p>
+        <br></br>
        </div>
      </div>
       <% if(volCount != '0'){ %>

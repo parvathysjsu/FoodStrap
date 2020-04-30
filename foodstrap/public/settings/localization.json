@@ -642,7 +642,8 @@
                 "img_problemhead":"img/problem_header.jpg",
                 "img_volhead":"img/vol2.jpg",
                 "img_VOLDASH":"img/VOL_DASH_EN.jpg",
-                "img_RESTDASH":"img/restdashbanner_en.jpg"
+                "img_RESTDASH":"img/restdashbanner_en.jpg",
+                "img_shDASH":"img/SH_DASH_EN.jpg"
             },
             "fr": {
                 "img_foodstrap":"img/foodstrap_banner.jpg",
@@ -668,7 +669,8 @@
                 "img_problemhead":"img/probh.png",
                 "img_volhead":"img/volhindi.png",
                 "img_VOLDASH":"img/VOL_DASH_hi.jpg",
-                "img_RESTDASH":"img/restdashbanner_HI.jpg"
+                "img_RESTDASH":"img/restdashbanner_HI.jpg",
+                "img_shDASH":"img/SH_DASH_hi.jpg"
             }
         }
     }

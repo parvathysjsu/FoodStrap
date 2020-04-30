@@ -670,7 +670,8 @@ router.get('/shelter_dashboard', function (req, res, next) {
             shelter: shelter,
             donList:don,
             volCount:count,
-            Volunteers:volunteer
+            Volunteers:volunteer,
+            imgNames: messages.page.images[lang]
           }
           );
         })
