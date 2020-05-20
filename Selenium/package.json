@@ -1,0 +1,11 @@
+{
+    "name": "selenium_foodstrap",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {
+        "selenium-webdriver": "^4.0.0-alpha.7"
+    }
+}
