@@ -5,58 +5,58 @@ var cheerio = require('cheerio');
 describe('Automated test Cases', function () {
     describe('SignIn Page Test Cases', function () {
     it('SignIn page', function () {
-        request('http://localhost:5000/signin', function (error, response, body) {           
+        request('http://localhost:3000/signin', function (error, response, body) {           
             verifyPage(response);            
         });
     });
     it('SignIn page content', function () {
-        request('http://localhost:5000/signin', function (error, response, body) {
+        request('http://localhost:3000/signin', function (error, response, body) {
             verifyPageContent(body);                              
         });
     });
     })
     describe('SignUp Page Test Cases', function () {
     it('SignUp page', function () {
-        request('http://localhost:5000/signup', function (error, response, body) {
+        request('http://localhost:3000/signup', function (error, response, body) {
            // console.log(body);
            verifyPage(response);                        
         });
     });
     it('SignUp page content', function () {
-        request('http://localhost:5000/signup', function (error, response, body) {
+        request('http://localhost:3000/signup', function (error, response, body) {
             verifyPageContent(body);                              
         });
     });
     })
     describe('Recieve Food- Shelters Page Test Cases', function () {
         it('shelters page', function () {
-            request('http://localhost:5000/shelters', function (error, response, body) {
+            request('http://localhost:3000/shelters', function (error, response, body) {
                // console.log(body);
                verifyPage(response);                            
             });
         });
         it('shelters page content', function () {
-            request('http://localhost:5000/shelters', function (error, response, body) {
+            request('http://localhost:3000/shelters', function (error, response, body) {
                 verifyPageContentSheltersPage(body);                
             });
         });
         })
     describe('Settings Page Test Cases', function () {
     it('Setting page', function () {
-        request('http://localhost:5000/setting', function (error, response, body) {
+        request('http://localhost:3000/setting', function (error, response, body) {
            // console.log(body);
            verifyPage(response);                       
         });
     });
     it('Setting page content', function () {
-        request('http://localhost:5000/setting', function (error, response, body) {
+        request('http://localhost:3000/setting', function (error, response, body) {
             verifyPageContent(body);           
         });
     });
 })
     describe('Negative flow Test Cases', function () {
     it('Wrong page', function () {
-        request('http://localhost:5000/wrongpage', function (error, response, body) {
+        request('http://localhost:3000/wrongpage', function (error, response, body) {
             //console.log(body);   
             verifyPageError(response);                              
         });

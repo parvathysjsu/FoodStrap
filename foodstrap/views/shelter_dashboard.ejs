@@ -141,7 +141,7 @@
 
 function initMap() {
   var shelterPosition = {};
-  fetch('http://localhost:5000/shelterPosition')
+  fetch('http://localhost:3000/shelterPosition')
     .then((response) => {
       shelterPosition = response.json();
       return shelterPosition;

@@ -188,7 +188,7 @@ padding: 20px;
 
     function initMap() {
       var donPosition = {};
-      fetch('http://localhost:5000/donPosition')
+      fetch('http://localhost:3000/donPosition')
         .then((response) => {
           donPosition = response.json();
           return donPosition;

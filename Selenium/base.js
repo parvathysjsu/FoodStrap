@@ -6,7 +6,7 @@ class BasePage{
         global.driver = driver;
     }
     navigateToHome() {
-        driver.get("http://localhost:5000/");
+        driver.get("http://localhost:3000/");
     }
 }
 module.exports = BasePage;

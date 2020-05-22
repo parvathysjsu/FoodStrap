@@ -13,7 +13,7 @@ A portal where extra food can be donated
 3. npm install
 4. npm start
 
-Service running in http://hostname:5000/
+Service running in http://hostname:3000/
   <br><br>
 Run Mocha Test Cases <br>
 • npm test<br>

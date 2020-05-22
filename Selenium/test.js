@@ -3,7 +3,7 @@ var By = webdriver.By;
 var until = webdriver.until;
 var Key = webdriver.Key;
 var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
-driver.get("ec2-3-101-76-67.us-west-1.compute.amazonaws.com:5000/");
+driver.get("ec2-3-101-76-67.us-west-1.compute.amazonaws.com:3000/");
 driver.findElement(By.xpath("//a[@href='/donors']")).click();
 driver.sleep(2000)
 driver.wait(until.elementLocated(By.css('.vertify-booking'))).click();
@@ -27,9 +27,9 @@ driver.wait(until.elementLocated(By.css('#rcity'))).sendKeys('Dublin');
 driver.wait(until.elementLocated(By.css('#rstate'))).sendKeys('CA');
 driver.wait(until.elementLocated(By.css('#rzip'))).sendKeys('94568');
 driver.wait(until.elementLocated(By.css('.s'))).click();
-//driver.executeScript('window.open("http://ec2-3-101-76-67.us-west-1.compute.amazonaws.com:5000/signin");')
+//driver.executeScript('window.open("http://ec2-3-101-76-67.us-west-1.compute.amazonaws.com:3000/signin");')
 
-//driver.navigate().to("http://ec2-3-101-76-67.us-west-1.compute.amazonaws.com:5000/signin");*/
+//driver.navigate().to("http://ec2-3-101-76-67.us-west-1.compute.amazonaws.com:3000/signin");*/
 var homepage = require('./home');
 //var donor= require('./donor');
 homepage.navigateToHome();
