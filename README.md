@@ -12,7 +12,7 @@ A portal where extra food can be donated
 2. cd .\foodstrap\
 3. npm install
 4. npm start
-<br>
+
 Service running in http://<hostname>:5000/
   <br><br>
 Run Mocha Test Cases <br>
