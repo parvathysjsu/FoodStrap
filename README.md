@@ -1,6 +1,10 @@
 # FoodStrap
 A portal where extra food can be donated
 
+# Pre-requisites
+• A machine with NodeJS installed
+• MongoDB installed and service running
+
 
 # Steps to run
 
@@ -8,5 +12,10 @@ A portal where extra food can be donated
 2. cd .\foodstrap\
 3. npm install
 4. npm start
-
-http://localhost:5000/
+<br>
+Service running in http://<hostname>:5000/
+  <br><br>
+Run Mocha Test Cases <br>
+• npm test<br>
+Run Selenium test cases<br>
+• Detailed instructions are provided in Selenium Automation section<br><br>
