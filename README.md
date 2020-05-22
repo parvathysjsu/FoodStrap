@@ -2,7 +2,7 @@
 A portal where extra food can be donated
 
 # Pre-requisites
-• A machine with NodeJS installed
+• A machine with NodeJS installed<br>
 • MongoDB installed and service running
 
 
