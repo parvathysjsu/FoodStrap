@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sentiment Analysis</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <br><br><br>
+    <a href="/restaurant_dashboard"><%= msgs.dashboard %></a> <br>
+    <a href="/donate"><%= msgs.donate %></a> <br>
+    <a href="/donationshistory"><%= msgs.history %></a> <br>
+    <a href="/donationprocess"><%= msgs.process %></a> <br>
+    <a href="/rest_profile"><%= msgs.profile %></a> <br>
+    <a href="/"> <%= msgs.logout %></a> <br>
+  </div>
+  <div id="main">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-center">
+
+          <p class="fontDashheading">Sentiment Analysis of Chat Messages</p>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="navbar-brand" href="/"><img class="logoimage" src="img/logo.JPG"></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h3> Overall Sentiment Analysis Score: <%= avg %>      
+        <% if(avg > 0){ %>
+          <img src="img/happy.JPG">
+          <% } %>
+          <% if(avg == 0){ %>
+          <img  src="img/neutral.JPG">
+          <% } %>
+          <% if(avg < 0){ %>
+          <img src="img/sad.JPG">
+          <% } %>            
+      </h3>
+      
+      <br>
+      <table id="myTable" class="table table-striped" align="center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"> MESSAGE</th>
+            <th scope="col"> SCORE</th>
+            <th scope="col"> SCORE EMOTION</th>
+            <th scope="col"> POSITIVE WORDS</th>
+            <th scope="col"> NEGATIVE WORDS</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var item in msgList) { %>
+          <tr>
+            <th scope="row"><%= parseInt(item)+1 %></th>
+            <td> <%= msgList[item].message %></td>
+            <td> <%= msgList[item].score %></td>
+            <td>
+              <% if(msgList[item].score > 0){ %>
+              <img class="imgWidth10" src="img/happy.JPG">
+              <% } %>
+              <% if(msgList[item].score == 0){ %>
+              <img class="imgWidth10" src="img/neutral.JPG">
+              <% } %>
+              <% if(msgList[item].score < 0){ %>
+              <img class="imgWidth10" src="img/sad.JPG">
+              <% } %>
+            </td>
+            <td> <%= msgList[item].positive %></td>
+            <td> <%= msgList[item].negative %></td>
+          </tr>
+          <% } %>
+
+        </tbody>
+      </table>
+      <br><br>
+    </div>
+  </div>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      // $('#myTable').dataTable();
+    });
+  </script>
+</body>
+
+</html>

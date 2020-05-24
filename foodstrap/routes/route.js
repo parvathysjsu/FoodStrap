@@ -8,7 +8,7 @@ var constants = require('../public/settings/Constants');
 var messages = require('../public/settings/localization');
 const NodeGeocoder = require('node-geocoder');
 const _ = require("lodash");
-
+var Sentiment = require('sentiment');
 
 router.get('/error_msg', function (req, res, next) {
   var lang = constants.properties.lang;
@@ -330,6 +330,19 @@ router.get('/donationprocess', function (req, res, next) {
   console.log(lang);
   var msgsVar = messages.page.donationprocess[lang];
   res.render('donationprocess', {
+    msgs: msgsVar,
+    user: req.session.user,
+    langCode: lang
+  }
+  );
+});
+
+router.get('/restchat', function (req, res, next) {
+  console.log("get restchat");
+  var lang = constants.properties.lang;
+  console.log(lang);
+  var msgsVar = messages.page.donationprocess[lang];
+  res.render('restchat', {
     msgs: msgsVar,
     user: req.session.user,
     langCode: lang
@@ -1320,5 +1333,69 @@ router.post('/vol_profile', function (req, res, next) {
   });
 });
 
+router.get('/chat', function (req, res, next) {
+var msgs = [];
+var sentiment = new Sentiment();
+let c =0;
+  MongoClient.connect("mongodb://localhost:27017/letschat", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("letschat");
+    dbo.collection("messages").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      console.log("inside db call");
+      console.log("len: "+result.length);
+    //  console.log("result: "+result);
+      // console.log("result 0: "+result[0]);
+      // console.log("result 0json: "+JSON.stringify(result[0]));
+      // console.log("result 0 text: "+result[0]["text"]);
+      for (var i = 0; i < result.length; i++) { 
+        let message = result[i]["text"]; 
+      var res_score = sentiment.analyze(message);
+     // console.log(res_score["score"]);
+      console.log("result: "+JSON.stringify(res_score));
+        msgs.push({
+          "message":message,
+          "score":res_score["score"],
+          "positive":res_score["positive"],
+          "negative":res_score["negative"]
+        });           
+        console.log("result text: "+message+" : "+res_score["score"]);
+         c= c+res_score["score"];    
+      }   
+      //console.log(msgs);
+      let avg = c/result.length;
+      console.log("avg: "+avg);
 
+      var lang = constants.properties.lang;
+      var msgsVar = messages.page.donationshistory[lang];
+     
+         res.render('chat_analytics', {
+             msgs: msgsVar,
+             user: req.session.user,
+             langCode: lang,
+             msgList: msgs,
+             avg: avg
+           }
+           );
+
+      //res.send(msgs);         
+    });
+  });   
+
+});
+router.get('/chatdelete', function (req, res, next) {
+  MongoClient.connect("mongodb://localhost:27017/letschat", function (err, db) {
+    if (!err) {
+      console.log("We are connected");
+    }
+    var dbo = db.db("letschat");
+    dbo.collection("messages").deleteMany({}, function(err, obj) {
+      if (err) throw err;
+     res.send(obj.result.n + " document(s) deleted");
+      db.close();
+    });
+})
+})
 module.exports = router;
