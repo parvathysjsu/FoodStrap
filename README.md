@@ -11,13 +11,13 @@ Altruistic people can sign up in the application to be volunteers for a homeless
 The application is developed using NodeJS. For the front end, EJS Embedded JavaScript templates with HTML5 and CSS3 are used. Libraries like jQuery, Bootstrap, Google Maps, and Google Charts are also used to enhance the UI. APIs are developed using Express.js and MongoDB is the database used. It is hosted on AWS EC2 instances. Test case automation for APIs is done using Mocha. Selenium automation is done for the overall flow. Load and performance testing is done using JMeter. Profiling is done using Chrome tools like CPU profiling and heap snapshot. Cross-browser compatibility is also verified. The application was designed using MVC pattern with each layer separated from one another. Search engine optimization techniques are implemented to make it easy to search for the application on the web. The application is developed with localization support for English, Hindi, and French locales.<br>
 
 ## Personas
-Jim Sanders, Sam ‘s Pizzeria Restaurant Manager
+- Jim Sanders, Sam ‘s Pizzeria Restaurant Manager<br>
 Jim Halls is the manager in Sam’s Pizzeria restaurant.  In Sam’s Pizzeria, several pounds of food are leftover at the end of each day. Jim decides to donate the leftover food to homeless shelters. By using FoodStrap, he connects with shelters and volunteers easily.
 <br>
-Sally Sands, Manager, Home for Good Homeless Shelter
+- Sally Sands, Manager, Home for Good Homeless Shelter<br>
 Home for Good Homeless Shelter provides assistance to hundreds of homeless people. Sally, the manager, connects with local restaurants and grocery stores to obtain food donations to feed the people in the shelter. She uses the FoodStrap app to connect with local restaurants and obtains their surplus food.
 <br>
-Patrick Jane, Volunteer at Home for Good
+- Patrick Jane, Volunteer at Home for Good <br>
 Patrick is a volunteer at Home for Good shelter. He spends quality time at the shelter helping the inmates with their tasks. He drives around town and collects donations for the shelter. He uses the FoodStrap app to keep track of all the donations. He typically spends few hours every week volunteering.
 <br>
 
@@ -45,14 +45,14 @@ Front end<br>
   - HTML5
   - CSS3
   - Library: JQuery, BootStrap, D3JS, Google maps, Google Charts
-Back end<br>
+<br>Back end<br>
   - NodeJS Express.js
   - Library: mongod, node-geocoder, node-fetch, http-errors, debug, morgan, client-sessions, cookie-parser
-Database <br>
+<br>Database <br>
 - MongoDB
-Cloud Deployment <br>
+<br>Cloud Deployment <br>
 - AWS EC2
-Test Automation <br>
+<br>Test Automation <br>
 - Mocha
 	- NodeJS
 	- Library: Chai, Cheerio, Request
