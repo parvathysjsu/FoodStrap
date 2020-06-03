@@ -42,16 +42,16 @@ Front end<br>
   - NodeJS and EJS Embedded JavaScript
   - HTML5
   - CSS3
-  - Library: JQuery, BootStrap, D3JS, Google maps, Google Charts
+  - Library: JQuery, BootStrap, D3JS, Google maps, Google Charts<br>
 
-<br>Back end<br>
+Back end<br>
   - NodeJS Express.js
-  - Library: mongod, node-geocoder, node-fetch, http-errors, debug, morgan, client-sessions, cookie-parser
+  - Library: mongod, node-geocoder, node-fetch, http-errors, debug, morgan, client-sessions, cookie-parser<br>
 
-<br>Database <br>
-- MongoDB
+Database <br>
+- MongoDB<br>
 
-<br>Cloud Deployment <br>
+Cloud Deployment <br>
 - AWS EC2<br>
 
 Test Automation <br>
@@ -61,3 +61,11 @@ Test Automation <br>
 - Selenium
 	- Selenium-webdriver
 	- Chrome driver
+
+# Research Paper - Integration of Let’s Chat and Sentiment Analysis on Messages in FoodStrap
+<br>Abstract<br><br>
+An enormous amount of food is wasted or thrown out at restaurants across the country every single day. Over preparation of food and large portion sizes are two major contributing factors. FoodStrap, a web application, aims to bridge the gap between hunger and food waste. It makes it easy to donate leftover and surplus food. The application provides a platform where all the stakeholders for food donation can participate and make the process easy. Through the application, restaurants can donate leftover food at the end of each day and connect with homeless shelters and volunteers in its community. Homeless shelters can sign up in the application and claim food donated by restaurants. Philanthropic people can register themselves as volunteers for homeless shelters and can drive for them. They can pick up the food from restaurants and deliver them to the shelters.<br>
+The FoodStrap application has several actors and communication between them is required. In this paper, an open source chatting application, Let’s Chat, is integrated with the FoodStrap application to enable users to communicate with each other. To assess customer satisfaction, that is a crucial factor for any application, and to obtain an overview of the emotions exhibited by the users, sentiment analysis on the chat messages is done.<br>
+
+<br>Source Code<br>
+BRANCH name: research_Parvathy<br><br>
